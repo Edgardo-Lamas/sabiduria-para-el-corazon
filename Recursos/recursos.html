@@ -10,109 +10,97 @@
 
 <body>
     <header>
-        <div class="resources">
-            <img src="../img/Recursos fondo.png" alt="declaracion">
-        </div>
         <nav>
             <a href="../index.html"><img src="../img/logo SpC.svg" alt="logo"></a>
-            <ul>
-                <li><a href="../Recursos/articulos.html">Articulos</a></li>
-                <li><a href="../Recursos/audios.html">Audios y Videos</a></li>
-                <li><a href="../Recursos/libros.html">Libros</a></li>
-                <li><a href="../Recursos/versiculos.html">Versículos</a></li>
+            
+            <!-- Menú hamburguesa para móviles -->
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="../page/nosotros.html">NOSOTROS</a></li>
+                <li><a href="../Recursos/recursos.html">RECURSOS</a></li>
+                <li><a href="../page/tienda.html">TIENDA</a></li>
+                <li><a href="../page/contacto.html">CONTACTO</a></li>
             </ul>
         </nav>
+        <section class="resources-header">
+            <img src="../img/Recursos fondo.png" alt="recursos fondo">
+            <div class="resources-content">
+                <h1>Recursos Cristianos</h1>
+                <p>Encuentra contenido espiritual para fortalecer tu fe</p>
+            </div>
+        </section>
     </header>
-
-<!--
-<div id="header">
-    <ul class="nav">
-        <li><a href="#">inicio</a></li>
-        <li><a href="#">servicios</a>
-            <ul>
-                <li><a href="#">mantenimiento</a></li>
-                <li><a href="#">predictivo</a></li>
-                <li><a href="#">correctivo</a></li>
-            </ul>
-        </li>
-        <li><a href="#">productos</a>
-            <ul>
-                <li><a href="#">calderas</a>
-                    
-                </li>
-                <li><a href="#">radiadores</a></li>
-                <li><a href="#">pisos</a>
-                    <ul>
-                        <li><a href="#">colector</a></li>
-                        <li><a href="#">tubo</a></li>
-                        <li><a href="#">valvulas</a>
-                            <ul>
-                                <li><a href="#">colector</a></li>
-                                <li><a href="#">tubo</a></li>
-                                <li><a href="#">valvulas</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li><a href="#">contacto</a></li>
-    </ul>
-</div>
--->
-
-
-
 
     <main>
         <section class="mejorecurso">
             <div class="titulorecurso">
                 <p>En esta sección encontrarás nuestros sermones en videos, y otros recursos online para conocer más
-                    sobre
-                    la fe cristiana a un click de distancia.</p>
+                    sobre la fe cristiana a un click de distancia.</p>
             </div>
+            
             <section class="superecursos">
                 <section class="recursos">
                     <div class="primero">
                         <a href="../Recursos/audios.html">
-                            <h3>Audios</h3><img src="../img/audios foto.jpg" alt="audios">
+                            <h3>Audios y Videos</h3>
+                            <img src="../img/audios foto.jpg" alt="audios">
                         </a>
                     </div>
                     <div class="segundo">
                         <div class="one">
                             <a href="../Recursos/libros.html">
-                                <h3>Libros en PDF</h3><img src="../img/foto libros.jpg" alt="Libros">
+                                <h3>Libros en PDF</h3>
+                                <img src="../img/foto libros.jpg" alt="Libros">
                             </a>
                         </div>
-                        <a class="two" href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA">Ir al Canal</a>
+                        <a class="two" href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank">Ir al Canal</a>
                     </div>
                     <div class="tercero">
                         <a href="../Recursos/articulos.html">
-                            <h3>Articulos y Bosquejos</h3><img src="../img/foto articulos.jpg" alt="Art y bosquejos">
-                        </a>
-                    </div>
-                    <div class="cuarto">
-                        <a href="../Recursos/versiculos.html">
-                            <h3>Versículos Bíblicos</h3><img src="../img/fondoo.jpg" alt="Versículos como postales">
+                            <h3>Artículos y Bosquejos</h3>
+                            <img src="../img/foto articulos.jpg" alt="Art y bosquejos">
                         </a>
                     </div>
                 </section>
-
-                <section class="recursos-1">
-                    <div class="nav">
+                
+                <!-- Sección de Postales de Versículos con Canvas HTML5 -->
+                <div class="cuarto">
+                    <a href="../Recursos/versiculos.html">
+                        <h3>🎨 Postales de Versículos</h3>
+                        <img src="../img/Elohim.jpg" alt="Postales de versículos">
+                        <div class="descripcion-recurso">
+                            <p>Genera y descarga hermosas postales de versículos bíblicos con tecnología Canvas HTML5</p>
+                            <ul>
+                                <li>✨ Postales únicas generadas al instante</li>
+                                <li>📐 Tamaño optimizado 1200x800 píxeles</li>
+                                <li>🎯 Organizadas por temas bíblicos</li>
+                                <li>💾 Descarga directa en alta calidad</li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                
+                <section class="navegacion-recursos">
+                    <div class="nav-recursos">
+                        <h3>Navegar por Sección</h3>
                         <ul>
-                            <li><a href="../Recursos/articulosl.html">Articulos</a></li>
                             <li><a href="../Recursos/audios.html">Audios y Videos</a></li>
+                            <li><a href="../Recursos/articulos.html">Artículos y Bosquejos</a></li>
                             <li><a href="../Recursos/libros.html">Libros</a></li>
+                            <li><a href="../Recursos/versiculos.html">🎨 Postales de Versículos</a></li>
                             <li><a href="../Recursos/recursos.html">Recursos</a></li>
                         </ul>
                     </div>
-
                 </section>
             </section>
         </section>
-
     </main>
+
     <footer>
         <section class="fondopag">
             <div class="redes-dos">
@@ -137,19 +125,19 @@
                 <h3>Reuniones</h3>
                 <br>
                 <ul>
-                    <li><a href="../ministerios/escuela-biblica.html">Escuela Bilbica</a></li>
+                    <li><a href="../ministerios/escuela-biblica.html">Escuela Bíblica</a></li>
                     <li><a href="../ministerios/escuela-dominical.html">Escuela Dominical</a></li>
-                    <li><a href="../ministerios/ministerios.html">Reunion de oracion</a></li>
-                    <li><a href="../ministerios/misiones.html">Reunion Misionera</a></li>
+                    <li><a href="../ministerios/ministerios.html">Reunión de Oración</a></li>
+                    <li><a href="../ministerios/misiones.html">Reunión Misionera</a></li>
                 </ul>
             </div>
             <div class="nosotros">
                 <h3>Nosotros</h3>
                 <br>
                 <ul>
-                    <li><a href="../Nosotros/confesiondefe.html">Confesion de Fe</a></li>
+                    <li><a href="../Nosotros/confesiondefe.html">Confesión de Fe</a></li>
                     <li><a href="../Nosotros/historia.html">Historia</a></li>
-                    <li><a href="../Nosotros/mision.html">Mision</a></li>
+                    <li><a href="../Nosotros/mision.html">Misión</a></li>
                     <li><a href="../Nosotros/distintivos.html">Distintivos</a></li>
                 </ul>
             </div>
@@ -157,14 +145,36 @@
                 <h3>Soy nuevo !</h3>
                 <br>
                 <ul>
-                    <li><a href="#">¿En que creemos?</a></li>
-                    <li><a href="#">¿como puedo congregarme en la IBM?</a></li>
+                    <li><a href="#">¿En qué creemos?</a></li>
+                    <li><a href="#">¿Cómo puedo congregarme en la IBM?</a></li>
                     <li><a href="#">Formulario visitante</a></li>
                     <li><a href="#">Recursos</a></li>
                 </ul>
             </div>
         </section>
     </footer>
+    
+    <script>
+        // Función para el menú hamburguesa
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger-menu');
+            
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Cerrar menú al hacer clic en un enlace (móvil)
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navMenu = document.querySelector('.nav-menu');
+                const hamburger = document.querySelector('.hamburger-menu');
+                
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
