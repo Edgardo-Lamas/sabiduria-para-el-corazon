@@ -490,64 +490,6 @@ main .mejorecurso .titulorecurso p{
 }
 
 /* Los estilos generales de .recursos ya aplican a todas las tarjetas incluyendo .cuarto */
-
-/* Navegación de recursos */
-.navegacion-recursos {
-    margin: 40px 0 20px 0;
-    padding: 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.nav-recursos {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.nav-recursos h3 {
-    font-size: 24px;
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 600;
-}
-
-.nav-recursos ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.nav-recursos ul li {
-    background: white;
-    border-radius: 25px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.nav-recursos ul li:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.nav-recursos ul li a {
-    display: block;
-    padding: 12px 20px;
-    color: #2c3e50;
-    text-decoration: none;
-    font-weight: 500;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: color 0.3s ease;
-}
-
-.nav-recursos ul li:hover a {
-    color: #667eea;
-}
 .superecursos .recursos-1 .nav ul li{
     list-style: none;
     padding-top: 30px;
@@ -1228,75 +1170,7 @@ main .mejorecurso .titulorecurso p{
 
 
 /* Cuarta sección de recursos - Versículos */
-.recursos .cuarto {
-    grid-area: cuarto;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    min-height: 200px;
-}
-
-.recursos .cuarto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
-}
-
-.recursos .cuarto a {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    text-decoration: none;
-    color: white;
-    padding: 1.5rem;
-}
-
-.recursos .cuarto h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: white;
-    text-align: center;
-    font-weight: 600;
-}
-
-.recursos .cuarto img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
-}
-
-.recursos .cuarto:hover img {
-    opacity: 1;
-}
-
-/* Actualizar grid para incluir la cuarta sección */
-.recursos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-template-areas: 
-        "primero segundo"
-        "tercero cuarto";
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-    .recursos {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "primero"
-            "segundo"
-            "tercero"
-            "cuarto";
-        gap: 1.5rem;
-        padding: 1rem;
-    }
-}
+/* Los estilos generales de .recursos ya aplican a todas las tarjetas incluyendo .cuarto */
 
 /* Responsive para sección de recursos con 4 tarjetas */
 @media (max-width: 1024px) {
@@ -2470,11 +2344,6 @@ footer .redes-cuatro ul{
         padding: 20px;
     }
     
-    .navegacion-recursos {
-        margin: 20px 0;
-        padding: 20px;
-    }
-    
     /* FOOTER RESPONSIVE - Tablet */
     .fondopag {
         height: auto;
@@ -2775,20 +2644,6 @@ footer .redes-cuatro ul{
     
     .descripcion-recurso ul {
         font-size: 14px;
-    }
-    
-    .navegacion-recursos {
-        margin: 10px 0;
-        padding: 15px;
-    }
-    
-    .nav-recursos ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .nav-recursos ul li {
-        text-align: center;
     }
 }
 
