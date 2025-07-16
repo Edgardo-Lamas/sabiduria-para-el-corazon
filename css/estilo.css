@@ -422,9 +422,11 @@ main .mejorecurso .titulorecurso p{
     justify-content:space-around;
 }
 .superecursos .recursos{
-    width:60%;
+    width: 80%;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .superecursos .recursos img{
     width: 200px;
@@ -433,6 +435,13 @@ main .mejorecurso .titulorecurso p{
     border-radius: 5px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
     transition: all 400ms ease;
+}
+
+.superecursos .recursos .primero,
+.superecursos .recursos .tercero,
+.superecursos .recursos .cuarto {
+    flex: 0 0 200px;
+    text-align: center;
 }
 .superecursos .recursos img:hover{
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
@@ -480,52 +489,7 @@ main .mejorecurso .titulorecurso p{
     list-style: none;
 }
 
-/* Cuarta sección de recursos - Postales de Versículos */
-.recursos .cuarto {
-    width: 200px;
-    margin-top: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.recursos .cuarto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
-}
-
-.recursos .cuarto a {
-    display: block;
-    text-decoration: none;
-    color: white;
-    padding: 20px;
-    height: 100%;
-}
-
-.recursos .cuarto h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: white;
-    text-align: center;
-    font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.recursos .cuarto img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.recursos .cuarto:hover img {
-    opacity: 1;
-}
+/* Los estilos generales de .recursos ya aplican a todas las tarjetas incluyendo .cuarto */
 
 /* Navegación de recursos */
 .navegacion-recursos {
@@ -1331,6 +1295,68 @@ main .mejorecurso .titulorecurso p{
             "cuarto";
         gap: 1.5rem;
         padding: 1rem;
+    }
+}
+
+/* Responsive para sección de recursos con 4 tarjetas */
+@media (max-width: 1024px) {
+    .superecursos .recursos {
+        width: 90%;
+        gap: 15px;
+    }
+    
+    .superecursos .recursos .primero,
+    .superecursos .recursos .tercero,
+    .superecursos .recursos .cuarto {
+        flex: 0 0 180px;
+    }
+    
+    .superecursos .recursos img {
+        width: 180px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 768px) {
+    .superecursos .recursos {
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .superecursos .recursos .primero,
+    .superecursos .recursos .tercero,
+    .superecursos .recursos .cuarto,
+    .superecursos .recursos .segundo {
+        flex: none;
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .superecursos .recursos img {
+        width: 100%;
+        max-width: 280px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .superecursos .recursos .primero,
+    .superecursos .recursos .tercero,
+    .superecursos .recursos .cuarto,
+    .superecursos .recursos .segundo {
+        max-width: 250px;
+    }
+    
+    .superecursos .recursos img {
+        max-width: 250px;
+        height: 130px;
+    }
+    
+    .superecursos .recursos h3 {
+        font-size: 18px;
+        padding-bottom: 20px;
     }
 }
 
