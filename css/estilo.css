@@ -479,6 +479,111 @@ main .mejorecurso .titulorecurso p{
     height: 400px;
     list-style: none;
 }
+
+/* Cuarta sección de recursos - Postales de Versículos */
+.recursos .cuarto {
+    width: 200px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recursos .cuarto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+}
+
+.recursos .cuarto a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    height: 100%;
+}
+
+.recursos .cuarto h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.recursos .cuarto img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.recursos .cuarto:hover img {
+    opacity: 1;
+}
+
+/* Navegación de recursos */
+.navegacion-recursos {
+    margin: 40px 0 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-recursos {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nav-recursos h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+
+.nav-recursos ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-recursos ul li {
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-recursos ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.nav-recursos ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: color 0.3s ease;
+}
+
+.nav-recursos ul li:hover a {
+    color: #667eea;
+}
 .superecursos .recursos-1 .nav ul li{
     list-style: none;
     padding-top: 30px;
