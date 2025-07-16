@@ -324,11 +324,24 @@
 
         // Función para el menú hamburguesa
         function toggleMenu() {
+            console.log('🍔 toggleMenu() llamada');
+            
             const navMenu = document.querySelector('.nav-menu');
             const hamburger = document.querySelector('.hamburger-menu');
             
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
+            console.log('📱 navMenu encontrado:', navMenu);
+            console.log('🍔 hamburger encontrado:', hamburger);
+            
+            if (navMenu && hamburger) {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                
+                console.log('✅ Clases toggled');
+                console.log('📱 navMenu tiene active:', navMenu.classList.contains('active'));
+                console.log('🍔 hamburger tiene active:', hamburger.classList.contains('active'));
+            } else {
+                console.error('❌ No se encontraron elementos del menú');
+            }
         }
 
         // Cerrar menú al hacer clic en un enlace (móvil)

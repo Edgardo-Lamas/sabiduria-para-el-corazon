@@ -107,7 +107,8 @@ nav ul {
 
 /* Menú hamburguesa oculto por defecto (desktop) */
 .hamburger-menu {
-    display: none;
+    display: block !important;
+    /* DEBUG: Forzar visibilidad temporalmente para verificar */
 }
 
 /* Renombrar ul como nav-menu para consistencia responsive */
@@ -2382,7 +2383,7 @@ footer .redes-cuatro ul{
     
     /* MENÚ HAMBURGUESA - Móvil */
     .hamburger-menu {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         cursor: pointer;
         margin-right: 20px;
@@ -2424,6 +2425,7 @@ footer .redes-cuatro ul{
         transition: right 0.3s ease;
         padding-top: 50px;
         z-index: 1000;
+        display: flex !important; /* Forzar display flex siempre */
     }
     
     .nav-menu.active {
@@ -2449,9 +2451,18 @@ footer .redes-cuatro ul{
         background-color: rgba(255, 255, 255, 0.1);
     }
     
-    /* Navegación desktop oculta en móvil */
-    nav .nav-menu {
-        display: none;
+    /* Navegación desktop: mostrar horizontal en desktop */
+    @media (min-width: 481px) {
+        .nav-menu {
+            position: static !important;
+            display: flex !important;
+            flex-direction: row !important;
+            width: auto !important;
+            height: auto !important;
+            background-color: transparent !important;
+            padding-top: 0 !important;
+            right: auto !important;
+        }
     }
     
     /* Navegación */
@@ -2472,29 +2483,47 @@ footer .redes-cuatro ul{
     
     /* Hero section móvil - Typography más pequeña */
     header .masfondo h1 {
-        font-size: 24px; /* Reducido de 32px */
-        right: 20px;
-        bottom: 100px;
-        width: calc(100% - 40px);
+        font-size: 20px; /* Reducido aún más de 24px */
+        right: 15px;
+        bottom: 80px;
+        width: calc(100% - 30px);
         text-align: center;
+        line-height: 1.2;
     }
     
     header .masfondo p {
-        font-size: 14px; /* Reducido de 18px */
-        right: 20px;
-        bottom: 50px;
-        width: calc(100% - 40px);
+        font-size: 12px; /* Reducido de 14px */
+        right: 15px;
+        bottom: 40px;
+        width: calc(100% - 30px);
         text-align: center;
     }
     
     /* Secciones aún más compactas */
     .central {
-        padding: 10px;
+        padding: 5px;
+        gap: 10px;
+    }
+    
+    .central .primero,
+    .central .segundo,
+    .central .tercero {
+        padding: 8px;
+        margin: 5px 0;
+    }
+    
+    /* Imágenes responsive en secciones principales */
+    .central img {
+        width: 100%;
+        max-width: 120px;
+        height: auto;
     }
     
     /* Reducir tipografías agresivamente */
     .central h2 {
-        font-size: 18px;
+        font-size: 16px;
+        line-height: 1.3;
+        margin-bottom: 8px;
     }
     
     .central p {
