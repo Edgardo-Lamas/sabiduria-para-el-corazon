@@ -2383,7 +2383,7 @@ footer .redes-cuatro ul{
 /* Móviles */
 @media (max-width: 480px) {
     /* Reemplazar imágenes de fondo con gradiente en móviles */
-   
+
     header .fondo {
         display: none; /* Ocultamos completamente el carrusel de imágenes */
     }
@@ -2659,30 +2659,62 @@ footer .redes-cuatro ul{
     }
 }
 
-/* Asegurar separación adecuada entre contenido y footer en móviles */
+/* Reglas específicas para evitar superposición de tarjetas con footer */
 @media (max-width: 768px) {
-    main {
-        margin-bottom: 40px;
+    .mejorecurso .superecursos .recursos {
+        margin-bottom: 60px !important;
+        padding-bottom: 40px !important;
     }
     
-    .mejorecurso {
-        margin-bottom: 60px;
-        padding-bottom: 50px;
+    body main {
+        margin-bottom: 60px !important;
     }
 }
 
 @media (max-width: 480px) {
-    main {
-        margin-bottom: 50px;
+    .mejorecurso .superecursos .recursos {
+        margin-bottom: 80px !important;
+        padding-bottom: 50px !important;
     }
     
-    .mejorecurso {
-        margin-bottom: 70px;
-        padding-bottom: 60px;
+    .mejorecurso .superecursos {
+        margin-bottom: 100px !important;
+        padding-bottom: 80px !important;
     }
     
-    footer {
-        margin-top: 80px;
+    body main {
+        margin-bottom: 80px !important;
+    }
+    
+    body footer {
+        margin-top: 100px !important;
+        clear: both !important;
+    }
+}
+
+/* Asegurar que las tarjetas no usen positioning que cause superposición */
+@media (max-width: 768px) {
+    .superecursos .recursos .primero,
+    .superecursos .recursos .segundo,
+    .superecursos .recursos .tercero,
+    .superecursos .recursos .cuarto {
+        position: static !important;
+        margin-bottom: 25px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .superecursos .recursos .primero,
+    .superecursos .recursos .segundo,
+    .superecursos .recursos .tercero,
+    .superecursos .recursos .cuarto {
+        position: static !important;
+        margin-bottom: 30px !important;
+    }
+    
+    /* Espaciado final para evitar superposición */
+    .recursos:last-child {
+        margin-bottom: 60px !important;
     }
 }
 
