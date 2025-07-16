@@ -1171,8 +1171,6 @@ main .mejorecurso .titulorecurso p{
 
 /* Cuarta sección de recursos - Versículos */
 /* Los estilos generales de .recursos ya aplican a todas las tarjetas incluyendo .cuarto */
-
-/* Responsive para sección de recursos con 4 tarjetas */
 @media (max-width: 1024px) {
     .superecursos .recursos {
         width: 90%;
@@ -1197,6 +1195,9 @@ main .mejorecurso .titulorecurso p{
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 40px;
     }
     
     .superecursos .recursos .primero,
@@ -1206,6 +1207,8 @@ main .mejorecurso .titulorecurso p{
         flex: none;
         width: 100%;
         max-width: 280px;
+        position: relative;
+        margin-bottom: 20px;
     }
     
     .superecursos .recursos img {
@@ -1221,6 +1224,7 @@ main .mejorecurso .titulorecurso p{
     .superecursos .recursos .cuarto,
     .superecursos .recursos .segundo {
         max-width: 250px;
+        margin-bottom: 15px;
     }
     
     .superecursos .recursos img {
@@ -1231,6 +1235,11 @@ main .mejorecurso .titulorecurso p{
     .superecursos .recursos h3 {
         font-size: 18px;
         padding-bottom: 20px;
+    }
+    
+    .superecursos {
+        margin-bottom: 60px;
+        padding-bottom: 40px;
     }
 }
 
@@ -2116,6 +2125,8 @@ main h1{
 footer{
     width: 100%;
     background-color:black;
+    margin-top: 40px;
+    clear: both;
 }
 footer .redes-cuatro img{
     width: 40px;
@@ -2372,6 +2383,7 @@ footer .redes-cuatro ul{
 /* Móviles */
 @media (max-width: 480px) {
     /* Reemplazar imágenes de fondo con gradiente en móviles */
+   
     header .fondo {
         display: none; /* Ocultamos completamente el carrusel de imágenes */
     }
@@ -2644,6 +2656,33 @@ footer .redes-cuatro ul{
     
     .descripcion-recurso ul {
         font-size: 14px;
+    }
+}
+
+/* Asegurar separación adecuada entre contenido y footer en móviles */
+@media (max-width: 768px) {
+    main {
+        margin-bottom: 40px;
+    }
+    
+    .mejorecurso {
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin-bottom: 50px;
+    }
+    
+    .mejorecurso {
+        margin-bottom: 50px;
+        padding-bottom: 40px;
+    }
+    
+    footer {
+        margin-top: 60px;
     }
 }
 
