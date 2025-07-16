@@ -1238,8 +1238,8 @@ main .mejorecurso .titulorecurso p{
     }
     
     .superecursos {
-        margin-bottom: 60px;
-        padding-bottom: 40px;
+        margin-bottom: 80px;
+        padding-bottom: 60px;
     }
 }
 
@@ -2666,8 +2666,8 @@ footer .redes-cuatro ul{
     }
     
     .mejorecurso {
-        margin-bottom: 40px;
-        padding-bottom: 30px;
+        margin-bottom: 60px;
+        padding-bottom: 50px;
     }
 }
 
@@ -2677,12 +2677,12 @@ footer .redes-cuatro ul{
     }
     
     .mejorecurso {
-        margin-bottom: 50px;
-        padding-bottom: 40px;
+        margin-bottom: 70px;
+        padding-bottom: 60px;
     }
     
     footer {
-        margin-top: 60px;
+        margin-top: 80px;
     }
 }
 
