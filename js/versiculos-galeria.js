@@ -1116,62 +1116,6 @@ window.pruebaDescargaDirecta = function() {
     }
 };
 
-// Nueva función de prueba ultra-simple de Canvas
-window.pruebaCanvasSimple = function() {
-    console.log('🧪 PRUEBA CANVAS SIMPLE...');
-    
-    try {
-        // Crear canvas básico
-        const canvas = document.createElement('canvas');
-        canvas.width = 400;
-        canvas.height = 300;
-        const ctx = canvas.getContext('2d');
-        
-        if (!ctx) {
-            throw new Error('No se pudo obtener contexto 2D');
-        }
-        
-        console.log('✅ Canvas creado');
-        
-        // Dibujar algo simple
-        ctx.fillStyle = '#3498db';
-        ctx.fillRect(0, 0, 400, 300);
-        
-        ctx.fillStyle = 'white';
-        ctx.font = '24px Arial';
-        ctx.textAlign = 'center';
-        ctx.fillText('Prueba Canvas', 200, 150);
-        
-        console.log('✅ Contenido dibujado');
-        
-        // Generar imagen
-        const imageData = canvas.toDataURL('image/png');
-        
-        if (!imageData || imageData === 'data:,') {
-            throw new Error('Canvas vacío');
-        }
-        
-        console.log('✅ Imagen generada, tamaño:', imageData.length);
-        
-        // Descargar
-        const link = document.createElement('a');
-        link.download = 'prueba-canvas.png';
-        link.href = imageData;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        console.log('✅ Descarga completada');
-        alert('Prueba de Canvas exitosa! Archivo descargado.');
-        return true;
-        
-    } catch (error) {
-        console.error('❌ Error en prueba Canvas:', error);
-        alert('Error en Canvas: ' + error.message);
-        return false;
-    }
-};
-
 // Función auxiliar para obtener nombres de archivo locales
 function getImagenLocalPorTema(tema) {
     const imagenesLocales = {
