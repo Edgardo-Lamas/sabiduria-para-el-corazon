@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería de versículos bíblicos como postales - Sabiduría para el Corazón">
+    <meta name="keywords" content="versiculos, postales, biblia, descargar, temas biblicos, imagenes">
+    <meta name="author" content="Sabiduría para el Corazón">
+    <title>Versículos Bíblicos - Sabiduría para el Corazón</title>
+    
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/versiculos-galeria.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html"><img src="../img/logo SpC.svg" alt="logo"></a>
+            <ul>
+                <li><a href="../page/nosotros.html">NOSOTROS</a></li>
+                <li><a href="../Recursos/recursos.html">RECURSOS</a></li>
+                <li><a href="../page/tienda.html">TIENDA</a></li>
+                <li><a href="../page/contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="versiculos-main">
+        <div class="hero-section">
+            <h1>Galería de Versículos Bíblicos</h1>
+            <p>Descarga hermosas postales con versículos bíblicos organizados por temas</p>
+        </div>
+
+        <!-- Filtros por tema -->
+        <div class="filtros-container">
+            <h2>Buscar por Tema</h2>
+            <div class="filtros-temas">
+                <button class="filtro-btn active" data-tema="todos">Todos</button>
+                <button class="filtro-btn" data-tema="amor">Amor</button>
+                <button class="filtro-btn" data-tema="esperanza">Esperanza</button>
+                <button class="filtro-btn" data-tema="fe">Fe</button>
+                <button class="filtro-btn" data-tema="paz">Paz</button>
+                <button class="filtro-btn" data-tema="fortaleza">Fortaleza</button>
+                <button class="filtro-btn" data-tema="salvacion">Salvación</button>
+                <button class="filtro-btn" data-tema="sabiduria">Sabiduría</button>
+                <button class="filtro-btn" data-tema="gratitud">Gratitud</button>
+            </div>
+        </div>
+
+        <!-- Panel informativo sobre tecnología -->
+        <div class="info-tecnologia">
+            <div class="info-card">
+                <h3>🎨 Postales Únicas Generadas con Tecnología Canvas HTML5</h3>
+                <div class="info-contenido">
+                    <div class="info-item">
+                        <span class="info-icon">✨</span>
+                        <strong>Cada postal es única:</strong> Generada específicamente para ti con tecnología Canvas HTML5
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📐</span>
+                        <strong>Tamaño optimizado:</strong> 1200x800 píxeles, perfecto para redes sociales e impresión
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🏛️</span>
+                        <strong>Marca Sabiduría para el Corazón:</strong> Incluye nuestro branding discreto
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🎯</span>
+                        <strong>Calidad profesional:</strong> Tipografía optimizada y fondos temáticos de alta resolución
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Galería de versículos -->
+        <div class="versiculos-loading">🔄 Cargando galería de versículos...</div>
+        
+        <div class="versiculos-galeria" id="versiculos-galeria">
+            <!-- Los versículos se cargarán dinámicamente desde Airtable -->
+        </div>
+
+        <!-- Contador y estadísticas -->
+        <div class="galeria-stats">
+            <span id="total-versiculos">0 versículos disponibles</span>
+            <span id="versiculos-filtrados">0 mostrando</span>
+        </div>
+    </main>
+
+    <!-- Modal de confirmación de descarga -->
+    <div class="modal-descarga" id="modal-descarga">
+        <div class="modal-contenido">
+            <button class="modal-cerrar" onclick="cerrarModalDescarga()">&times;</button>
+            <div class="modal-header">
+                <h3>🎨 Generando Tu Postal Única</h3>
+                <p>Tecnología Canvas HTML5 de Sabiduría para el Corazón</p>
+            </div>
+            <div class="modal-body">
+                <div class="caracteristicas-postal">
+                    <div class="caracteristica">
+                        <span class="icon">📐</span>
+                        <strong>Dimensiones:</strong> 1200x800 píxeles
+                    </div>
+                    <div class="caracteristica">
+                        <span class="icon">🎯</span>
+                        <strong>Formato:</strong> PNG de alta calidad
+                    </div>
+                    <div class="caracteristica">
+                        <span class="icon">✨</span>
+                        <strong>Contenido:</strong> Versículo + fondo temático + branding
+                    </div>
+                    <div class="caracteristica">
+                        <span class="icon">🏛️</span>
+                        <strong>Marca:</strong> Sabiduría para el Corazón
+                    </div>
+                </div>
+                <div class="preview-info">
+                    <p><strong>Tu postal incluirá:</strong></p>
+                    <ul>
+                        <li>✓ Fondo visual optimizado según el tema</li>
+                        <li>✓ Texto del versículo con tipografía profesional</li>
+                        <li>✓ Referencia bíblica claramente visible</li>
+                        <li>✓ Logo discreto de Sabiduría para el Corazón</li>
+                        <li>✓ Tamaño perfecto para redes sociales e impresión</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancelar" onclick="cerrarModalDescarga()">Cancelar</button>
+                <button class="btn-generar" onclick="confirmarDescarga()">🎨 Generar Mi Postal</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="redes-cuatro">
+            <ul>
+                <li><a href="https://web.facebook.com/"><img src="../img/facebook (1).png" alt="Facebook"></a></li>
+                <li><a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA"><img src="../img/youtube (2).png" alt="Youtube"></a></li>
+                <li><a href="../index.html"><img src="../img/instagram (2).png" alt="Instagram"></a></li>
+                <li><a href="../index.html"><img src="../img/whatsapp.png" alt="WhatsApp"></a></li>
+            </ul>
+        </div>
+
+        <section class="fondopag">
+            <div class="redes-dos">
+                <h3>Información de contacto</h3>
+                <br>
+                <ul>
+                    <h4>Carabobo 4151</h4>
+                    <h4>Villa Luzuriaga</h4>
+                    <h4>Morón</h4>
+                    <h4>Buenos Aires</h4>
+                </ul>
+                <div class="tres-dos">
+                    <img src="../img/telephone.png" alt="telefono">
+                    <h3>Teléfono: 1152604138</h3>
+                </div>
+                <div class="tres-uno">
+                    <img src="../img/email.png" alt="sobre">
+                    <h3>Email: contacto@sabiduriaparaelcorazon.org</h3>
+                </div>
+            </div>
+            <div class="reuniones">
+                <h3>Reuniones</h3>
+                <br>
+                <ul>
+                    <li><a href="../ministerios/misiones.html">Campo Misionero</a></li>
+                    <li><a href="../ministerios/escuela-dominical.html">Escuela Dominical</a></li>
+                    <li><a href="../ministerios/escuela-biblica.html">Escuela Biblica</a></li>
+                    <li><a href="../ministerios/ministerios.html">MINISTERIOS</a></li>
+                </ul>
+            </div>
+            <div class="nosotros">
+                <h3>Nosotros</h3>
+                <br>
+                <ul>
+                    <li><a href="../Nosotros/confesiondefe.html">Declaración de Fe</a></li>
+                    <li><a href="../Nosotros/historia.html">Historia</a></li>
+                    <li><a href="../Nosotros/mision.html">Misión</a></li>
+                    <li><a href="../Nosotros/distintivos.html">Distintivos</a></li>
+                </ul>
+            </div>
+            <div class="nuevo">
+                <h3>¡Soy nuevo!</h3>
+                <br>
+                <ul>
+                    <li><a href="../Nosotros/confesiondefe.html">¿En qué creemos?</a></li>
+                    <li><a href="../page/contacto.html">¿Cómo puedo congregarme en la IBM?</a></li>
+                    <li><a href="../page/contacto.html">Formulario visitante</a></li>
+                    <li><a href="../Recursos/recursos.html">Recursos</a></li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/config.js"></script>
+    <script src="../js/airtable-integration.js"></script>
+    <script>
+        // Configuración para versículos
+        const AIRTABLE_CONFIG = {
+            baseId: 'appQWxkBgJOCbJEe0',
+            apiKey: 'patpY2QvtfLTSLHKi.1795e19ee085dc933d8df22180a288f951160db886d23b3347f8018f4c402e3f',
+            baseUrl: 'https://api.airtable.com/v0/'
+        };
+        
+        console.log('🔧 AIRTABLE_CONFIG configurado para versículos');
+    </script>
+    <script src="../js/versiculos-galeria.js"></script>
+    <script>
+        // Inicializar galería cuando se carga la página
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('🎨 Inicializando galería de versículos...');
+            
+            // Verificar que AIRTABLE_CONFIG esté disponible
+            if (typeof AIRTABLE_CONFIG === 'undefined') {
+                console.error('❌ AIRTABLE_CONFIG no está definido');
+                return;
+            }
+            
+            // Crear instancia de la galería
+            window.versiculosGaleria = new VersiculosGaleria();
+            
+            // Inicializar la galería
+            await window.versiculosGaleria.init();
+            
+            console.log('✅ Galería de versículos inicializada correctamente');
+        });
+    </script>
+</body>
+
+</html>

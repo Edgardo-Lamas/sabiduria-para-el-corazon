@@ -1,0 +1,68 @@
+# Archivos del sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Archivos de video grandes (GitHub tiene límite de 100MB)
+videos/*.mp4
+videos/*.avi
+videos/*.mov
+videos/*.mkv
+
+# Archivos de audio grandes (GitHub tiene límite de 100MB)
+audios/*.mp3
+audios/*.wav
+audios/*.m4a
+
+# Archivos de configuración del editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Variables de entorno y configuración sensible
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+config/secrets.js
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Backup files
+*.bak
+*.backup
+
+# Large media files that should be hosted elsewhere
+# (uncomment if you want to exclude large files)
+# *.mp4
+# *.avi
+# *.mov
+# *.mp3
+# *.wav
+# *.pdf
+
+# Test files
+test/
+tests/

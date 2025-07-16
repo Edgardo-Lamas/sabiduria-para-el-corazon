@@ -1,0 +1,40 @@
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://sabiduriaparaelcorazon.github.io" # the base hostname & protocol for your site
+
+# Site settings
+title: "Sabiduría para el Corazón"
+description: "Plataforma de contenido bíblico con audios, videos, artículos y recursos para el crecimiento espiritual"
+keywords: "biblia, cristiano, iglesia, predicas, audios, videos, articulos, recursos biblicos"
+
+# Organization details
+organization:
+  name: "Sabiduría para el Corazón"
+  address: "Carabobo 4151, Villa Luzuriaga, Buenos Aires"
+  phone: "+54-11-5260-4138"
+  email: "contacto@sabiduriaparaelcorazon.org"
+
+# Social media
+social:
+  youtube: "https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA"
+  facebook: "https://web.facebook.com/"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .vscode/
+
+# Include specific files
+include:
+  - .htaccess
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
