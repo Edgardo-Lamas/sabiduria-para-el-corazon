@@ -162,14 +162,15 @@
                 const footer = document.querySelector('footer');
                 
                 if (mejorecurso) {
-                    mejorecurso.style.marginBottom = isMobile ? '400px' : '300px';
+                    mejorecurso.style.marginBottom = isMobile ? '600px' : '400px';
+                    mejorecurso.style.paddingBottom = isMobile ? '100px' : '50px';
                 }
                 
                 if (footer) {
-                    footer.style.marginTop = isMobile ? '150px' : '100px';
+                    footer.style.marginTop = isMobile ? '250px' : '200px';
                 }
 
-                console.log('✅ Espaciado simplificado aplicado:', isMobile ? 'móvil 400px' : 'tablet 300px');
+                console.log('✅ Espaciado EXTRA aplicado:', isMobile ? 'móvil 600px' : 'tablet 400px');
             }
         });
     </script>
