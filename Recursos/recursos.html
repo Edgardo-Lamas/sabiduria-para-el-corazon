@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="../css/estilo.css?v=202507172330">
+    <link rel="stylesheet" href="../css/estilo.css?v=202507172355">
     <title>Recursos</title>
 </head>
 
@@ -158,22 +158,36 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Detectar si es móvil
             const isMobile = window.innerWidth <= 480;
+            const isTablet = window.innerWidth <= 768 && window.innerWidth > 480;
             
             if (isMobile) {
-                // Forzar reflow de estilos
+                // Forzar reflow de estilos para móviles pequeños
                 const recursos = document.querySelector('.recursos');
+                const superecursos = document.querySelector('.superecursos');
+                const mejorecurso = document.querySelector('.mejorecurso');
                 const footer = document.querySelector('footer');
                 const main = document.querySelector('main');
                 
                 if (recursos) {
-                    recursos.style.marginBottom = '120px';
-                    recursos.style.paddingBottom = '80px';
+                    recursos.style.marginBottom = '200px';
+                    recursos.style.paddingBottom = '150px';
                     recursos.style.position = 'relative';
-                    recursos.style.zIndex = '10';
+                    recursos.style.zIndex = '20';
+                }
+                
+                if (superecursos) {
+                    superecursos.style.marginBottom = '200px';
+                    superecursos.style.paddingBottom = '180px';
+                }
+                
+                if (mejorecurso) {
+                    mejorecurso.style.marginBottom = '180px';
+                    mejorecurso.style.paddingBottom = '120px';
                 }
                 
                 if (footer) {
-                    footer.style.marginTop = '120px';
+                    footer.style.marginTop = '200px';
+                    footer.style.paddingTop = '50px';
                     footer.style.clear = 'both';
                     footer.style.position = 'relative';
                     footer.style.zIndex = '1';
@@ -184,11 +198,41 @@
                     main.style.paddingBottom = '40px';
                 }
 
-                // Forzar reflow
-                document.body.offsetHeight;
+                // Espaciado individual de tarjetas
+                const tarjetas = document.querySelectorAll('.recursos .primero, .recursos .segundo, .recursos .tercero, .recursos .cuarto');
+                tarjetas.forEach((tarjeta, index) => {
+                    tarjeta.style.marginBottom = index === tarjetas.length - 1 ? '100px' : '60px';
+                    tarjeta.style.paddingBottom = '30px';
+                    tarjeta.style.position = 'static';
+                    tarjeta.style.display = 'block';
+                });
+
+                console.log('🔧 Estilos móviles RECURSOS aplicados forzadamente - Espaciado 200px');
+            } else if (isTablet) {
+                // Estilos para tablet
+                const recursos = document.querySelector('.recursos');
+                const superecursos = document.querySelector('.superecursos');
+                const footer = document.querySelector('footer');
                 
-                console.log('🔧 Estilos móviles aplicados forzadamente');
+                if (recursos) {
+                    recursos.style.marginBottom = '150px';
+                    recursos.style.paddingBottom = '100px';
+                }
+                
+                if (superecursos) {
+                    superecursos.style.marginBottom = '150px';
+                    superecursos.style.paddingBottom = '120px';
+                }
+                
+                if (footer) {
+                    footer.style.marginTop = '150px';
+                }
+                
+                console.log('🔧 Estilos tablet RECURSOS aplicados - Espaciado 150px');
             }
+            
+            // Forzar reflow
+            document.body.offsetHeight;
         });
     </script>
 </body>
