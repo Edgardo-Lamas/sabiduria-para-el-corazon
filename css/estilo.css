@@ -2385,6 +2385,8 @@ footer .redes-cuatro ul{
     /* Reemplazar imágenes de fondo con gradiente en móviles */
 
    
+
+
     header .fondo {
         display: none; /* Ocultamos completamente el carrusel de imágenes */
     }
@@ -2452,7 +2454,7 @@ footer .redes-cuatro ul{
     
     .nav-menu li a {
         font-size: 18px;
-        color: bisque;
+        color: white;
         text-decoration: none;
         font-weight: 600;
         padding: 10px 20px;
@@ -2711,6 +2713,93 @@ footer .redes-cuatro ul{
         margin-bottom: 40px !important;
         position: static !important;
         display: block !important;
+    }
+}
+
+/* REGLAS ESPECÍFICAS PARA SOBRESCRIBIR BOOTSTRAP Y NAVEGACIÓN AZUL */
+/* Aplicar estilos consistentes de navegación en todas las páginas */
+
+/* Resetear estilos de Bootstrap en navegación */
+nav, nav ul, nav ul li, nav ul li a {
+    background-color: transparent !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Estilos específicos para el menú de navegación */
+nav {
+    background-color: transparent !important;
+    position: relative !important;
+    z-index: 1000 !important;
+}
+
+nav .nav-menu {
+    background-color: transparent !important;
+    display: flex !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+nav .nav-menu li {
+    background-color: transparent !important;
+    padding-right: 20px !important;
+    margin-right: 100px !important;
+}
+
+nav .nav-menu li a {
+    font-size: 14px !important;
+    padding-right: 10px !important;
+    color: white !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    font-weight: normal !important;
+}
+
+nav .nav-menu li a:hover {
+    color: #ccc !important;
+    background-color: transparent !important;
+}
+
+/* Asegurar que no haya estilos azules de Bootstrap */
+.nav, .navbar, .nav-link, .navbar-nav .nav-link {
+    color: white !important;
+    background-color: transparent !important;
+}
+
+/* Responsive hamburger menu styles */
+@media (max-width: 768px) {
+    nav .nav-menu {
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important;
+        width: 80% !important;
+        height: 100vh !important;
+        background-color: rgba(0, 0, 0, 0.95) !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        transition: right 0.3s ease !important;
+        z-index: 999 !important;
+    }
+    
+    nav .nav-menu.active {
+        right: 0 !important;
+    }
+    
+    nav .nav-menu li {
+        margin: 20px 0 !important;
+        text-align: center !important;
+    }
+    
+    nav .nav-menu li a {
+        font-size: 18px !important;
+        color: white !important;
+        text-decoration: none !important;
     }
 }
 

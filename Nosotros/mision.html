@@ -16,7 +16,15 @@
         </div>
         <nav>
             <a href="../index.html"><img src="../img/logo SpC.svg" alt="logo"></a>
-            <ul>
+            
+            <!-- Menú hamburguesa para móviles -->
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
                 <li><a href="../page/nosotros.html">NOSOTROS</a></li>
                 <li><a href="../Nosotros/confesiondefe.html">DECLARACION DE FE</a></li>
                 <li><a href="../Nosotros/historia.html">HISTORIAS</a></li>
@@ -132,6 +140,29 @@
             </div>
         </section>
     </footer>
+    
+    <script>
+        // Función para el menú hamburguesa
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger-menu');
+            
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Cerrar menú al hacer clic en un enlace (móvil)
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navMenu = document.querySelector('.nav-menu');
+                const hamburger = document.querySelector('.hamburger-menu');
+                
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

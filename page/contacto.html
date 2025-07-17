@@ -10,7 +10,15 @@
     <header >
         <nav> 
             <a href="../index.html"><img src="../img/logo SpC.svg" alt="logo"></a>
-            <ul>
+            
+            <!-- Menú hamburguesa para móviles -->
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
                 <li><a href="../page/nosotros.html">NOSOTROS</a></li>
                 <li><a href="../Recursos/recursos.html">RECURSOS</a></li>
                 <li><a href="../page/tienda.html">TIENDA</a></li>
@@ -98,5 +106,27 @@
             </div>
         </section>
     </footer>
+    
+    <script>
+        // Función para el menú hamburguesa
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger-menu');
+            
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Cerrar menú al hacer clic en un enlace (móvil)
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navMenu = document.querySelector('.nav-menu');
+                const hamburger = document.querySelector('.hamburger-menu');
+                
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
