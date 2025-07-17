@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="../css/estilo.css?v=202507172355">
+    <link rel="stylesheet" href="../css/estilo.css?v=202507180010">
     <title>Recursos</title>
 </head>
 
@@ -169,33 +169,46 @@
                 const main = document.querySelector('main');
                 
                 if (recursos) {
-                    recursos.style.marginBottom = '200px';
-                    recursos.style.paddingBottom = '150px';
-                    recursos.style.position = 'relative';
-                    recursos.style.zIndex = '20';
+                    recursos.style.marginBottom = '250px';
+                    recursos.style.paddingBottom = '200px';
+                    recursos.style.position = 'static';
+                    recursos.style.zIndex = 'auto';
+                    recursos.style.display = 'block';
+                    recursos.style.width = '100%';
                 }
                 
                 if (superecursos) {
-                    superecursos.style.marginBottom = '200px';
-                    superecursos.style.paddingBottom = '180px';
+                    superecursos.style.marginBottom = '250px';
+                    superecursos.style.paddingBottom = '200px';
+                    superecursos.style.position = 'static';
+                    superecursos.style.display = 'block';
                 }
                 
                 if (mejorecurso) {
-                    mejorecurso.style.marginBottom = '180px';
-                    mejorecurso.style.paddingBottom = '120px';
+                    mejorecurso.style.marginBottom = '250px';
+                    mejorecurso.style.paddingBottom = '150px';
+                    mejorecurso.style.position = 'static';
+                    mejorecurso.style.display = 'block';
                 }
                 
                 if (footer) {
-                    footer.style.marginTop = '200px';
-                    footer.style.paddingTop = '50px';
+                    footer.style.marginTop = '250px';
+                    footer.style.paddingTop = '60px';
                     footer.style.clear = 'both';
-                    footer.style.position = 'relative';
-                    footer.style.zIndex = '1';
+                    footer.style.position = 'static';
+                    footer.style.zIndex = 'auto';
+                    footer.style.display = 'block';
+                    footer.style.width = '100%';
+                    footer.style.float = 'none';
                 }
                 
                 if (main) {
-                    main.style.marginBottom = '100px';
-                    main.style.paddingBottom = '40px';
+                    main.style.marginBottom = '250px';
+                    main.style.paddingBottom = '50px';
+                    main.style.position = 'static';
+                    main.style.display = 'block';
+                    main.style.width = '100%';
+                    main.style.overflow = 'visible';
                 }
 
                 // Espaciado individual de tarjetas
@@ -207,7 +220,7 @@
                     tarjeta.style.display = 'block';
                 });
 
-                console.log('🔧 Estilos móviles RECURSOS aplicados forzadamente - Espaciado 200px');
+                console.log('🔧 Estilos móviles RECURSOS aplicados forzadamente - Espaciado 250px ESTÁTICO');
             } else if (isTablet) {
                 // Estilos para tablet
                 const recursos = document.querySelector('.recursos');
