@@ -466,7 +466,6 @@ main .mejorecurso .titulorecurso p{
     padding-bottom: 40px;
 }
 .superecursos .recursos .segundo{
-    height: 400px;
     display: flex;
     justify-content: center;
     flex-direction: column;
