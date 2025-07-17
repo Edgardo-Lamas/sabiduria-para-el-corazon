@@ -2387,6 +2387,9 @@ footer .redes-cuatro ul{
 
 
 
+
+
+
     header .fondo {
         display: none; /* Ocultamos completamente el carrusel de imágenes */
     }
@@ -2688,6 +2691,35 @@ footer .redes-cuatro ul{
         z-index: 10 !important;
     }
     
-    html body .mejorecur
+    html body .mejorecurso {
+        margin-bottom: 400px !important;
+    }
+    
+    footer {
+        margin-top: 150px !important;
+    }
+}
+/* SOLUCIÓN SIMPLE Y DIRECTA - RECURSOS FOOTER SPACING */
+/* Regla final para evitar superposición en página recursos */
+
+@media screen and (max-width: 768px) {
+    .mejorecurso {
+        margin-bottom: 300px !important;
+    }
+    
+    footer {
+        margin-top: 100px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mejorecurso {
+        margin-bottom: 400px !important;
+    }
+    
+    footer {
+        margin-top: 150px !important;
+    }
+}
 
 

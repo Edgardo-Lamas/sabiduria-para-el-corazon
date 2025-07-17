@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache">
     <link rel="stylesheet" href="../css/estilo.css?v=202507180010">
-    <title>Recursos</title>
+    <title>Recursos - Sabiduría para el Corazón</title>
 </head>
 
 <body>
@@ -154,98 +152,25 @@
             });
         });
 
-        // Script anti-caché para forzar aplicación de estilos móviles
+        // Script simplificado para espaciado en móviles
         document.addEventListener('DOMContentLoaded', function() {
-            // Detectar si es móvil
             const isMobile = window.innerWidth <= 480;
             const isTablet = window.innerWidth <= 768 && window.innerWidth > 480;
             
-            if (isMobile) {
-                // Forzar reflow de estilos para móviles pequeños
-                const recursos = document.querySelector('.recursos');
-                const superecursos = document.querySelector('.superecursos');
+            if (isMobile || isTablet) {
                 const mejorecurso = document.querySelector('.mejorecurso');
                 const footer = document.querySelector('footer');
-                const main = document.querySelector('main');
-                
-                if (recursos) {
-                    recursos.style.marginBottom = '250px';
-                    recursos.style.paddingBottom = '200px';
-                    recursos.style.position = 'static';
-                    recursos.style.zIndex = 'auto';
-                    recursos.style.display = 'block';
-                    recursos.style.width = '100%';
-                }
-                
-                if (superecursos) {
-                    superecursos.style.marginBottom = '250px';
-                    superecursos.style.paddingBottom = '200px';
-                    superecursos.style.position = 'static';
-                    superecursos.style.display = 'block';
-                }
                 
                 if (mejorecurso) {
-                    mejorecurso.style.marginBottom = '250px';
-                    mejorecurso.style.paddingBottom = '150px';
-                    mejorecurso.style.position = 'static';
-                    mejorecurso.style.display = 'block';
+                    mejorecurso.style.marginBottom = isMobile ? '400px' : '300px';
                 }
                 
                 if (footer) {
-                    footer.style.marginTop = '250px';
-                    footer.style.paddingTop = '60px';
-                    footer.style.clear = 'both';
-                    footer.style.position = 'static';
-                    footer.style.zIndex = 'auto';
-                    footer.style.display = 'block';
-                    footer.style.width = '100%';
-                    footer.style.float = 'none';
-                }
-                
-                if (main) {
-                    main.style.marginBottom = '250px';
-                    main.style.paddingBottom = '50px';
-                    main.style.position = 'static';
-                    main.style.display = 'block';
-                    main.style.width = '100%';
-                    main.style.overflow = 'visible';
+                    footer.style.marginTop = isMobile ? '150px' : '100px';
                 }
 
-                // Espaciado individual de tarjetas
-                const tarjetas = document.querySelectorAll('.recursos .primero, .recursos .segundo, .recursos .tercero, .recursos .cuarto');
-                tarjetas.forEach((tarjeta, index) => {
-                    tarjeta.style.marginBottom = index === tarjetas.length - 1 ? '100px' : '60px';
-                    tarjeta.style.paddingBottom = '30px';
-                    tarjeta.style.position = 'static';
-                    tarjeta.style.display = 'block';
-                });
-
-                console.log('🔧 Estilos móviles RECURSOS aplicados forzadamente - Espaciado 250px ESTÁTICO');
-            } else if (isTablet) {
-                // Estilos para tablet
-                const recursos = document.querySelector('.recursos');
-                const superecursos = document.querySelector('.superecursos');
-                const footer = document.querySelector('footer');
-                
-                if (recursos) {
-                    recursos.style.marginBottom = '150px';
-                    recursos.style.paddingBottom = '100px';
-                }
-                
-                if (superecursos) {
-                    superecursos.style.marginBottom = '150px';
-                    superecursos.style.paddingBottom = '120px';
-                }
-                
-                if (footer) {
-                    footer.style.marginTop = '150px';
-                }
-                
-                console.log('🔧 Estilos tablet RECURSOS aplicados - Espaciado 150px');
+                console.log('✅ Espaciado simplificado aplicado:', isMobile ? 'móvil 400px' : 'tablet 300px');
             }
-            
-            // Forzar reflow
-            document.body.offsetHeight;
         });
     </script>
 </body>
