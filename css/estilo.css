@@ -2384,6 +2384,7 @@ footer .redes-cuatro ul{
 @media (max-width: 480px) {
     /* Reemplazar imágenes de fondo con gradiente en móviles */
 
+   
     header .fondo {
         display: none; /* Ocultamos completamente el carrusel de imágenes */
     }
@@ -2659,62 +2660,57 @@ footer .redes-cuatro ul{
     }
 }
 
-/* Reglas específicas para evitar superposición de tarjetas con footer */
-@media (max-width: 768px) {
-    .mejorecurso .superecursos .recursos {
-        margin-bottom: 60px !important;
+/* REGLAS CRÍTICAS ANTI-CACHÉ PARA MÓVILES - MÁXIMA PRIORIDAD */
+/* Aplicar con máxima especificidad para sobrescribir cualquier caché */
+
+@media screen and (max-width: 768px) {
+    body .mejorecurso .superecursos .recursos {
+        margin-bottom: 80px !important;
+        padding-bottom: 60px !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+    
+    body main .mejorecurso {
+        margin-bottom: 80px !important;
+        padding-bottom: 60px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Reglas ultra-específicas para móviles pequeños */
+    html body .mejorecurso .superecursos .recursos {
+        margin-bottom: 120px !important;
+        padding-bottom: 80px !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    html body .mejorecurso .superecursos {
+        margin-bottom: 120px !important;
+        padding-bottom: 100px !important;
+    }
+    
+    html body main {
+        margin-bottom: 100px !important;
         padding-bottom: 40px !important;
     }
     
-    body main {
-        margin-bottom: 60px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .mejorecurso .superecursos .recursos {
-        margin-bottom: 80px !important;
-        padding-bottom: 50px !important;
-    }
-    
-    .mejorecurso .superecursos {
-        margin-bottom: 100px !important;
-        padding-bottom: 80px !important;
-    }
-    
-    body main {
-        margin-bottom: 80px !important;
-    }
-    
-    body footer {
-        margin-top: 100px !important;
+    html body footer {
+        margin-top: 120px !important;
         clear: both !important;
-    }
-}
-
-/* Asegurar que las tarjetas no usen positioning que cause superposición */
-@media (max-width: 768px) {
-    .superecursos .recursos .primero,
-    .superecursos .recursos .segundo,
-    .superecursos .recursos .tercero,
-    .superecursos .recursos .cuarto {
-        position: static !important;
-        margin-bottom: 25px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .superecursos .recursos .primero,
-    .superecursos .recursos .segundo,
-    .superecursos .recursos .tercero,
-    .superecursos .recursos .cuarto {
-        position: static !important;
-        margin-bottom: 30px !important;
+        position: relative !important;
+        z-index: 1 !important;
     }
     
-    /* Espaciado final para evitar superposición */
-    .recursos:last-child {
-        margin-bottom: 60px !important;
+    /* Asegurar separación de cada tarjeta individual */
+    html body .superecursos .recursos .primero,
+    html body .superecursos .recursos .segundo,
+    html body .superecursos .recursos .tercero,
+    html body .superecursos .recursos .cuarto {
+        margin-bottom: 40px !important;
+        position: static !important;
+        display: block !important;
     }
 }
 

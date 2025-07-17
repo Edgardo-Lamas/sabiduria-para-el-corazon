@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/estilo.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="../css/estilo.css?v=202507172330">
     <title>Recursos</title>
 </head>
 
@@ -149,6 +152,43 @@
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
             });
+        });
+
+        // Script anti-caché para forzar aplicación de estilos móviles
+        document.addEventListener('DOMContentLoaded', function() {
+            // Detectar si es móvil
+            const isMobile = window.innerWidth <= 480;
+            
+            if (isMobile) {
+                // Forzar reflow de estilos
+                const recursos = document.querySelector('.recursos');
+                const footer = document.querySelector('footer');
+                const main = document.querySelector('main');
+                
+                if (recursos) {
+                    recursos.style.marginBottom = '120px';
+                    recursos.style.paddingBottom = '80px';
+                    recursos.style.position = 'relative';
+                    recursos.style.zIndex = '10';
+                }
+                
+                if (footer) {
+                    footer.style.marginTop = '120px';
+                    footer.style.clear = 'both';
+                    footer.style.position = 'relative';
+                    footer.style.zIndex = '1';
+                }
+                
+                if (main) {
+                    main.style.marginBottom = '100px';
+                    main.style.paddingBottom = '40px';
+                }
+
+                // Forzar reflow
+                document.body.offsetHeight;
+                
+                console.log('🔧 Estilos móviles aplicados forzadamente');
+            }
         });
     </script>
 </body>
