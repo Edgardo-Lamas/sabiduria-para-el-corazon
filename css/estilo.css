@@ -2378,7 +2378,7 @@ footer .redes-cuatro ul{
     }
     
     .fondopag h3 {
-        font-size: 16px;
+        font-size:  16px;
     }
     
     .fondopag ul li a {
@@ -2671,71 +2671,96 @@ footer .redes-cuatro ul{
     }
 }
 
-/* REGLAS CRÍTICAS ANTI-CACHÉ PARA MÓVILES - MÁXIMA PRIORIDAD */
-/* Aplicar con máxima especificidad para sobrescribir cualquier caché */
-
-@media screen and (max-width: 768px) {
-    body .mejorecurso .superecursos .recursos {
-        margin-bottom: 80px !important;
-        padding-bottom: 60px !important;
-        position: relative !important;
-        z-index: 1 !important;
-    }
-    
-    body main .mejorecurso {
-        margin-bottom: 80px !important;
-        padding-bottom: 60px !important;
-    }
-}
-
+/* RESPONSIVE TIENDA - Cards optimizadas para móviles */
 @media screen and (max-width: 480px) {
-    /* Reglas ultra-específicas para móviles pequeños */
-    html body .mejorecurso .superecursos .recursos {
-        margin-bottom: 120px !important;
-        padding-bottom: 80px !important;
-        position: relative !important;
-        z-index: 10 !important;
+    .car-box {
+        height: auto;
+        padding: 20px 10px;
     }
     
-    html body .mejorecurso {
-        margin-bottom: 400px !important;
+    .car-box .tienda-car {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        height: auto;
+        padding: 20px 0;
     }
     
-    footer {
-        margin-top: 150px !important;
+    /* Cards más pequeñas para móviles */
+    .car-one, .car-two, .car-three, .car-four, .car-five, .car-six,
+    .box-one, .box-two, .box-three, .box-four, .box-five, .box-six {
+        width: 90% !important;
+        max-width: 240px !important;
+        height: 380px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Imágenes más pequeñas en móviles */
+    .car-one img, .car-two img, .car-three img, .car-four img, .car-five img, .car-six img,
+    .box-one img, .box-two img, .box-three img, .box-four img, .box-five img, .box-six img {
+        width: 140px !important;
+        height: 180px !important;
+    }
+    
+    /* Texto más compacto */
+    .car-one h3, .car-two h3, .car-three h3, .car-four h3, .car-five h3, .car-six h3,
+    .box-one h3, .box-two h3, .box-three h3, .box-four h3, .box-five h3, .box-six h3 {
+        font-size: 18px !important;
+        margin: 10px 0 !important;
+    }
+    
+    .car-one p, .car-two p, .car-three p, .car-four p, .car-five p, .car-six p,
+    .box-one p, .box-two p, .box-three p, .box-four p, .box-five p, .box-six p {
+        font-size: 14px !important;
+        padding: 8px !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Botón comprar más pequeño */
+    .car-one a, .car-two a, .car-three a, .car-four a, .car-five a, .car-six a,
+    .box-one a, .box-two a, .box-three a, .box-four a, .box-five a, .box-six a {
+        font-size: 16px !important;
+        padding: 8px 12px !important;
+    }
+    
+    .tienda-box {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px !important;
+        height: auto !important;
+        padding: 20px 0 !important;
     }
 }
 
-/* DESKTOP - Margen bottom para evitar superposición con footer */
-@media screen and (min-width: 769px) {
-    .mejorecurso {
-        margin-bottom: 200px !important;
-        padding-bottom: 80px !important;
+/* TABLET - 2 columnas */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .car-box .tienda-car {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr !important;
+        grid-template-areas:
+            "car-one car-two"
+            "car-three car-four"
+            "car-five car-six" !important;
+        height: auto !important;
+        padding: 30px 20px !important;
     }
     
-    .superecursos .recursos {
-        margin-bottom: 100px;
+    .car-one, .car-two, .car-three, .car-four, .car-five, .car-six,
+    .box-one, .box-two, .box-three, .box-four, .box-five, .box-six {
+        width: 260px !important;
+        height: 440px !important;
     }
     
-    /* Asegurar que las 4 tarjetas se distribuyan en 2 filas de 2 */
-    .superecursos .recursos .primero,
-    .superecursos .recursos .segundo,
-    .superecursos .recursos .tercero,
-    .superecursos .recursos .cuarto {
-        flex: 0 1 calc(50% - 40px);
-        max-width: 400px;
-        margin-bottom: 50px;
-    }
-}
-
-/* TABLET GRANDE - Para pantallas entre 769px y 1024px */
-@media screen and (min-width: 1025px) {
-    .superecursos .recursos .primero,
-    .superecursos .recursos .segundo,
-    .superecursos .recursos .tercero,
-    .superecursos .recursos .cuarto {
-        flex: 0 1 calc(25% - 30px);
-        max-width: 280px;
+    .tienda-box {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr !important;
+        gap: 30px !important;
+        height: auto !important;
+        padding: 30px 20px !important;
+        background-color: rgba(57, 54, 51, 0.635) !important;
     }
 }
 
