@@ -406,8 +406,9 @@ header .resources img{
 }
 main .mejorecurso{
     width: 100%;
-    height: 600px;
+    min-height: 600px;
     background-color:bisque;
+    padding-bottom: 50px;
 }
 main .mejorecurso .titulorecurso p{
     font-size: 18px;
@@ -2704,49 +2705,37 @@ footer .redes-cuatro ul{
         margin-top: 150px !important;
     }
 }
-/* SOLUCIÓN SIMPLE Y DIRECTA - RECURSOS FOOTER SPACING */
-/* Regla final para evitar superposición en página recursos */
 
-@media screen and (max-width: 768px) {
+/* DESKTOP - Margen bottom para evitar superposición con footer */
+@media screen and (min-width: 769px) {
     .mejorecurso {
-        margin-bottom: 400px !important;
-        padding-bottom: 50px !important;
+        margin-bottom: 200px !important;
+        padding-bottom: 80px !important;
     }
     
     .superecursos .recursos {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
+        margin-bottom: 100px;
     }
     
+    /* Asegurar que las 4 tarjetas se distribuyan en 2 filas de 2 */
     .superecursos .recursos .primero,
     .superecursos .recursos .segundo,
     .superecursos .recursos .tercero,
     .superecursos .recursos .cuarto {
-        flex: none;
-        width: 100%;
-        max-width: 280px;
-        margin-bottom: 20px;
-    }
-    
-    footer {
-        margin-top: 200px !important;
+        flex: 0 1 calc(50% - 40px);
+        max-width: 400px;
+        margin-bottom: 50px;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .mejorecurso {
-        margin-bottom: 600px !important;
-        padding-bottom: 100px !important;
-    }
-    
-    .superecursos .recursos {
-        width: 95%;
-        gap: 50px;
-    }
-    
-    footer {
-        margin-top: 250px !important;
+/* TABLET GRANDE - Para pantallas entre 769px y 1024px */
+@media screen and (min-width: 1025px) {
+    .superecursos .recursos .primero,
+    .superecursos .recursos .segundo,
+    .superecursos .recursos .tercero,
+    .superecursos .recursos .cuarto {
+        flex: 0 1 calc(25% - 30px);
+        max-width: 280px;
     }
 }
 
