@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visor de PDF | Sabiduría para el Corazón</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="stylesheet" href="../css/modern-design.css">
+  <link rel="stylesheet" href="../css/visor.css">
+  <!-- PDF.js CDN -->
+  <link rel="resource" type="application/pdf" href="">
+</head>
+<body>
+  <header class="modern-header">
+    <nav class="main-nav">
+      <div class="nav-container">
+        <a href="../index.html" class="logo-link">
+          <img src="../img/logo SpC.svg" alt="Sabiduría para el Corazón" class="main-logo">
+          <span class="logo-text">Sabiduría para el Corazón</span>
+        </a>
+        <a href="./articulos.html" class="btn btn-secondary" style="margin-left:2em;">← Volver a Artículos</a>
+      </div>
+    </nav>
+  </header>
+  <main class="visor-main">
+    <div class="visor-header">
+      <h1 class="visor-title">Visualizador de PDF</h1>
+      <div class="visor-controls">
+        <button id="prev">⏮️</button>
+        <span id="page_num">1</span> / <span id="page_count">1</span>
+        <button id="next">⏭️</button>
+        <button id="zoom_in">🔍+</button>
+        <button id="zoom_out">🔍-</button>
+        <a id="download" href="#" target="_blank" class="btn-descargar">Descargar PDF</a>
+      </div>
+    </div>
+    <div id="pdf-viewer" class="pdf-viewer"></div>
+    <div id="visor-loading">Cargando documento...</div>
+    <div id="visor-error" style="display:none;color:#c00;"></div>
+  </main>
+  <footer class="modern-footer">
+    <div class="container">
+      <p>&copy; 2025 Sabiduría para el Corazón</p>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="../js/visor.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/*
+  Estilos específicos para la página de Artículos
+  Puedes personalizar colores, márgenes, tarjetas, botones, etc.
+*/
+
+.articulos-categorias {
+  margin: 3rem auto;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.categoria-titulo {
+  font-family: 'Crimson Text', serif;
+  font-size: 2rem;
+  color: #2a3a4b;
+  margin-bottom: 0.2em;
+  border-left: 5px solid #4e7cff;
+  padding-left: 0.5em;
+}
+
+.categoria-descripcion {
+  color: #5a6a7a;
+  font-size: 1.1rem;
+  margin-bottom: 1.5em;
+}
+
+.articulos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.articulo-item {
+  background: #f7f9fc;
+  border-radius: 0.7rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  padding: 1.2rem 1rem 1rem 1rem;
+  flex: 1 1 260px;
+  min-width: 220px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.articulo-item h3 {
+  font-size: 1.15rem;
+  color: #2a3a4b;
+  margin-bottom: 0.5em;
+}
+
+.articulo-item p {
+  color: #4e5d6c;
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+.btn-descargar {
+  display: inline-block;
+  background: #4e7cff;
+  color: #fff;
+  padding: 0.5em 1.2em;
+  border-radius: 0.5em;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+  margin-top: auto;
+}
+
+.btn-descargar:hover {
+  background: #2a3a4b;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .articulos-lista {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .articulos-categorias {
+    padding: 1.2rem 0.5rem;
+  }
+}

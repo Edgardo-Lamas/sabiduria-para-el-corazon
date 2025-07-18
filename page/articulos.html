@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artículos | Sabiduría para el Corazón</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="stylesheet" href="../css/modern-design.css">
+  <link rel="stylesheet" href="../css/articulos.css">
+</head>
+<body>
+  <header class="modern-header">
+    <!-- Navegación principal -->
+    <nav class="main-nav">
+      <div class="nav-container">
+        <a href="../index.html" class="logo-link">
+          <img src="../img/logo SpC.svg" alt="Sabiduría para el Corazón" class="main-logo">
+          <span class="logo-text">Sabiduría para el Corazón</span>
+        </a>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link">BIBLIOTECA</a>
+            <div class="dropdown-content">
+              <a href="./articulos.html">Artículos</a>
+              <a href="../Recursos/ebooks.html">eBooks</a>
+              <a href="../Recursos/comentarios.html">Comentarios</a>
+              <a href="../Recursos/devocionales.html">Devocionales</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link">MEDIA</a>
+            <div class="dropdown-content">
+              <a href="../Recursos/audios.html">Sermones</a>
+              <a href="../Recursos/podcasts.html">Podcasts</a>
+              <a href="../Recursos/videos.html">Videos</a>
+              <a href="../Recursos/radio.html">Radio en Vivo</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link">MINISTERIO</a>
+            <div class="dropdown-content">
+              <a href="../page/nosotros.html">Acerca de</a>
+              <a href="../ministerios/ministerios.html">Ministerios</a>
+              <a href="../ministerios/misiones.html">Misiones</a>
+              <a href="../page/eventos.html">Eventos</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="../page/tienda.html" class="nav-link">TIENDA</a>
+          </li>
+          <li class="nav-item">
+            <a href="../page/contacto.html" class="nav-link">CONTACTO</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <div class="search-container">
+            <input type="search" placeholder="Buscar recursos..." class="search-input">
+            <button class="search-btn">🔍</button>
+          </div>
+          <button class="newsletter-btn">📧 Newsletter</button>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-section articulos-hero">
+      <div class="hero-background">
+        <div class="hero-overlay"></div>
+        <img src="../img/Recursos articulos.jpg" alt="Artículos y recursos" class="hero-image">
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Artículos Académicos y Recursos Bíblicos</h1>
+          <p class="hero-subtitle">Explora artículos, estudios y documentos para el crecimiento espiritual y académico.</p>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main class="main-content">
+
+  <main class="main-content" style="background: #f7f9fc; min-height: 100vh;">
+
+    <!-- Estudios Bíblicos -->
+    <section class="articulos-categorias">
+      <h2 class="categoria-titulo">Estudios Bíblicos</h2>
+      <p class="categoria-descripcion">Estudios detallados de libros y pasajes bíblicos, ideales para profundizar en la Palabra.</p>
+      <div class="articulos-lista">
+        <article class="articulo-item"><h3>Romanos 1-3</h3><a href="./visor.html?file=../PDF/Romanos%201-3.pdf" class="btn-descargar">Ver PDF</a></article>
+        <article class="articulo-item"><h3>Éxodo 34</h3><a href="./visor.html?file=../PDF/Éxodo%2034.pdf" class="btn-descargar">Ver PDF</a></article>
+        <article class="articulo-item"><h3>Salmos 19, 20, 34, 37</h3><a href="./visor.html?file=../PDF/Salmos.pdf" class="btn-descargar">Ver PDF</a></article>
+        <article class="articulo-item"><h3>Proverbios 1-7</h3><a href="./visor.html?file=../PDF/Proverbios%201-7.pdf" class="btn-descargar">Ver PDF</a></article>
+        <article class="articulo-item"><h3>1 Pedro (varios estudios)</h3><a href="./visor.html?file=../PDF/1%20Pedro.pdf" class="btn-descargar">Ver PDF</a></article>
+        <article class="articulo-item"><h3>2 Corintios</h3><a href="./visor.html?file=../PDF/2%20Corintios.pdf" class="btn-descargar">Ver PDF</a></article>
+      </div>
+    </section>
+
+    <!-- Artículos Doctrinales -->
+    <section class="articulos-categorias">
+      <h2 class="categoria-titulo">Artículos Doctrinales</h2>
+      <p class="categoria-descripcion">Reflexiones y estudios sobre doctrinas fundamentales de la fe cristiana.</p>
+      <div class="articulos-lista">
+        <article class="articulo-item"><h3>El creyente puede pecar</h3><a href="./visor.html?file=../PDF/El%20creyente%20puede%20pecar.pdf" class="btn-descargar">Ver PDF</a></article>
+        <article class="articulo-item"><h3>El significado de la cruz</h3><a href="./visor.html?file=../PDF/El%20significado%20de%20la%20cruz.pdf" class="btn-descargar">Ver PDF</a></article>
+        <article class="articulo-item"><h3>Teología de la elección</h3><a href="./visor.html?file=../PDF/Teolog%C3%ADa%20de%20la%20elecci%C3%B3n.pdf" class="btn-descargar">Ver PDF</a></article>
+        <article class="articulo-item"><h3>La identidad celestial del creyente</h3><a href="./visor.html?file=../PDF/La%20identidad%20celestial%20del%20creyente.pdf" class="btn-descargar">Ver PDF</a></article>
+      </div>
+    </section>
+
+    <!-- Series organizadas -->
+    <section class="articulos-categorias">
+      <h2 class="categoria-titulo">Series de Estudios</h2>
+      <p class="categoria-descripcion">Colecciones temáticas y estudios continuos sobre libros o temas específicos.</p>
+      <div class="articulos-lista">
+        <article class="articulo-item"><h3>1 Corintios (Serie completa)</h3><a href="../PDF/! Corintios/" class="btn-descargar">Ver carpeta</a></article>
+        <article class="articulo-item"><h3>Serie Sed: obedientes, santos, sobrios, sabios</h3><a href="../PDF/serie Sed/" class="btn-descargar">Ver carpeta</a></article>
+      </div>
+    </section>
+
+    <!-- Recursos especializados -->
+    <section class="articulos-categorias">
+      <h2 class="categoria-titulo">Textos Históricos y Fundacionales</h2>
+      <p class="categoria-descripcion">Recopilación de documentos esenciales: Septuaginta, Torá, Tanaj, Talmud y otros textos que forman la base de la tradición bíblica y judía.</p>
+      <div class="articulos-lista">
+        <article class="articulo-item"><h3>La TORA editada</h3><a href="./visor.html?file=../PDF/La%20TORA%20editada.pdf" class="btn-descargar">Ver PDF</a></article>
+        <article class="articulo-item"><h3>Septuaginta final</h3><a href="./visor.html?file=../PDF/Septuaginta%20final.pdf" class="btn-descargar">Ver PDF</a></article>
+        <article class="articulo-item"><h3>La Bendición de Dios</h3><a href="./visor.html?file=../PDF/La%20Bendici%C3%B3n%20de%20Dios.pdf" class="btn-descargar">Ver PDF</a></article>
+      </div>
+    </section>
+
+    <!-- Puedes agregar más categorías o recursos según crezca tu biblioteca -->
+
+  </main>
+  <footer>
+    <!-- ...existing footer code... -->
+  </footer>
+  <script src="../js/main.js"></script>
+  <script src="../js/modern-app.js"></script>
+</body>
+</html>

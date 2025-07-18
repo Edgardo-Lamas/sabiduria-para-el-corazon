@@ -10,7 +10,14 @@
     <meta property="og:title" content="Sabiduría para el Corazón - Contenido Bíblico">
     <meta property="og:description" content="Verdades Eternas hasta lo último de la Tierra">
     <meta property="og:type" content="website">
+    
+    <!-- Fuentes modernas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/modern-design.css">
     <link rel="stylesheet" href="./css/nuevas-funcionalidades.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -46,195 +53,566 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="./index.html"><img src="./img/logo SpC.svg" alt="logo"></a>
-            
-            <!-- Menú hamburguesa para móviles -->
-            <div class="hamburger-menu" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+    <header class="modern-header">
+        <!-- Navegación principal -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="./index.html" class="logo-link">
+                    <img src="./img/logo SpC.svg" alt="Sabiduría para el Corazón" class="main-logo">
+                    <span class="logo-text">Sabiduría para el Corazón</span>
+                </a>
+                
+                <!-- Menú hamburguesa para móviles -->
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <!-- Navegación principal -->
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">BIBLIOTECA</a>
+                        <div class="dropdown-content">
+                            <a href="./page/articulos.html">Artículos</a>
+                            <a href="./Recursos/ebooks.html">eBooks</a>
+                            <a href="./Recursos/comentarios.html">Comentarios</a>
+                            <a href="./Recursos/devocionales.html">Devocionales</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">MEDIA</a>
+                        <div class="dropdown-content">
+                            <a href="./Recursos/audios.html">Sermones</a>
+                            <a href="./Recursos/podcasts.html">Podcasts</a>
+                            <a href="./Recursos/videos.html">Videos</a>
+                            <a href="./Recursos/radio.html">Radio en Vivo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">MINISTERIO</a>
+                        <div class="dropdown-content">
+                            <a href="./page/nosotros.html">Acerca de</a>
+                            <a href="./ministerios/ministerios.html">Ministerios</a>
+                            <a href="./ministerios/misiones.html">Misiones</a>
+                            <a href="./page/eventos.html">Eventos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./page/tienda.html" class="nav-link">TIENDA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./page/contacto.html" class="nav-link">CONTACTO</a>
+                    </li>
+                </ul>
+                
+                <!-- Búsqueda y acciones -->
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="search" placeholder="Buscar recursos..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <button class="newsletter-btn">📧 Newsletter</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+                <img src="./img/fondo nuevo 5.jpg" alt="Biblioteca Cristiana" class="hero-image">
             </div>
             
-            <ul class="nav-menu">
-                <li><a href="./page/nosotros.html">NOSOTROS</a></li>
-                <li><a href="./Recursos/recursos.html">RECURSOS</a></li>
-                <li><a href="./page/tienda.html">TIENDA</a></li>
-                <li><a href="./page/contacto.html">CONTACTO</a></li>
-            </ul>
-        </nav>
-        <section class="fondo">
-            <ul>
-                <li><img src="./img/fondo nuevo 5.jpg" alt="recepcion"></li>
-                <li><img src="./img/libreria.jpg" alt="libreria"></li>
-                <li><img src="./img/libros fondo.jpg" alt="mixlibros"></li>
-                <li><img src="./img/nuevo fondo4.jpg" alt="bosquejos"></li>
-            </ul>
-        </section>
-        <section class="masfondo">
-            <h1>Bienvenidos a Sabiduría para el Corazón</h1>
-            <p>Verdades Eternas hasta lo último de la Tierra</p>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Verdades Eternas hasta lo último de la Tierra</h1>
+                    <p class="hero-subtitle">Plataforma académica cristiana con recursos, estudios bíblicos, comentarios y contenido para el crecimiento espiritual</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Artículos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Sermones</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">eBooks</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="#biblioteca-destacada" class="btn btn-primary">Explorar Biblioteca</a>
+                        <a href="#plan-lectura" class="btn btn-secondary">Plan de Lectura</a>
+                    </div>
+                </div>
+                
+                <!-- Búsqueda prominente -->
+                <div class="hero-search">
+                    <h3>¿Qué buscas estudiar hoy?</h3>
+                    <div class="search-box">
+                        <input type="search" placeholder="Buscar por tema, autor, libro bíblico..." class="hero-search-input">
+                        <button class="hero-search-btn">Buscar</button>
+                    </div>
+                    <div class="quick-links">
+                        <span>Populares:</span>
+                        <a href="#" class="quick-link">Gracia</a>
+                        <a href="#" class="quick-link">Evangelismo</a>
+                        <a href="#" class="quick-link">Doctrina</a>
+                        <a href="#" class="quick-link">Vida Cristiana</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </header>
-    <main>
-        <section class="central">
-            <div class="primero">
-                <a href="./ministerios/ministerios.html">
-                    <h2>MINISTERIO</h2>
-                    <p>En Sabiduría para el Corazón tenemos el firme
-                        propósito de crecer juntos en la fe y transmitir a otros lo que Cristo Jesús nos enseñó. Sus
-                        enseñanzas son lo único que puede darle sentido a nuestras vidas. ¿Quieres saber más sobre
-                        nuestros recursos?</p>
-                </a>
-                <img src="./img/foto igl chica.jpg" alt="iglesia">
-            </div>
+    <main class="main-content">
+        <!-- Sección de Biblioteca Destacada -->
+        <section class="featured-library" id="biblioteca-destacada">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Biblioteca Digital</h2>
+                    <p class="section-subtitle">Recursos académicos para el estudio profundo de las Escrituras</p>
+                </div>
+                
+                <div class="library-grid">
+                    <!-- eBooks Destacados -->
+                    <div class="library-category">
+                        <div class="category-header">
+                            <div>
+                                <h3>📚 eBooks Gratis</h3>
+                                <p class="category-subtitle">Descarga inmediata sin registro</p>
+                            </div>
+                            <a href="./Recursos/ebooks.html" class="view-all">Ver biblioteca completa →</a>
+                        </div>
+                        <div class="resource-cards">
+                            <div class="resource-card" id="featured-ebook">
+                                <div class="card-image">
+                                    <img src="./img/bosquejos.jpg" alt="eBook Destacado">
+                                    <span class="card-badge">Nuevo</span>
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="card-title">Comentario Expositivo</h4>
+                                    <p class="card-author">Dr. John MacArthur</p>
+                                    <p class="card-description">Estudio profundo de las Escrituras con aplicación práctica...</p>
+                                    <div class="card-meta">
+                                        <span class="downloads">📥 1,234 descargas</span>
+                                        <span class="rating">⭐ 4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Más cards se cargarán dinámicamente desde Airtable -->
+                        </div>
+                    </div>
 
-            <div class="segundo" id="mensaje-destacado">
-                <!-- Este contenido se cargará dinámicamente desde Airtable -->
-                <img src="./img/foto audio 4.jpg" alt="reproductor 1">
-                <h2>MENSAJE DESTACADO</h2>
-                <div class="mensaje-loading">🔄 Cargando mensaje destacado...</div>
-                <p>Te invitamos a escuchar el mensaje destacado de la semana</p>
-                <a href="./Recursos/recursos.html">Mas Predicaciones</a>
-                <br />
-                <audio src="./img/Love Story Original Beethoven.mp3" controls></audio>
-                <div class="mensaje-stats" style="display: none;">
-                    <span class="stats-downloads">📊 0 descargas</span>
-                    <span class="stats-duration">⏱️ 0:00</span>
+                    <!-- Artículos Destacados -->
+                    <div class="library-category">
+                        <div class="category-header">
+                            <div>
+                                <h3>📄 Artículos Destacados</h3>
+                                <p class="category-subtitle">Los más leídos esta semana</p>
+                            </div>
+                            <a href="./Recursos/articulos.html" class="view-all">Ver biblioteca completa →</a>
+                        </div>
+                        <div class="resource-cards">
+                            <div class="resource-card" id="featured-article">
+                                <div class="card-content">
+                                    <span class="card-category">Teología Sistemática</span>
+                                    <h4 class="card-title">La Doctrina de la Gracia</h4>
+                                    <p class="card-author">Por Dr. R.C. Sproul</p>
+                                    <p class="card-description">Un análisis exhaustivo de las cinco doctrinas de la gracia...</p>
+                                    <div class="card-meta">
+                                        <span class="read-time">⏱️ 15 min lectura</span>
+                                        <span class="date">📅 Enero 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sermones y Audio -->
+                    <div class="library-category">
+                        <div class="category-header">
+                            <div>
+                                <h3>🎧 Sermones y Podcasts</h3>
+                                <p class="category-subtitle">Contenido reciente y popular</p>
+                            </div>
+                            <a href="./Recursos/audios.html" class="view-all">Ver biblioteca completa →</a>
+                        </div>
+                        <div class="resource-cards">
+                            <div class="resource-card audio-card" id="featured-sermon">
+                                <div class="card-content">
+                                    <span class="card-category">Serie: Romanos</span>
+                                    <h4 class="card-title">La Justificación por Fe</h4>
+                                    <p class="card-author">Pastor Juan Pérez</p>
+                                    <div class="audio-controls">
+                                        <button class="play-btn">▶️</button>
+                                        <div class="audio-info">
+                                            <span class="duration">45:30</span>
+                                            <span class="date">15 Ene 2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="tercero">
-                <h2>PROGRAMA DE RADIOS</h2>
-                <p>Conectate con emisoras Cristianas</p>
-                <img src="" alt="planilla">
+        </section>
+
+        <!-- Sección Plan de Lectura Bíblica -->
+        <section class="bible-reading-plan" id="plan-lectura">
+            <div class="container">
+                <div class="plan-content">
+                    <div class="plan-info">
+                        <h2>Plan de Lectura Bíblica</h2>
+                        <p>Únete a miles de creyentes en un viaje sistemático a través de las Escrituras</p>
+                        
+                        <div class="plan-stats">
+                            <div class="stat">
+                                <span class="stat-number">365</span>
+                                <span class="stat-label">Días</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">66</span>
+                                <span class="stat-label">Libros</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3,240</span>
+                                <span class="stat-label">Participantes</span>
+                            </div>
+                        </div>
+                        
+                        <a href="./Recursos/plan-lectura.html" class="btn btn-primary">Unirse al Plan</a>
+                    </div>
+                    
+                    <div class="today-reading" id="lectura-hoy">
+                        <h3>Lectura de Hoy</h3>
+                        <div class="reading-loading">🔄 Cargando lectura del día...</div>
+                        <div class="reading-passages">
+                            <div class="passage">
+                                <span class="book">Génesis 15</span>
+                                <span class="type">Antiguo Testamento</span>
+                            </div>
+                            <div class="passage">
+                                <span class="book">Mateo 12</span>
+                                <span class="type">Nuevo Testamento</span>
+                            </div>
+                            <div class="passage">
+                                <span class="book">Salmo 8</span>
+                                <span class="type">Salmos</span>
+                            </div>
+                            <div class="passage">
+                                <span class="book">Proverbios 3</span>
+                                <span class="type">Proverbios</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary">Comenzar Lectura</button>
+                    </div>
+                </div>
             </div>
         </section>
-        <div class="cuarta" id="versiculo-del-dia">
-            <!-- Este contenido se actualizará automáticamente cada día desde Airtable -->
-            <h2>Versículo del día</h2>
-            <div class="versiculo-loading">🔄 Cargando versículo del día...</div>
-            <p>"Pero Dios, habiendo pasado por alto los tiempos de esta ignorancia, ahora manda a todos los hombres en
-                todo lugar que se arrepientan..."</p>
-            <h3>Hechos 17:30</h3>
-            <div class="versiculo-actions" style="display: none;">
-                <button onclick="compartirVersiculo()" class="btn-compartir">📤 Compartir</button>
-                <button onclick="copiarVersiculo()" class="btn-copiar">📋 Copiar</button>
-                <a href="./Recursos/versiculos.html" class="btn-mas-versiculos">📖 Más versículos</a>
+
+        <!-- Sección de Versículo del Día -->
+        <section class="daily-verse" id="versiculo-del-dia">
+            <div class="container">
+                <div class="verse-content">
+                    <h2>Versículo del Día</h2>
+                    <div class="versiculo-loading">🔄 Cargando versículo del día...</div>
+                    <blockquote class="verse-text">
+                        "Pero Dios, habiendo pasado por alto los tiempos de esta ignorancia, ahora manda a todos los hombres en todo lugar que se arrepientan..."
+                    </blockquote>
+                    <cite class="verse-reference">Hechos 17:30</cite>
+                    
+                    <div class="verse-actions">
+                        <button onclick="compartirVersiculo()" class="btn-icon">📤 Compartir</button>
+                        <button onclick="copiarVersiculo()" class="btn-icon">📋 Copiar</button>
+                        <a href="./Recursos/versiculos.html" class="btn-icon">📖 Más versículos</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="quinta" id="horarios-eventos">
-            <!-- Este contenido se cargará dinámicamente desde Airtable -->
-            <h2>Horarios</h2>
-            <div class="horarios-loading">🔄 Cargando horarios actualizados...</div>
-            <ul>
-                <li class="domingo">
-                    <h3>Domingo</h3>
-                    <a href="./ministerios/escuela-dominical.html">
-                        <h4>Escuela Dominical <br> 10:30 Hs</h4>
-                    </a>
-                    <a href="./ministerios/escuela-biblica.html">
-                        <h4>Escuela Bíblica <br> 10:00 Hs</h4>
-                    </a>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </li>
-                <li class="jueves">
-                    <h3>Jueves</h3>
-                    <a href="./ministerios/ministerios.html">
-                        <h4>Reunion Casera San Alberto <br> 20 : 00 Hs</h4>
-                    </a>
-                    <a href="./ministerios/ministerios.html">
-                        <h4>Reunion Casera Luzuriaga <br> 20: 00 Hs</h4>
-                    </a>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </li>
-                <li class="sabado">
-                    <h3>Sabado</h3>
-                    <a href="./ministerios/ministerios.html">
-                        <h4>Reunion de Hombres <br> 08: 00 Hs</h4>
-                    </a>
-                    <a href="./ministerios/ministerios.html">
-                        <h4>Reunion de Jovenes <br> 16:30 Hs</h4>
-                    </a>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </li>
-            </ul>
-        </div>
-        <section class="final">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.2065815010337!2d-58.59718346297786!3d-34.67473532038333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7a96760e0bd%3A0x9781de637e4c994e!2sCarabobo%204141%2C%20Villa%20Luzuriaga%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1705608275971!5m2!1ses-419!2sar"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <img src="./img/Elohim.jpg" alt="textos">
+        </section>
+
+        <!-- Sección de Newsletter y Devocionales -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2>Devocionales Diarios</h2>
+                        <p>Recibe contenido edificante cada día. Artículos, reflexiones y recursos para tu crecimiento espiritual.</p>
+                        
+                        <div class="newsletter-benefits">
+                            <div class="benefit">
+                                <span class="benefit-icon">📧</span>
+                                <span>Devocionales diarios</span>
+                            </div>
+                            <div class="benefit">
+                                <span class="benefit-icon">�</span>
+                                <span>Acceso exclusivo a recursos</span>
+                            </div>
+                            <div class="benefit">
+                                <span class="benefit-icon">🎧</span>
+                                <span>Nuevos sermones y podcasts</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-form">
+                        <h3>Suscríbete Gratis</h3>
+                        <form class="subscription-form" id="newsletter-form">
+                            <input type="email" placeholder="Tu correo electrónico" required class="email-input">
+                            <div class="form-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span>Devocional diario</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span>Newsletter semanal</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span>Nuevos recursos</span>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Suscribirse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Eventos y Ministerios -->
+        <section class="ministry-events" id="ministerios-eventos">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Ministerios y Eventos</h2>
+                    <p>Conoce nuestras actividades y cómo puedes participar</p>
+                </div>
+                
+                <div class="ministry-grid">
+                    <div class="ministry-card">
+                        <div class="ministry-icon">🎓</div>
+                        <h3>Escuela Bíblica</h3>
+                        <p>Domingos 10:00 AM</p>
+                        <p>Estudios sistemáticos de la Palabra de Dios</p>
+                        <a href="./ministerios/escuela-biblica.html" class="btn btn-outline">Más información</a>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon">👥</div>
+                        <h3>Grupos de Estudio</h3>
+                        <p>Miércoles 7:00 PM</p>
+                        <p>Estudios profundos en grupos pequeños</p>
+                        <a href="./ministerios/grupos-estudio.html" class="btn btn-outline">Unirse</a>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon">🌍</div>
+                        <h3>Misiones</h3>
+                        <p>Todo el año</p>
+                        <p>Llevando el evangelio hasta lo último de la tierra</p>
+                        <a href="./ministerios/misiones.html" class="btn btn-outline">Participar</a>
+                    </div>
+                    
+                    <div class="ministry-card">
+                        <div class="ministry-icon">📻</div>
+                        <h3>Radio Cristiana</h3>
+                        <p>24/7 en vivo</p>
+                        <p>Programación continua de contenido edificante</p>
+                        <a href="./Recursos/radio.html" class="btn btn-outline">Escuchar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa de ubicación -->
+        <section class="location-section">
+            <div class="container">
+                <div class="location-content">
+                    <div class="location-info">
+                        <h2>Visítanos</h2>
+                        <p>Te esperamos en nuestras instalaciones para adorar juntos</p>
+                        
+                        <div class="address">
+                            <h4>📍 Dirección</h4>
+                            <p>Carabobo 4151<br>
+                            Villa Luzuriaga, Buenos Aires<br>
+                            Argentina</p>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span class="contact-icon">📞</span>
+                                <span>+54-11-5260-4138</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <span>contacto@sabiduriaparaelcorazon.org</span>
+                            </div>
+                        </div>
+                        
+                        <a href="./page/contacto.html" class="btn btn-primary">Planifica tu visita</a>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.2065815010337!2d-58.59718346297786!3d-34.67473532038333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7a96760e0bd%3A0x9781de637e4c994e!2sCarabobo%204141%2C%20Villa%20Luzuriaga%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1705608275971!5m2!1ses-419!2sar"
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
-        <div class="redes-cuatro">
-            <ul>
-                <li><a href="https://web.facebook.com/"><img src="./img/facebook (1).png" alt="Facebook"></a></li>
-                <li><a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA"><img src="./img/youtube (2).png"
-                            alt="Youtube"></a></li>
-                <li><a href="./index.html"><img src="./img/instagram (2).png" alt="Instagram"></a></li>
-                <li><a href="./index.html"><img src="./img/whatsapp.png" alt="WhatsApp"></a></li>
-            </ul>
-        </div>
+    <footer class="modern-footer">
+        <div class="container">
+            <!-- Newsletter destacado en footer -->
+            <div class="footer-newsletter">
+                <div class="newsletter-box">
+                    <h3>📧 Mantente Conectado</h3>
+                    <p>Recibe nuestros mejores recursos directamente en tu correo</p>
+                    <form class="footer-newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn btn-primary">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
 
-        <section class="fondopag">
-            <div class="redes-dos">
-                <h3>Información de contacto</h3>
-                <br>
-                <ul>
-                    <h4>Carabobo 4151</h4>
-                    <h4>Villa Luzuriaga</h4>
-                    <h4>Morón</h4>
-                    <h4>Buenos Aires</h4>
-                </ul>
-                <div class="tres-dos">
-                    <img src="./img/telephone.png" alt="telefono">
-                    <h3>Teléfono: 1152604138</h3>
+            <!-- Enlaces del footer -->
+            <div class="footer-content">
+                <!-- Columna 1: Biblioteca -->
+                <div class="footer-column">
+                    <h4>📚 Biblioteca Digital</h4>
+                    <ul>
+                        <li><a href="./Recursos/articulos.html">Artículos Académicos</a></li>
+                        <li><a href="./Recursos/ebooks.html">eBooks Gratis</a></li>
+                        <li><a href="./Recursos/comentarios.html">Comentarios Bíblicos</a></li>
+                        <li><a href="./Recursos/devocionales.html">Devocionales</a></li>
+                        <li><a href="./Recursos/plan-lectura.html">Plan de Lectura</a></li>
+                    </ul>
                 </div>
-                <div class="tres-uno">
-                    <img src="./img/email.png" alt="sobre">
-                    <h3>Email: contacto@sabiduriaparaelcorazon.org</h3>
+
+                <!-- Columna 2: Media -->
+                <div class="footer-column">
+                    <h4>🎧 Contenido Audio/Video</h4>
+                    <ul>
+                        <li><a href="./Recursos/sermones.html">Sermones</a></li>
+                        <li><a href="./Recursos/podcasts.html">Podcasts</a></li>
+                        <li><a href="./Recursos/videos.html">Videos Educativos</a></li>
+                        <li><a href="./Recursos/radio.html">Radio en Vivo</a></li>
+                        <li><a href="./Recursos/musica.html">Música Cristiana</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Ministerio -->
+                <div class="footer-column">
+                    <h4>⛪ Ministerio</h4>
+                    <ul>
+                        <li><a href="./page/nosotros.html">Acerca de Nosotros</a></li>
+                        <li><a href="./Nosotros/confesiondefe.html">Declaración de Fe</a></li>
+                        <li><a href="./ministerios/ministerios.html">Ministerios</a></li>
+                        <li><a href="./ministerios/misiones.html">Misiones</a></li>
+                        <li><a href="./page/eventos.html">Eventos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Recursos -->
+                <div class="footer-column">
+                    <h4>🛠️ Recursos</h4>
+                    <ul>
+                        <li><a href="./page/tienda.html">Tienda</a></li>
+                        <li><a href="./page/donaciones.html">Donar</a></li>
+                        <li><a href="./page/contacto.html">Contacto</a></li>
+                        <li><a href="./page/nuevo.html">Soy Nuevo</a></li>
+                        <li><a href="./page/ayuda.html">Centro de Ayuda</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 5: Contacto -->
+                <div class="footer-column">
+                    <h4>📍 Contacto</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <p>Carabobo 4151<br>
+                                Villa Luzuriaga<br>
+                                Buenos Aires, Argentina</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+541152604138">+54-11-5260-4138</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:contacto@sabiduriaparaelcorazon.org">contacto@sabiduriaparaelcorazon.org</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="reuniones">
-                <h3>Reuniones</h3>
-                <br>
-                <ul>
-                    <li><a href="./ministerios/misiones.html">Campo Misionero</a></li>
-                    <li><a href="./ministerios/escuela-dominical.html">Escuela Dominical</a></li>
-                    <li><a href="./ministerios/escuela-biblica.html">Escuela Biblica</a></li>
-                    <li><a href="./ministerios/ministerios.html">MINISTERIOS</a></li>
-                </ul>
+
+            <!-- Redes sociales -->
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="https://web.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link facebook">
+                        <img src="./img/facebook (1).png" alt="Facebook">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank" rel="noopener noreferrer" class="social-link youtube">
+                        <img src="./img/youtube (2).png" alt="YouTube">
+                        <span>YouTube</span>
+                    </a>
+                    <a href="./index.html" class="social-link instagram">
+                        <img src="./img/instagram (2).png" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
+                    <a href="./index.html" class="social-link whatsapp">
+                        <img src="./img/whatsapp.png" alt="WhatsApp">
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
             </div>
-            <div class="nosotros">
-                <h3>Nosotros</h3>
-                <br>
-                <ul>
-                    <li><a href="./Nosotros/confesiondefe.html">Declaración de Fe</a></li>
-                    <li><a href="./Nosotros/historia.html">Historia</a></li>
-                    <li><a href="./Nosotros/mision.html">Misión</a></li>
-                    <li><a href="./Nosotros/confesiondefe.html">Distintivos</a></li>
-                </ul>
+
+            <!-- Copyright y links legales -->
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <div class="copyright">
+                        <p>&copy; 2025 Sabiduría para el Corazón. Todos los derechos reservados.</p>
+                        <p class="tagline">Verdades Eternas hasta lo último de la Tierra</p>
+                    </div>
+                    <div class="legal-links">
+                        <a href="./page/privacidad.html">Política de Privacidad</a>
+                        <a href="./page/terminos.html">Términos de Uso</a>
+                        <a href="./page/cookies.html">Política de Cookies</a>
+                        <a href="./page/donaciones.html">Donaciones</a>
+                    </div>
+                </div>
+                
+                <!-- Información adicional -->
+                <div class="footer-info">
+                    <div class="ministry-info">
+                        <p><strong>🏛️ Iglesia Bautista Misionera</strong></p>
+                        <p>Ministerio dedicado a la enseñanza expositiva de la Palabra de Dios</p>
+                    </div>
+                    <div class="tech-info">
+                        <p>🚀 Desarrollado con GitHub Pages + Airtable + Notion</p>
+                    </div>
+                </div>
             </div>
-            <div class="nuevo">
-                <h3>¡Soy nuevo!</h3>
-                <br>
-                <ul>
-                    <li><a href="./Nosotros/confesiondefe.html">¿En qué creemos?</a></li>
-                    <li><a href="./page/contacto.html">¿Cómo puedo congregarme en la IBM?</a></li>
-                    <li><a href="./page/contacto.html">Formulario visitante</a></li>
-                    <li><a href="./Recursos/recursos.html">Recursos</a></li>
-                </ul>
-            </div>
-        </section>
+        </div>
     </footer>
     
     <!-- Scripts -->
     <script src="./js/config.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/airtable-integration.js"></script>
+    <script src="./js/modern-app.js"></script>
     <script>
         // Configuración específica para Sabiduría para el Corazón
         const AIRTABLE_CONFIG = {
@@ -243,7 +621,7 @@
             baseUrl: 'https://api.airtable.com/v0/'
         };
 
-        // Inicializar funcionalidades de Airtable
+        // Inicialización de funcionalidades legacy (mantenida para compatibilidad)
         document.addEventListener('DOMContentLoaded', () => {
             // Verificar configuración de APIs
             if (typeof AIRTABLE_CONFIG === 'undefined' || !AIRTABLE_CONFIG.baseId || AIRTABLE_CONFIG.baseId === 'TU_BASE_ID_AQUI') {
@@ -251,108 +629,17 @@
                 return;
             }
             
-            // Crear instancia de AirtableContent
-            const airtableContent = new AirtableContent();
-            
-            // Cargar contenido dinámico
-            airtableContent.loadFeaturedMessage();
-            airtableContent.loadDailyVerse();
-            airtableContent.loadUpcomingEvents();
-            
-            console.log('✅ Sistema Airtable inicializado correctamente');
-        });
-
-        // Funciones auxiliares
-        function compartirVersiculo() {
-            const versiculoTexto = document.querySelector('#versiculo-del-dia .versiculo-texto');
-            const referencia = document.querySelector('#versiculo-del-dia .versiculo-referencia');
-            
-            if (versiculoTexto && referencia) {
-                const texto = versiculoTexto.textContent + ' - ' + referencia.textContent;
+            // Crear instancia de AirtableContent si existe
+            if (typeof AirtableContent !== 'undefined') {
+                const airtableContent = new AirtableContent();
                 
-                if (navigator.share) {
-                    navigator.share({
-                        title: 'Versículo del día',
-                        text: texto
-                    });
-                } else {
-                    alert('Función de compartir no disponible en este navegador');
-                }
-            } else {
-                // Fallback al método anterior
-                const versiculo = document.querySelector('#versiculo-del-dia p')?.textContent || '';
-                const ref = document.querySelector('#versiculo-del-dia h3')?.textContent || '';
+                // Cargar contenido dinámico legacy
+                airtableContent.loadFeaturedMessage?.();
+                airtableContent.loadDailyVerse?.();
+                airtableContent.loadUpcomingEvents?.();
                 
-                if (navigator.share) {
-                    navigator.share({
-                        title: 'Versículo del día',
-                        text: `${versiculo} - ${ref}`
-                    });
-                } else {
-                    alert('Función de compartir no disponible en este navegador');
-                }
+                console.log('✅ Sistema Airtable legacy inicializado');
             }
-        }
-
-        function copiarVersiculo() {
-            const versiculoTexto = document.querySelector('#versiculo-del-dia .versiculo-texto');
-            const referencia = document.querySelector('#versiculo-del-dia .versiculo-referencia');
-            
-            if (versiculoTexto && referencia) {
-                const texto = versiculoTexto.textContent + ' - ' + referencia.textContent;
-                
-                navigator.clipboard.writeText(texto).then(() => {
-                    alert('Versículo copiado al portapapeles');
-                });
-            } else {
-                // Fallback al método anterior
-                const versiculo = document.querySelector('#versiculo-del-dia p')?.textContent || '';
-                const ref = document.querySelector('#versiculo-del-dia h3')?.textContent || '';
-                const texto = `${versiculo} - ${ref}`;
-                
-                navigator.clipboard.writeText(texto).then(() => {
-                    alert('Versículo copiado al portapapeles');
-                });
-            }
-        }
-
-        // Solo abrir en nueva pestaña los enlaces externos (redes sociales, YouTube, etc.)
-        document.querySelectorAll('a[href^="http"], a[href^="https://web.facebook.com"], a[href^="https://www.youtube.com"]').forEach(function(link) {
-            link.setAttribute('target', '_blank');
-            link.setAttribute('rel', 'noopener noreferrer');
-        });
-
-        // Función para el menú hamburguesa
-        function toggleMenu() {
-            console.log('🍔 toggleMenu() llamada');
-            
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger-menu');
-            
-            console.log('📱 navMenu encontrado:', navMenu);
-            console.log('🍔 hamburger encontrado:', hamburger);
-            
-            if (navMenu && hamburger) {
-                navMenu.classList.toggle('active');
-                hamburger.classList.toggle('active');
-                
-                console.log('✅ Clases toggled');
-                console.log('📱 navMenu tiene active:', navMenu.classList.contains('active'));
-                console.log('🍔 hamburger tiene active:', hamburger.classList.contains('active'));
-            } else {
-                console.error('❌ No se encontraron elementos del menú');
-            }
-        }
-
-        // Cerrar menú al hacer clic en un enlace (móvil)
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                const navMenu = document.querySelector('.nav-menu');
-                const hamburger = document.querySelector('.hamburger-menu');
-                
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
         });
     </script>
 </body>
