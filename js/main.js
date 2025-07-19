@@ -21,6 +21,13 @@ function initializeSearchFunctionality() {
     }
 }
 
+// Menú hamburguesa para mobile
+function toggleMenu() {
+  const navMenu = document.querySelector('.nav-menu');
+  navMenu.classList.toggle('active');
+  // Opcional: bloquear scroll del body cuando el menú está abierto
+  document.body.classList.toggle('menu-open', navMenu.classList.contains('active'));
+}
 async function handleSearch(event) {
     event.preventDefault();
     const query = event.target.querySelector('input[name="search"]').value;
