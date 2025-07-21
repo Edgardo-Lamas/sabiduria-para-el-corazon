@@ -28,10 +28,20 @@ function renderEbooks(ebooks) {
     const descripcion = props.Descripción?.rich_text?.[0]?.plain_text || '';
     const url = props.PDF?.files?.[0]?.file?.url || props.PDF?.files?.[0]?.external?.url || '#';
     const portada = props.Portada?.files?.[0]?.file?.url || props.Portada?.files?.[0]?.external?.url || '../img/bosquejos.jpg';
-
+    // Badge si es reciente (ejemplo: si fue creado en los últimos 30 días)
+    let badge = '';
+    if (props["Fecha de publicación"] && props["Fecha de publicación"].date) {
+      const pubDate = new Date(props["Fecha de publicación"].date.start);
+      const now = new Date();
+      const diff = (now - pubDate) / (1000 * 60 * 60 * 24);
+      if (diff < 30) badge = '<span class="badge-new">Nuevo</span>';
+    }
     container.innerHTML += `
       <div class="ebook-card">
-        <img src="${portada}" alt="${title}" class="ebook-cover">
+        <div class="ebook-img-wrap">
+          <img src="${portada}" alt="${title}" class="ebook-cover" loading="lazy">
+          ${badge}
+        </div>
         <div class="ebook-info">
           <h3>${title}</h3>
           <p class="ebook-author">${autor}</p>
@@ -41,6 +51,26 @@ function renderEbooks(ebooks) {
       </div>
     `;
   });
+// Animación de fade-in para las cards al renderizar
+function animateCards() {
+  const cards = document.querySelectorAll('.ebook-card');
+  cards.forEach((card, i) => {
+    card.style.opacity = 0;
+    card.style.transform = 'translateY(40px)';
+    setTimeout(() => {
+      card.style.transition = 'opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s cubic-bezier(.77,0,.18,1)';
+      card.style.opacity = 1;
+      card.style.transform = 'translateY(0)';
+    }, 100 + i * 80);
+  });
+}
+
+// Llamar animación después de renderizar
+const oldRenderEbooks = renderEbooks;
+renderEbooks = function(ebooks) {
+  oldRenderEbooks(ebooks);
+  animateCards();
+}
 }
 
 function searchEbooks(term) {
