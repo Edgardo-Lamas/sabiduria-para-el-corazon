@@ -33,6 +33,16 @@ audios/*.m4a
 .env.production.local
 config/secrets.js
 
+# Backend Sabiduría para el Corazón
+backend-ebooks/node_modules/
+backend-ebooks/.env
+backend-ebooks/.env.*
+backend-ebooks/npm-debug.log*
+backend-ebooks/yarn-debug.log*
+backend-ebooks/yarn-error.log*
+backend-ebooks/logs/
+backend-ebooks/*.log
+
 # Logs
 logs
 *.log

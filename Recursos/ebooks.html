@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="eBooks cristianos gratis para descargar. Biblioteca digital de Sabiduría para el Corazón.">
+    <meta name="keywords" content="ebooks, libros cristianos, descarga gratis, biblia, recursos">
+    <meta name="author" content="Sabiduría para el Corazón">
+    <title>eBooks Gratis - Sabiduría para el Corazón</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/modern-design.css">
+    <link rel="stylesheet" href="../css/nuevas-funcionalidades.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="modern-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="../index.html" class="logo-link">
+                    <img src="../img/logo SpC.svg" alt="Sabiduría para el Corazón" class="main-logo">
+                    <span class="logo-text">Sabiduría para el Corazón</span>
+                </a>
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">BIBLIOTECA</a>
+                        <div class="dropdown-content">
+                            <a href="../page/articulos.html">Artículos</a>
+                            <a href="./ebooks.html">eBooks</a>
+                            <a href="../Recursos/comentarios.html">Comentarios</a>
+                            <a href="../Recursos/devocionales.html">Devocionales</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">MEDIA</a>
+                        <div class="dropdown-content">
+                            <a href="../Recursos/audios.html">Sermones</a>
+                            <a href="../Recursos/podcasts.html">Podcasts</a>
+                            <a href="../Recursos/videos.html">Videos</a>
+                            <a href="../Recursos/radio.html">Radio en Vivo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">MINISTERIO</a>
+                        <div class="dropdown-content">
+                            <a href="../page/nosotros.html">Acerca de</a>
+                            <a href="../ministerios/ministerios.html">Ministerios</a>
+                            <a href="../ministerios/misiones.html">Misiones</a>
+                            <a href="../page/eventos.html">Eventos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../page/tienda.html" class="nav-link">TIENDA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../page/contacto.html" class="nav-link">CONTACTO</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="search" placeholder="Buscar recursos..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <button class="newsletter-btn">📧 Newsletter</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section class="ebooks-section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">📚 Biblioteca de eBooks</h1>
+                    <p class="section-subtitle">Descarga inmediata y gratuita de libros cristianos seleccionados</p>
+                </div>
+                <div class="ebooks-search-bar">
+                    <input type="search" id="ebooks-search-input" placeholder="Buscar por título, autor, tema...">
+                    <button id="ebooks-search-btn">Buscar</button>
+                </div>
+                <div id="ebooks-loading" class="ebooks-loading">🔄 Cargando eBooks...</div>
+                <div id="ebooks-list" class="ebooks-grid"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-newsletter">
+                <div class="newsletter-box">
+                    <h3>📧 Mantente Conectado</h3>
+                    <p>Recibe nuestros mejores recursos directamente en tu correo</p>
+                    <form class="footer-newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn btn-primary">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Puedes copiar el resto del footer de index.html aquí si lo deseas -->
+        </div>
+    </footer>
+    <script src="../js/config.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/airtable-integration.js"></script>
+    <script src="../js/modern-app.js"></script>
+    <script src="../js/ebooks.js"></script>
+</body>
+</html>
