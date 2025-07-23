@@ -1,17 +1,38 @@
-// js/ebooks.js
-// Cambia la URL por la de tu backend seguro (Vercel/Netlify)
-const ENDPOINT = 'http://localhost:3001/api/ebooks'; // <-- Apunta al backend local de Notion
 
+// URL pública del backend en la nube (Vercel/Netlify/Render)
+// Cambia SOLO esta variable cuando tengas la URL de tu backend desplegado (ejemplo: https://notion-backend-tunombre.vercel.app/api/ebooks)
+const ENDPOINT = 'https://tu-backend.vercel.app/api/ebooks';
+
+// Fallback de eBooks estáticos: si el backend no responde, siempre se mostrará al menos este libro
+const FALLBACK_EBOOKS = [
+  {
+    properties: {
+      Título: { title: [{ plain_text: 'Comentario Expositivo' }] },
+      Autor: { rich_text: [{ plain_text: 'Dr. John MacArthur' }] },
+      Descripción: { rich_text: [{ plain_text: 'Estudio profundo de las Escrituras con aplicación práctica.' }] },
+      PDF: { files: [{ file: { url: 'https://sabiduriaparaelcorazon.github.io/ebooks/comentario-expositivo.pdf' } }] },
+      Portada: { files: [{ file: { url: '../img/bosquejos.jpg' } }] },
+      "Fecha de publicación": { date: { start: '2025-01-01' } }
+    }
+  }
+];
 
 let ebooksData = [];
 
 async function fetchEbooks() {
   document.getElementById('ebooks-loading').style.display = 'block';
   document.getElementById('ebooks-list').innerHTML = '';
-  const res = await fetch(ENDPOINT);
-  const data = await res.json();
-  document.getElementById('ebooks-loading').style.display = 'none';
-  return data.results || [];
+  try {
+    const res = await fetch(ENDPOINT);
+    if (!res.ok) throw new Error('API no disponible');
+    const data = await res.json();
+    document.getElementById('ebooks-loading').style.display = 'none';
+    return data.results && data.results.length ? data.results : FALLBACK_EBOOKS;
+  } catch (e) {
+    document.getElementById('ebooks-loading').style.display = 'none';
+    // Fallback a datos estáticos
+    return FALLBACK_EBOOKS;
+  }
 }
 
 function renderEbooks(ebooks) {
