@@ -241,41 +241,47 @@ class EbooksManagerSimple {
             return;
         }
 
+        // Asegurar que el contenedor tenga la clase correcta
+        container.className = 'ebooks-grid';
+
         ebooks.forEach(ebook => {
             const ebookCard = document.createElement('div');
             ebookCard.className = 'ebook-card animate-card';
             
             ebookCard.innerHTML = `
-                <div class="ebook-cover">
-                    <img src="${ebook.portada}" alt="Portada de ${ebook.titulo}" 
-                         onerror="this.src='${this.portadasBaseUrl}portada-generica.jpg'">
-                    ${ebook.destacado ? '<span class="ebook-badge destacado">⭐ Destacado</span>' : ''}
-                    ${ebook.estado !== 'Disponible' ? '<span class="ebook-badge proximamente">🔜 Próximamente</span>' : ''}
-                </div>
-                <div class="ebook-content">
+                <img src="${ebook.portada}" alt="Portada de ${ebook.titulo}" 
+                     class="ebook-cover" 
+                     onerror="this.src='${this.portadasBaseUrl}portada-generica.jpg'">
+                     
+                <div class="ebook-info">
                     <div class="ebook-category">${ebook.categoria || 'General'}</div>
-                    <h3 class="ebook-title">${ebook.titulo}</h3>
+                    <h3>${ebook.titulo}</h3>
                     <p class="ebook-author">${ebook.autor}</p>
-                    <p class="ebook-description">${ebook.descripcion || 'Descripción no disponible'}</p>
+                    <p class="ebook-desc">${ebook.descripcion || 'Descripción no disponible'}</p>
+                    
                     <div class="ebook-meta">
                         ${ebook.año ? `<span class="ebook-year">📅 ${ebook.año}</span>` : ''}
                         <span class="ebook-status ${ebook.estado === 'Disponible' ? 'disponible' : 'no-disponible'}">
                             ${ebook.estado === 'Disponible' ? '✅ Disponible' : '⏳ Próximamente'}
                         </span>
                     </div>
+                    
                     <div class="ebook-actions">
                         ${ebook.estado === 'Disponible' ? 
-                            `<a href="${ebook.archivo}" target="_blank" class="btn-download" rel="noopener noreferrer">
+                            `<a href="${ebook.archivo}" target="_blank" class="btn-primary" rel="noopener noreferrer">
                                 <span class="download-icon">📥</span>
                                 Descargar PDF
                             </a>` : 
-                            `<button class="btn-download disabled" disabled>
+                            `<button class="btn-primary disabled" disabled>
                                 <span class="download-icon">⏳</span>
                                 Disponible próximamente
                             </button>`
                         }
                     </div>
                 </div>
+                
+                ${ebook.destacado ? '<span class="ebook-badge destacado">⭐ Destacado</span>' : ''}
+                ${ebook.estado !== 'Disponible' ? '<span class="ebook-badge proximamente">🔜 Próximamente</span>' : ''}
             `;
             
             container.appendChild(ebookCard);

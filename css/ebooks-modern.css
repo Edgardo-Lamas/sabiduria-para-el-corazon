@@ -278,16 +278,21 @@ body {
 }
 .ebook-card .btn-primary {
   background: linear-gradient(90deg, #3498db 60%, #2c3e50 100%);
-  color: #fff;
+  color: white;
+  padding: 0.8rem 1.5rem;
   border: none;
-  border-radius: 2rem;
-  padding: 0.6rem 1.5rem;
-  font-size: 1rem;
+  border-radius: 25px;
+  font-size: 0.98rem;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
-  transition: background 0.2s, transform 0.2s;
-  margin-top: 0.5rem;
-  animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1) 1.4s both;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  animation: slideUp 1.2s cubic-bezier(.77,0,.18,1) 1.4s both;
 }
 .ebook-card .btn-primary:hover {
   background: linear-gradient(90deg, #2c3e50 60%, #3498db 100%);
@@ -431,4 +436,97 @@ body {
     max-width: 100px;
     height: 140px;
   }
+}
+
+/* Estilos adicionales para nuevas clases */
+.ebook-category {
+  color: #3498db;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.ebook-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.ebook-year {
+  color: #6c757d;
+}
+
+.ebook-status {
+  font-weight: 600;
+}
+
+.ebook-status.disponible {
+  color: #27ae60;
+}
+
+.ebook-status.no-disponible {
+  color: #e74c3c;
+}
+
+.ebook-actions {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.ebook-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: #2c3e50;
+  padding: 0.3rem 0.6rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.ebook-badge.destacado {
+  background: linear-gradient(45deg, #f39c12, #e67e22);
+  color: white;
+}
+
+.ebook-badge.proximamente {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+}
+
+.download-icon {
+  margin-right: 0.3rem;
+}
+
+.btn-primary.disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-primary.disabled:hover {
+  transform: none;
+  background: #95a5a6;
+}
+
+.no-ebooks {
+  text-align: center;
+  color: #6c757d;
+  font-size: 1.2rem;
+  padding: 3rem;
+  grid-column: 1 / -1;
+}
+
+/* Animación para cards */
+.animate-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
