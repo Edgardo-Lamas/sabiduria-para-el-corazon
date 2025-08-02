@@ -111,9 +111,57 @@
     <script src="../js/config.js"></script>
     <script src="../js/config.private.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/airtable-integration.js"></script>
-    <script src="../js/modern-app.js"></script>
-    <script src="../js/ebooks-hybrid.js"></script>
-    <script src="../js/ebooks.js"></script>
+    <script src="../js/ebooks-simple.js"></script>
+    <script>
+        // Sistema simplificado con portadas locales
+        document.addEventListener('DOMContentLoaded', async () => {
+            const loadingEl = document.getElementById('ebooks-loading');
+            const listEl = document.getElementById('ebooks-list');
+            
+            try {
+                loadingEl.textContent = '� Cargando biblioteca de eBooks...';
+                loadingEl.style.display = 'block';
+                
+                const ebooksManager = new EbooksManagerSimple();
+                const ebooks = await ebooksManager.loadEbooks();
+                
+                loadingEl.style.display = 'none';
+                ebooksManager.renderEbooks(ebooks, listEl);
+                
+                console.log(`✅ ${ebooks.length} eBooks cargados exitosamente`);
+                
+                // Implementar búsqueda
+                const searchInput = document.getElementById('ebooks-search-input');
+                const searchBtn = document.getElementById('ebooks-search-btn');
+                
+                function filtrarEbooks() {
+                    const query = searchInput.value.toLowerCase().trim();
+                    if (!query) {
+                        ebooksManager.renderEbooks(ebooks, listEl);
+                        return;
+                    }
+                    
+                    const filtered = ebooks.filter(ebook => 
+                        ebook.titulo.toLowerCase().includes(query) ||
+                        ebook.autor.toLowerCase().includes(query) ||
+                        ebook.categoria.toLowerCase().includes(query) ||
+                        ebook.descripcion.toLowerCase().includes(query)
+                    );
+                    
+                    ebooksManager.renderEbooks(filtered, listEl);
+                }
+                
+                searchInput.addEventListener('input', filtrarEbooks);
+                searchBtn.addEventListener('click', filtrarEbooks);
+                searchInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') filtrarEbooks();
+                });
+                
+            } catch (error) {
+                console.error('Error crítico:', error);
+                loadingEl.textContent = '❌ Error al cargar los eBooks. Por favor recarga la página.';
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,18 +1,17 @@
-// Sistema híbrido: Notion (metadatos) + GitHub (PDFs)
-class EbooksManager {
+// Sistema local simplificado: GitHub PDFs + Portadas locales + Metadatos de Notion
+class EbooksManagerSimple {
     constructor() {
+        this.githubBaseUrl = 'https://raw.githubusercontent.com/Edgardo-Lamas/sabiduria-para-el-corazon/main/ebooks/';
+        this.portadasBaseUrl = 'https://raw.githubusercontent.com/Edgardo-Lamas/sabiduria-para-el-corazon/main/ebooks/portadas/';
         this.notionConfig = {
-            // Configuración se carga desde archivo privado
             baseUrl: 'https://api.notion.so/v1/',
             version: '2022-06-28'
         };
-        this.githubBaseUrl = 'https://raw.githubusercontent.com/Edgardo-Lamas/sabiduria-para-el-corazon/main/ebooks/';
     }
 
-    // Cargar configuración privada
+    // Cargar configuración privada para Notion
     async loadPrivateConfig() {
         try {
-            // Intentar cargar configuración privada local
             if (typeof PRIVATE_CONFIG !== 'undefined' && PRIVATE_CONFIG.notion) {
                 this.notionConfig.token = PRIVATE_CONFIG.notion.token;
                 this.notionConfig.databaseId = PRIVATE_CONFIG.notion.databaseId;
@@ -25,7 +24,23 @@ class EbooksManager {
         }
     }
 
-    // Cargar eBooks desde Notion
+    // Método principal para cargar eBooks
+    async loadEbooks() {
+        console.log('🔄 Iniciando carga de eBooks...');
+        
+        // Intentar cargar desde Notion primero
+        const notionEbooks = await this.loadFromNotion();
+        if (notionEbooks && notionEbooks.length > 0) {
+            console.log(`✅ ${notionEbooks.length} eBooks cargados desde Notion`);
+            return notionEbooks;
+        }
+        
+        // Fallback a datos estáticos
+        console.log('📚 Usando datos estáticos de respaldo');
+        return this.getFallbackData();
+    }
+
+    // Cargar desde Notion (simplificado)
     async loadFromNotion() {
         if (!await this.loadPrivateConfig()) {
             return null;
@@ -40,12 +55,7 @@ class EbooksManager {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    sorts: [
-                        {
-                            property: 'Destacado',
-                            direction: 'descending'
-                        }
-                    ]
+                    sorts: [{ property: 'Destacado', direction: 'descending' }]
                 })
             });
 
@@ -59,12 +69,11 @@ class EbooksManager {
         }
     }
 
-    // Procesar datos de Notion y combinar con URLs de GitHub
+    // Procesar datos de Notion
     processNotionData(results) {
         return results.map(page => {
             const props = page.properties;
             
-            // Extraer metadatos de Notion
             const titulo = props.Titulo?.title?.[0]?.plain_text || '';
             const autor = props.Autor?.rich_text?.[0]?.plain_text || '';
             const descripcion = props.Descripción?.rich_text?.[0]?.plain_text || '';
@@ -73,28 +82,10 @@ class EbooksManager {
             const destacado = props.Destacado?.checkbox || false;
             const estado = props.Estado?.select?.name || 'Disponible';
             
-            // Generar nombre de archivo basado en el título
+            // Generar URLs usando el sistema local
             const fileName = this.generateFileName(titulo);
-            
-            // Combinar con URL de GitHub
             const archivo = `${this.githubBaseUrl}${fileName}`;
-            
-            // Usar portada de Notion primero, luego fallback a portada generada
-            let portadaNotion = null;
-            
-            // Probar diferentes estructuras posibles del campo Portada
-            if (props.Portada) {
-                if (props.Portada.files && props.Portada.files.length > 0) {
-                    const file = props.Portada.files[0];
-                    portadaNotion = file.file?.url || file.external?.url;
-                } else if (props.Portada.url) {
-                    portadaNotion = props.Portada.url;
-                } else if (typeof props.Portada === 'string') {
-                    portadaNotion = props.Portada;
-                }
-            }
-            
-            const portada = portadaNotion || this.generatePortada(categoria, titulo);
+            const portada = this.generatePortadaUrl(fileName);
 
             return {
                 titulo,
@@ -110,7 +101,7 @@ class EbooksManager {
         });
     }
 
-    // Generar nombre de archivo consistente
+    // Generar nombre de archivo (mismo que antes)
     generateFileName(titulo) {
         return titulo
             .replace(/[^\w\s]/g, '') // Remover caracteres especiales
@@ -124,190 +115,112 @@ class EbooksManager {
             + '.pdf';
     }
 
-    // Generar portada basada en categoría
-    generatePortada(categoria, titulo) {
-        // Mapeo mejorado de categorías a imágenes específicas del repositorio
-        const portadasPorCategoria = {
-            'Historia': '../img/fondo historia.jpg',
-            'Teología': '../img/fondo declaracion fe.jpg',
-            'Doctrinal': '../img/fondo declaracion fe.jpg',
-            'Pastoral': '../img/foto igl chica.jpg',
-            'Estudio Bíblico': '../img/bosquejos.jpg',
-            'Comentario': '../img/Recursos libros.jpg',
-            'Comentarios': '../img/Recursos libros.jpg',
-            'Devocional': '../img/foto libros.jpg',
-            'Discipulado': '../img/foto libros.jpg',
-            'Misión': '../img/mision1.jpg',
-            'Misiones': '../img/mision1.jpg',
-            'Evangelismo': '../img/mision2.jpg',
-            'Vida Cristiana': '../img/foto libros.jpg',
-            'Sermones': '../img/audios foto.jpg',
-            'Educación': '../img/bosquejos.jpg'
+    // Generar URL de portada local con detección automática de formato
+    generatePortadaUrl(fileName) {
+        // Quitar .pdf del nombre del archivo
+        const baseName = fileName.replace('.pdf', '');
+        
+        // Lista de portadas existentes (se podría hacer dinámico en el futuro)
+        const portadasDisponibles = {
+            'Historia_de_la_Iglesia_Era_de_la_Reforma': 'png',
+            'La_Necesidad_del_momento': 'jpg',
+            'Confesion_de_Westminster': 'png',
+            'Nacido_para_multiplicarse': 'jpg',
+            'El_Arte_de_Aconsejar': 'png',
+            'La_Osa_Mayor': 'jpg',
+            'Como_preparar_y_dirigir_Estudios_Biblicos': 'png'
         };
-
-        // Si el título contiene referencias bíblicas específicas, usar imagen correspondiente
-        const librosBiblicos = {
-            'corintios': '../img/1 corintinos fn.jpg',
-            '1 corintios': '../img/1 corintinos fn.jpg',
-            'pedro': '../img/1pedro fn.jpg',
-            '1 pedro': '../img/1pedro fn.jpg',
-            'apocalipsis': '../img/apocalipsis fan.jpg',
-            'cantares': '../img/cantaresnfn.jpg',
-            'colosenses': '../img/colosenses fn.jpg',
-            'efesios': '../img/effesios fn.jpg',
-            'ester': '../img/ester fn.jpg',
-            'filemón': '../img/filemon fn.jpg',
-            'gálatas': '../img/galatas fn.jpg',
-            'hebreos': '../img/hebreos fn.jpg',
-            'juan': '../img/primera juan fn.jpg',
-            '1 juan': '../img/primera juan fn.jpg',
-            'romanos': '../img/romanos fn.jpg'
-        };
-
-        // Buscar coincidencia en el título con libros bíblicos
-        const tituloLower = titulo.toLowerCase();
-        for (const [libro, imagen] of Object.entries(librosBiblicos)) {
-            if (tituloLower.includes(libro)) {
-                return imagen;
-            }
+        
+        // Verificar si existe portada específica
+        if (portadasDisponibles[baseName]) {
+            return `${this.portadasBaseUrl}${baseName}.${portadasDisponibles[baseName]}`;
         }
-
-        // Retornar imagen específica por categoría o imagen genérica para eBooks
-        return portadasPorCategoria[categoria] || '../img/portada eBooks.png';
+        
+        // Fallback a portada genérica
+        return `${this.portadasBaseUrl}portada-generica.jpg`;
     }
 
-    // Datos de fallback (estáticos)
+    // Datos de fallback simplificados
     getFallbackData() {
         return [
             {
-                titulo: "Historia De la Iglesia. Era de la Reforma",
-                autor: "Justo González",
-                descripcion: "Un estudio detallado de la era de la Reforma en la historia de la iglesia cristiana.",
+                titulo: "Historia de la Iglesia: Era de la Reforma",
+                autor: "Justo L. González",
+                descripcion: "Un recorrido por la historia de la Reforma Protestante y sus principales figuras.",
                 categoria: "Historia",
-                archivo: `${this.githubBaseUrl}Historia_de_la_Iglesia_Era_de_la_Reforma.pdf`,
-                portada: this.generatePortada("Historia"),
-                año: 2020,
+                año: 1995,
                 destacado: true,
-                estado: "Disponible próximamente"
+                estado: "Disponible",
+                archivo: `${this.githubBaseUrl}Historia_de_la_Iglesia_Era_de_la_Reforma.pdf`,
+                portada: `${this.portadasBaseUrl}Historia_de_la_Iglesia_Era_de_la_Reforma.png`
+            },
+            {
+                titulo: "La Necesidad del momento",
+                autor: "Charles H. Spurgeon",
+                descripcion: "Reflexiones espirituales sobre las necesidades del cristiano en tiempos difíciles.",
+                categoria: "Devocional",
+                año: 1887,
+                destacado: true,
+                estado: "Disponible",
+                archivo: `${this.githubBaseUrl}La_Necesidad_del_momento.pdf`,
+                portada: `${this.portadasBaseUrl}La_Necesidad_del_momento.jpg`
             },
             {
                 titulo: "Confesión de Westminster",
                 autor: "Asamblea de Westminster",
                 descripcion: "Documento fundamental de la fe reformada y presbiteriana.",
                 categoria: "Teología",
-                archivo: `${this.githubBaseUrl}Confesion_de_Westminster.pdf`,
-                portada: this.generatePortada("Teología"),
                 año: 1646,
                 destacado: true,
-                estado: "Disponible próximamente"
+                estado: "Disponible",
+                archivo: `${this.githubBaseUrl}Confesion_de_Westminster.pdf`,
+                portada: `${this.portadasBaseUrl}Confesion_de_Westminster.png`
             },
             {
                 titulo: "Nacido para multiplicarse",
                 autor: "Dawson Trotman",
                 descripcion: "Principios fundamentales del discipulado cristiano y la multiplicación espiritual.",
                 categoria: "Discipulado",
-                archivo: `${this.githubBaseUrl}Nacido_para_multiplicarse.pdf`,
-                portada: this.generatePortada("Pastoral"),
                 año: 1955,
                 destacado: false,
-                estado: "Disponible próximamente"
+                estado: "Disponible",
+                archivo: `${this.githubBaseUrl}Nacido_para_multiplicarse.pdf`,
+                portada: `${this.portadasBaseUrl}Nacido_para_multiplicarse.jpg`
             },
             {
                 titulo: "El Arte de Aconsejar",
                 autor: "Jay E. Adams",
                 descripcion: "Guía práctica para el consejo bíblico y pastoral.",
                 categoria: "Pastoral",
-                archivo: `${this.githubBaseUrl}El_Arte_de_Aconsejar.pdf`,
-                portada: this.generatePortada("Pastoral"),
                 año: 1986,
                 destacado: false,
-                estado: "Disponible próximamente"
+                estado: "Disponible",
+                archivo: `${this.githubBaseUrl}El_Arte_de_Aconsejar.pdf`,
+                portada: `${this.portadasBaseUrl}El_Arte_de_Aconsejar.png`
             },
             {
                 titulo: "La Osa Mayor",
                 autor: "Robert C. Sproul",
                 descripcion: "Estudio sobre la soberanía de Dios y su impacto en la vida cristiana.",
                 categoria: "Teología",
-                archivo: `${this.githubBaseUrl}La_Osa_Mayor.pdf`,
-                portada: this.generatePortada("Teología"),
                 año: 1993,
                 destacado: false,
-                estado: "Disponible próximamente"
+                estado: "Disponible",
+                archivo: `${this.githubBaseUrl}La_Osa_Mayor.pdf`,
+                portada: `${this.portadasBaseUrl}La_Osa_Mayor.jpg`
             },
             {
                 titulo: "Como preparar y dirigir Estudios Bíblicos",
                 autor: "James Braga",
                 descripcion: "Manual práctico para la preparación y dirección de estudios bíblicos efectivos.",
                 categoria: "Estudio Bíblico",
-                archivo: `${this.githubBaseUrl}Como_preparar_y_dirigir_Estudios_Biblicos.pdf`,
-                portada: this.generatePortada("Estudio Bíblico"),
                 año: 1967,
-                destacado: true,
-                estado: "Disponible próximamente"
-            },
-            {
-                titulo: "La Necesidad del momento",
-                autor: "A.W. Tozer",
-                descripcion: "Reflexiones profundas sobre las necesidades espirituales de nuestro tiempo.",
-                categoria: "Espiritualidad",
-                archivo: `${this.githubBaseUrl}La_Necesidad_del_momento.pdf`,
-                portada: this.generatePortada("General"),
-                año: 1960,
                 destacado: false,
-                estado: "Disponible próximamente"
+                estado: "Disponible",
+                archivo: `${this.githubBaseUrl}Como_preparar_y_dirigir_Estudios_Biblicos.pdf`,
+                portada: `${this.portadasBaseUrl}Como_preparar_y_dirigir_Estudios_Biblicos.png`
             }
         ];
-    }
-
-    // Método principal para cargar eBooks
-    async loadEbooks() {
-        // Mostrar indicador de carga
-        const loadingElement = document.getElementById('ebooks-loading');
-        if (loadingElement) {
-            loadingElement.style.display = 'block';
-        }
-
-        // Intentar cargar desde Notion
-        let ebooks = await this.loadFromNotion();
-        
-        // Si falla, usar datos estáticos
-        if (!ebooks || ebooks.length === 0) {
-            ebooks = this.getFallbackData();
-            console.log('🔄 Usando datos de fallback');
-        } else {
-            console.log('✅ Datos cargados desde Notion');
-        }
-
-        // Ocultar indicador de carga
-        if (loadingElement) {
-            loadingElement.style.display = 'none';
-        }
-
-        return ebooks;
-    }
-
-    // Verificar si un PDF existe en GitHub
-    async checkPdfExists(url) {
-        try {
-            const response = await fetch(url, { method: 'HEAD' });
-            return response.ok;
-        } catch (error) {
-            return false;
-        }
-    }
-
-    // Actualizar estado de eBooks basado en disponibilidad de PDFs
-    async updateEbookAvailability(ebooks) {
-        const updatedEbooks = await Promise.all(
-            ebooks.map(async (ebook) => {
-                const pdfExists = await this.checkPdfExists(ebook.archivo);
-                return {
-                    ...ebook,
-                    estado: pdfExists ? 'Disponible' : 'Disponible próximamente'
-                };
-            })
-        );
-        return updatedEbooks;
     }
 
     // Renderizar eBooks en el DOM
@@ -332,13 +245,10 @@ class EbooksManager {
             const ebookCard = document.createElement('div');
             ebookCard.className = 'ebook-card animate-card';
             
-            // Generar portada si no existe
-            const portadaUrl = ebook.portada || this.generatePortada(ebook.categoria, ebook.titulo);
-            
             ebookCard.innerHTML = `
                 <div class="ebook-cover">
-                    <img src="${portadaUrl}" alt="Portada de ${ebook.titulo}" 
-                         onerror="this.src='../img/portada eBooks.png'">
+                    <img src="${ebook.portada}" alt="Portada de ${ebook.titulo}" 
+                         onerror="this.src='${this.portadasBaseUrl}portada-generica.jpg'">
                     ${ebook.destacado ? '<span class="ebook-badge destacado">⭐ Destacado</span>' : ''}
                     ${ebook.estado !== 'Disponible' ? '<span class="ebook-badge proximamente">🔜 Próximamente</span>' : ''}
                 </div>
@@ -371,7 +281,7 @@ class EbooksManager {
             container.appendChild(ebookCard);
         });
 
-        // Agregar animaciones
+        // Agregar animaciones escalonadas
         const cards = container.querySelectorAll('.ebook-card');
         cards.forEach((card, index) => {
             setTimeout(() => {
@@ -383,4 +293,4 @@ class EbooksManager {
 }
 
 // Exportar para uso global
-window.EbooksManager = EbooksManager;
+window.EbooksManagerSimple = EbooksManagerSimple;

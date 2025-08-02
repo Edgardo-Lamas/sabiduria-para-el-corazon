@@ -2,6 +2,25 @@
 let ebooksData = [];
 let ebooksManager;
 
+// Función para generar portada basada en categoría
+function generatePortada(categoria, titulo) {
+    // Mapeo de categorías a imágenes específicas
+    const portadasPorCategoria = {
+        'Historia': '../img/fondo historia.jpg',
+        'Teología': '../img/fondo declaracion fe.jpg',
+        'Pastoral': '../img/foto igl chica.jpg',
+        'Estudio Bíblico': '../img/bosquejos.jpg',
+        'Comentario': '../img/libros fondo.jpg',
+        'Devocional': '../img/foto libros.jpg',
+        'Mision': '../img/mision1.jpg',
+        'Discipulado': '../img/foto igl chica.jpg',
+        'General': '../img/portada eBooks.png'
+    };
+
+    // Retornar imagen específica o genérica para eBooks
+    return portadasPorCategoria[categoria] || '../img/portada eBooks.png';
+}
+
 // Función para renderizar eBooks
 function renderEbooks(ebooks = ebooksData) {
     const container = document.getElementById('ebooks-list');
@@ -11,6 +30,11 @@ function renderEbooks(ebooks = ebooksData) {
     }
     container.innerHTML = '';
     ebooks.forEach(ebook => {
+        // Generar portada específica si no tiene una
+        const portada = ebook.portada && ebook.portada !== '../img/bosquejos.jpg' 
+            ? ebook.portada 
+            : generatePortada(ebook.categoria, ebook.titulo);
+        
         // Determinar si mostrar el estado
         const estadoHtml = ebook.estado && ebook.estado !== 'Disponible' 
             ? `<span class="estado-badge">${ebook.estado}</span>` 
@@ -23,7 +47,7 @@ function renderEbooks(ebooks = ebooksData) {
         container.innerHTML += `
             <div class="ebook-card">
                 <div class="ebook-img-wrap">
-                    <img src="${ebook.portada}" alt="${ebook.titulo}" class="ebook-cover" loading="lazy">
+                    <img src="${portada}" alt="${ebook.titulo}" class="ebook-cover" loading="lazy">
                     ${ebook.destacado ? '<span class="badge-featured">Destacado</span>' : ''}
                     ${estadoHtml}
                 </div>

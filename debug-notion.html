@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Notion - Portadas eBooks</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        .debug-container { 
+            background: #f5f5f5; 
+            padding: 20px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+        }
+        .ebook-item { 
+            background: white; 
+            padding: 15px; 
+            margin: 10px 0; 
+            border-radius: 5px; 
+            border-left: 4px solid #007acc; 
+        }
+        .portada-img { 
+            max-width: 100px; 
+            max-height: 150px; 
+            margin: 10px 0; 
+        }
+        .debug-data { 
+            background: #333; 
+            color: #0f0; 
+            padding: 10px; 
+            border-radius: 3px; 
+            font-family: monospace; 
+            overflow-x: auto; 
+        }
+        .status { 
+            padding: 10px; 
+            border-radius: 5px; 
+            margin: 10px 0; 
+        }
+        .status.loading { background: #fff3cd; }
+        .status.success { background: #d4edda; }
+        .status.error { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Debug Notion - Portadas eBooks</h1>
+    
+    <div id="status" class="status loading">
+        🔄 Cargando datos desde Notion...
+    </div>
+    
+    <div id="results"></div>
+    
+    <script src="./js/config.private.js"></script>
+    <script>
+        async function debugNotionPortadas() {
+            const statusEl = document.getElementById('status');
+            const resultsEl = document.getElementById('results');
+            
+            try {
+                // Verificar configuración
+                if (!PRIVATE_CONFIG || !PRIVATE_CONFIG.notion) {
+                    throw new Error('Configuración privada no disponible');
+                }
+                
+                statusEl.className = 'status loading';
+                statusEl.textContent = '🔄 Conectando con Notion API...';
+                
+                // Hacer petición a Notion
+                const response = await fetch(`https://api.notion.so/v1/databases/${PRIVATE_CONFIG.notion.databaseId}/query`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${PRIVATE_CONFIG.notion.token}`,
+                        'Notion-Version': '2022-06-28',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        sorts: [
+                            {
+                                property: 'Destacado',
+                                direction: 'descending'
+                            }
+                        ]
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Error HTTP: ${response.status} - ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                statusEl.className = 'status success';
+                statusEl.textContent = `✅ Datos cargados exitosamente. ${data.results.length} eBooks encontrados.`;
+                
+                // Mostrar resultados
+                resultsEl.innerHTML = '<h2>📊 Análisis de Portadas</h2>';
+                
+                data.results.forEach((page, index) => {
+                    const props = page.properties;
+                    const titulo = props.Titulo?.title?.[0]?.plain_text || 'Sin título';
+                    
+                    const portadaData = props.Portada;
+                    
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'ebook-item';
+                    
+                    itemDiv.innerHTML = `
+                        <h3>📚 ${titulo}</h3>
+                        <p><strong>Campo Portada:</strong></p>
+                        <div class="debug-data">
+                            ${JSON.stringify(portadaData, null, 2)}
+                        </div>
+                        ${portadaData ? `
+                            <p><strong>Análisis:</strong></p>
+                            <ul>
+                                <li>Tipo: ${portadaData.type || 'No especificado'}</li>
+                                <li>Files: ${portadaData.files ? portadaData.files.length + ' archivo(s)' : 'No encontrado'}</li>
+                                ${portadaData.files && portadaData.files.length > 0 ? `
+                                    <li>URL del primer archivo: ${portadaData.files[0].file?.url || portadaData.files[0].external?.url || 'No disponible'}</li>
+                                    ${portadaData.files[0].file?.url || portadaData.files[0].external?.url ? `
+                                        <img class="portada-img" src="${portadaData.files[0].file?.url || portadaData.files[0].external?.url}" alt="Portada de ${titulo}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                        <div style="display:none; color:red;">❌ Error cargando imagen</div>
+                                    ` : ''}
+                                ` : ''}
+                            </ul>
+                        ` : '<p><em>❌ Campo Portada vacío o no configurado</em></p>'}
+                    `;
+                    
+                    resultsEl.appendChild(itemDiv);
+                });
+                
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = `❌ Error: ${error.message}`;
+                
+                resultsEl.innerHTML = `
+                    <div class="debug-container">
+                        <h3>🚨 Error de Debug</h3>
+                        <p><strong>Mensaje:</strong> ${error.message}</p>
+                        <p><strong>Verificar:</strong></p>
+                        <ul>
+                            <li>Token de Notion válido</li>
+                            <li>ID de base de datos correcto</li>
+                            <li>Permisos de la integración de Notion</li>
+                            <li>Campo "Portada" existe en la base de datos</li>
+                        </ul>
+                    </div>
+                `;
+            }
+        }
+        
+        // Ejecutar debug al cargar la página
+        document.addEventListener('DOMContentLoaded', debugNotionPortadas);
+    </script>
+</body>
+</html>

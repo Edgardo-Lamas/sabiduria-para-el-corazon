@@ -26,12 +26,14 @@ audios/*.m4a
 *~
 
 # Variables de entorno y configuración sensible
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-config/secrets.js
+# Archivos de configuración privada
+config-privada.md
+js/config.private.js
+*.env
+.env.*
+*.private.*
+.notion-token
+.airtable-token
 
 # Backend Sabiduría para el Corazón
 backend-ebooks/node_modules/
