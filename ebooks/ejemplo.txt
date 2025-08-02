@@ -1,0 +1,2 @@
+Este archivo es solo un marcador de posición para que la carpeta ebooks sea incluida en git.
+Cuando subas los archivos PDF reales, puedes eliminar este archivo.
