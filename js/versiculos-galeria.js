@@ -10,12 +10,21 @@ class VersiculosGaleria {
         this.totalCounter = document.getElementById('total-versiculos');
         this.filtradosCounter = document.getElementById('versiculos-filtrados');
         
+        // Debug: verificar que los elementos existan
+        console.log('🔍 Elementos del DOM encontrados:');
+        console.log('  - Loader:', !!this.loader);
+        console.log('  - Galería:', !!this.galeria);
+        console.log('  - Total counter:', !!this.totalCounter);
+        console.log('  - Filtrados counter:', !!this.filtradosCounter);
+        
         // Configuración de Airtable
         this.baseUrl = `${AIRTABLE_CONFIG.baseUrl}${AIRTABLE_CONFIG.baseId}/`;
         this.headers = {
             'Authorization': `Bearer ${AIRTABLE_CONFIG.apiKey}`,
             'Content-Type': 'application/json'
         };
+        
+        console.log('🔧 Configuración Airtable:', this.baseUrl.substring(0, 50) + '...');
     }
 
     async init() {
@@ -169,8 +178,15 @@ class VersiculosGaleria {
     setupFiltros() {
         const filtros = document.querySelectorAll('.filtro-btn');
         
+        console.log(`🎛️ Configurando filtros - Encontrados: ${filtros.length} botones`);
+        filtros.forEach((btn, index) => {
+            console.log(`🔘 Botón ${index}: data-tema="${btn.dataset.tema}"`);
+        });
+        
         filtros.forEach(btn => {
             btn.addEventListener('click', (e) => {
+                console.log(`🖱️ Click en filtro: "${e.target.dataset.tema}"`);
+                
                 // Remover clase active de todos los botones
                 filtros.forEach(b => b.classList.remove('active'));
                 
@@ -178,23 +194,31 @@ class VersiculosGaleria {
                 e.target.classList.add('active');
                 
                 // Actualizar tema actual
+                const temaAnterior = this.temaActual;
                 this.temaActual = e.target.dataset.tema;
+                
+                console.log(`🔄 Tema cambiado: "${temaAnterior}" → "${this.temaActual}"`);
                 
                 // Filtrar versículos
                 this.filtrarVersiculos();
                 this.actualizarContadores();
                 
-                console.log(`🔍 Filtrando por tema: ${this.temaActual}`);
+                console.log(`✅ Filtrado completado para tema: ${this.temaActual}`);
             });
         });
     }
 
     renderizarVersiculos() {
-        if (!this.galeria) return;
+        if (!this.galeria) {
+            console.error('❌ No se encontró el contenedor .galeria');
+            return;
+        }
 
+        console.log(`🎨 Renderizando ${this.versiculos.length} versículos...`);
         this.galeria.innerHTML = '';
         
         this.versiculos.forEach((versiculo, index) => {
+            console.log(`📝 Creando tarjeta ${index}: "${versiculo.referencia}" (tema: ${versiculo.tema})`);
             const card = this.crearTarjetaVersiculo(versiculo, index);
             this.galeria.appendChild(card);
         });
@@ -202,9 +226,15 @@ class VersiculosGaleria {
         // Ocultar loader y mostrar galería
         if (this.loader) {
             this.loader.style.display = 'none';
+            console.log('🔄 Loader ocultado');
         }
         
         this.galeria.classList.add('loaded');
+        console.log('✅ Galería marcada como cargada');
+        
+        // Verificar que las tarjetas se crearon correctamente
+        const tarjetasCreadas = this.galeria.querySelectorAll('.versiculo-card');
+        console.log(`📊 Tarjetas creadas en DOM: ${tarjetasCreadas.length}`);
     }
 
     crearTarjetaVersiculo(versiculo, index) {
@@ -243,15 +273,29 @@ class VersiculosGaleria {
     filtrarVersiculos() {
         const cards = document.querySelectorAll('.versiculo-card');
         
-        cards.forEach(card => {
+        console.log(`🔍 Filtrando versículos - Tema actual: "${this.temaActual}"`);
+        console.log(`📊 Tarjetas encontradas: ${cards.length}`);
+        
+        let mostradas = 0;
+        let ocultadas = 0;
+        
+        cards.forEach((card, index) => {
             const temaTarjeta = card.dataset.tema;
+            console.log(`📋 Tarjeta ${index}: tema="${temaTarjeta}", filtro="${this.temaActual}"`);
             
             if (this.temaActual === 'todos' || temaTarjeta === this.temaActual) {
                 card.classList.remove('hidden');
+                card.style.display = ''; // Asegurar que no tenga display:none inline
+                mostradas++;
+                console.log(`👁️ Tarjeta ${index} MOSTRADA (tema: ${temaTarjeta})`);
             } else {
                 card.classList.add('hidden');
+                ocultadas++;
+                console.log(`🙈 Tarjeta ${index} OCULTADA (tema: ${temaTarjeta})`);
             }
         });
+        
+        console.log(`📈 Resultado: ${mostradas} mostradas, ${ocultadas} ocultadas`);
     }
 
     actualizarContadores() {
