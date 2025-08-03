@@ -7,80 +7,193 @@
     <meta name="description" content="Galería de versículos bíblicos como postales - Sabiduría para el Corazón">
     <meta name="keywords" content="versiculos, postales, biblia, descargar, temas biblicos, imagenes">
     <meta name="author" content="Sabiduría para el Corazón">
+    <meta property="og:title" content="Versículos Bíblicos - Sabiduría para el Corazón">
+    <meta property="og:description" content="Descarga hermosas postales con versículos bíblicos organizados por temas">
+    <meta property="og:type" content="website">
     <title>Versículos Bíblicos - Sabiduría para el Corazón</title>
     
+    <!-- Fuentes modernas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/modern-design.css">
     <link rel="stylesheet" href="../css/versiculos-galeria.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="../index.html"><img src="../img/logo SpC.svg" alt="logo"></a>
-            
-            <!-- Menú hamburguesa para móviles -->
-            <div class="hamburger-menu" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+    <header class="modern-header">
+        <!-- Navegación principal -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="../index.html" class="logo-link">
+                    <img src="../img/logo SpC.svg" alt="Sabiduría para el Corazón" class="main-logo">
+                    <span class="logo-text">Sabiduría para el Corazón</span>
+                </a>
+                
+                <!-- Menú hamburguesa para móviles -->
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <!-- Navegación principal -->
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">BIBLIOTECA</a>
+                        <div class="dropdown-content">
+                            <a href="../page/articulos.html">Artículos</a>
+                            <a href="./ebooks.html">eBooks</a>
+                            <a href="./versiculos.html">Versículos</a>
+                            <a href="./devocionales.html">Devocionales</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">MEDIA</a>
+                        <div class="dropdown-content">
+                            <a href="./audios.html">Sermones</a>
+                            <a href="./podcasts.html">Podcasts</a>
+                            <a href="./videos.html">Videos</a>
+                            <a href="./radio.html">Radio en Vivo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">MINISTERIO</a>
+                        <div class="dropdown-content">
+                            <a href="../page/nosotros.html">Acerca de</a>
+                            <a href="../ministerios/ministerios.html">Ministerios</a>
+                            <a href="../ministerios/misiones.html">Misiones</a>
+                            <a href="../page/eventos.html">Eventos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../page/tienda.html" class="nav-link">TIENDA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../page/contacto.html" class="nav-link">CONTACTO</a>
+                    </li>
+                </ul>
+                
+                <!-- Búsqueda y acciones -->
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="search" placeholder="Buscar versículos..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <button class="newsletter-btn">📧 Newsletter</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section Mejorado -->
+        <section class="hero-section">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+                <img src="../img/libros fondo.jpg" alt="Versículos Bíblicos" class="hero-image">
             </div>
             
-            <ul class="nav-menu">
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">BIBLIOTECA</a>
-                    <div class="dropdown-content">
-                        <a href="../page/articulos.html">Artículos</a>
-                        <a href="./ebooks.html">eBooks</a>
-                        <a href="./versiculos.html">Versículos</a>
-                        <a href="../Recursos/devocionales.html">Devocionales</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Galería de Versículos Bíblicos</h1>
+                    <p class="hero-subtitle">Descarga hermosas postales con versículos bíblicos organizados por temas. Cada imagen es generada con tecnología Canvas HTML5 para una calidad excepcional.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Versículos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Temas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">HD</span>
+                            <span class="stat-label">Calidad</span>
+                        </div>
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">MEDIA</a>
-                    <div class="dropdown-content">
-                        <a href="../Recursos/audios.html">Sermones</a>
-                        <a href="../Recursos/podcasts.html">Podcasts</a>
-                        <a href="../Recursos/videos.html">Videos</a>
-                        <a href="../Recursos/radio.html">Radio en Vivo</a>
+                    
+                    <div class="hero-actions">
+                        <a href="#filtros-container" class="btn btn-primary">Explorar por Temas</a>
+                        <a href="#versiculos-galeria" class="btn btn-secondary">Ver Galería</a>
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">MINISTERIO</a>
-                    <div class="dropdown-content">
-                        <a href="../page/nosotros.html">Acerca de</a>
-                        <a href="../ministerios/ministerios.html">Ministerios</a>
-                        <a href="../ministerios/misiones.html">Misiones</a>
-                        <a href="../page/eventos.html">Eventos</a>
+                </div>
+                
+                <!-- Información técnica -->
+                <div class="hero-search">
+                    <h3>🎨 Tecnología Canvas HTML5</h3>
+                    <p class="tech-description">Cada postal es generada dinámicamente con la más alta calidad, permitiendo personalizaciones únicas y descargas instantáneas.</p>
+                    <div class="tech-features">
+                        <span class="tech-feature">🖼️ Alta Resolución</span>
+                        <span class="tech-feature">🎯 Descarga Directa</span>
+                        <span class="tech-feature">📱 Optimizado Móvil</span>
+                        <span class="tech-feature">🎨 Diseño Único</span>
                     </div>
-                </li>
-                <li><a href="../page/tienda.html" class="nav-link">TIENDA</a></li>
-                <li><a href="../page/contacto.html" class="nav-link">CONTACTO</a></li>
-            </ul>
-        </nav>
+                </div>
+            </div>
+        </section>
     </header>
 
-    <main class="versiculos-main">
-        <div class="hero-section">
-            <h1>Galería de Versículos Bíblicos</h1>
-            <p>Descarga hermosas postales con versículos bíblicos organizados por temas</p>
-        </div>
-
-        <!-- Filtros por tema -->
-        <div class="filtros-container">
-            <h2>Buscar por Tema</h2>
-            <div class="filtros-temas">
-                <button class="filtro-btn active" data-tema="todos">Todos</button>
-                <button class="filtro-btn" data-tema="amor">Amor</button>
-                <button class="filtro-btn" data-tema="esperanza">Esperanza</button>
-                <button class="filtro-btn" data-tema="fe">Fe</button>
-                <button class="filtro-btn" data-tema="paz">Paz</button>
-                <button class="filtro-btn" data-tema="fortaleza">Fortaleza</button>
-                <button class="filtro-btn" data-tema="salvacion">Salvación</button>
-                <button class="filtro-btn" data-tema="sabiduria">Sabiduría</button>
-                <button class="filtro-btn" data-tema="gratitud">Gratitud</button>
+    <main class="main-content">
+        <!-- Sección de Filtros Mejorada -->
+        <section class="filtros-section" id="filtros-container">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Buscar por Tema</h2>
+                    <p class="section-subtitle">Encuentra versículos organizados por temas específicos</p>
+                </div>
+                
+                <div class="filtros-container">
+                    <div class="filtros-temas">
+                        <button class="filtro-btn active" data-tema="todos">
+                            <span class="tema-icon">📖</span>
+                            <span class="tema-label">Todos</span>
+                        </button>
+                        <button class="filtro-btn" data-tema="amor">
+                            <span class="tema-icon">❤️</span>
+                            <span class="tema-label">Amor</span>
+                        </button>
+                        <button class="filtro-btn" data-tema="esperanza">
+                            <span class="tema-icon">🌟</span>
+                            <span class="tema-label">Esperanza</span>
+                        </button>
+                        <button class="filtro-btn" data-tema="fe">
+                            <span class="tema-icon">✝️</span>
+                            <span class="tema-label">Fe</span>
+                        </button>
+                        <button class="filtro-btn" data-tema="paz">
+                            <span class="tema-icon">🕊️</span>
+                            <span class="tema-label">Paz</span>
+                        </button>
+                        <button class="filtro-btn" data-tema="fortaleza">
+                            <span class="tema-icon">💪</span>
+                            <span class="tema-label">Fortaleza</span>
+                        </button>
+                        <button class="filtro-btn" data-tema="salvacion">
+                            <span class="tema-icon">🙏</span>
+                            <span class="tema-label">Salvación</span>
+                        </button>
+                        <button class="filtro-btn" data-tema="sabiduria">
+                            <span class="tema-icon">🦉</span>
+                            <span class="tema-label">Sabiduría</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Contador de resultados -->
+                    <div class="resultados-contador">
+                        <div class="contador-info">
+                            <span class="contador-label">Total:</span>
+                            <span id="total-versiculos" class="contador-numero">0</span>
+                            <span class="contador-separator">|</span>
+                            <span class="contador-label">Filtrados:</span>
+                            <span id="versiculos-filtrados" class="contador-numero">0</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
         <!-- Panel informativo sobre tecnología -->
         <div class="info-tecnologia">
@@ -166,45 +279,151 @@
             </div>
         </div>
     </div>
+    </main>
 
-    <footer>
-        <div class="redes-cuatro">
-            <ul>
-                <li><a href="https://web.facebook.com/"><img src="../img/facebook (1).png" alt="Facebook"></a></li>
-                <li><a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA"><img src="../img/youtube (2).png" alt="Youtube"></a></li>
-                <li><a href="../index.html"><img src="../img/instagram (2).png" alt="Instagram"></a></li>
-                <li><a href="../index.html"><img src="../img/whatsapp.png" alt="WhatsApp"></a></li>
-            </ul>
-        </div>
-
-        <section class="fondopag">
-            <div class="redes-dos">
-                <h3>Información de contacto</h3>
-                <br>
-                <ul>
-                    <h4>Carabobo 4151</h4>
-                    <h4>Villa Luzuriaga</h4>
-                    <h4>Morón</h4>
-                    <h4>Buenos Aires</h4>
-                </ul>
-                <div class="tres-dos">
-                    <img src="../img/telephone.png" alt="telefono">
-                    <h3>Teléfono: 1152604138</h3>
-                </div>
-                <div class="tres-uno">
-                    <img src="../img/email.png" alt="sobre">
-                    <h3>Email: contacto@sabiduriaparaelcorazon.org</h3>
+    <footer class="modern-footer">
+        <div class="container">
+            <!-- Newsletter destacado en footer -->
+            <div class="footer-newsletter">
+                <div class="newsletter-box">
+                    <h3>📧 Mantente Conectado</h3>
+                    <p>Recibe nuestros mejores recursos directamente en tu correo</p>
+                    <form class="footer-newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn btn-primary">Suscribirse</button>
+                    </form>
                 </div>
             </div>
-            <div class="reuniones">
-                <h3>Reuniones</h3>
-                <br>
-                <ul>
-                    <li><a href="../ministerios/misiones.html">Campo Misionero</a></li>
-                    <li><a href="../ministerios/escuela-dominical.html">Escuela Dominical</a></li>
-                    <li><a href="../ministerios/escuela-biblica.html">Escuela Biblica</a></li>
-                    <li><a href="../ministerios/ministerios.html">MINISTERIOS</a></li>
-                </ul>
+
+            <!-- Enlaces del footer -->
+            <div class="footer-content">
+                <!-- Columna 1: Biblioteca -->
+                <div class="footer-column">
+                    <h4>📚 Biblioteca Digital</h4>
+                    <ul>
+                        <li><a href="../page/articulos.html">Artículos Académicos</a></li>
+                        <li><a href="./ebooks.html">eBooks Gratis</a></li>
+                        <li><a href="./versiculos.html">Versículos Bíblicos</a></li>
+                        <li><a href="./devocionales.html">Devocionales</a></li>
+                        <li><a href="./plan-lectura.html">Plan de Lectura</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 2: Media -->
+                <div class="footer-column">
+                    <h4>🎧 Contenido Audio/Video</h4>
+                    <ul>
+                        <li><a href="./audios.html">Sermones</a></li>
+                        <li><a href="./podcasts.html">Podcasts</a></li>
+                        <li><a href="./videos.html">Videos Educativos</a></li>
+                        <li><a href="./radio.html">Radio en Vivo</a></li>
+                        <li><a href="./musica.html">Música Cristiana</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Ministerio -->
+                <div class="footer-column">
+                    <h4>⛪ Ministerio</h4>
+                    <ul>
+                        <li><a href="../page/nosotros.html">Acerca de Nosotros</a></li>
+                        <li><a href="../Nosotros/confesiondefe.html">Declaración de Fe</a></li>
+                        <li><a href="../ministerios/ministerios.html">Ministerios</a></li>
+                        <li><a href="../ministerios/misiones.html">Misiones</a></li>
+                        <li><a href="../page/eventos.html">Eventos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Recursos -->
+                <div class="footer-column">
+                    <h4>🛠️ Recursos</h4>
+                    <ul>
+                        <li><a href="../page/tienda.html">Tienda</a></li>
+                        <li><a href="../page/donaciones.html">Donar</a></li>
+                        <li><a href="../page/contacto.html">Contacto</a></li>
+                        <li><a href="../page/nuevo.html">Soy Nuevo</a></li>
+                        <li><a href="../page/ayuda.html">Centro de Ayuda</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 5: Contacto -->
+                <div class="footer-column">
+                    <h4>📍 Contacto</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <p>Carabobo 4151<br>
+                                Villa Luzuriaga<br>
+                                Buenos Aires, Argentina</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+541152604138">+54-11-5260-4138</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:contacto@sabiduriaparaelcorazon.org">contacto@sabiduriaparaelcorazon.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="https://web.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link facebook">
+                        <img src="../img/facebook (1).png" alt="Facebook">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank" rel="noopener noreferrer" class="social-link youtube">
+                        <img src="../img/youtube (2).png" alt="YouTube">
+                        <span>YouTube</span>
+                    </a>
+                    <a href="../index.html" class="social-link instagram">
+                        <img src="../img/instagram (2).png" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
+                    <a href="../index.html" class="social-link whatsapp">
+                        <img src="../img/whatsapp.png" alt="WhatsApp">
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright y links legales -->
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <div class="copyright">
+                        <p>&copy; 2025 Sabiduría para el Corazón. Todos los derechos reservados.</p>
+                        <p class="tagline">Verdades Eternas hasta lo último de la Tierra</p>
+                    </div>
+                    <div class="legal-links">
+                        <a href="../page/privacidad.html">Política de Privacidad</a>
+                        <a href="../page/terminos.html">Términos de Uso</a>
+                        <a href="../page/cookies.html">Política de Cookies</a>
+                        <a href="../page/donaciones.html">Donaciones</a>
+                    </div>
+                </div>
+                
+                <!-- Información adicional -->
+                <div class="footer-info">
+                    <div class="ministry-info">
+                        <p><strong>🏛️ Iglesia Bautista Misionera</strong></p>
+                        <p>Ministerio dedicado a la enseñanza expositiva de la Palabra de Dios</p>
+                    </div>
+                    <div class="tech-info">
+                        <p>🚀 Desarrollado con GitHub Pages + Airtable + Canvas HTML5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/config.js"></script>
+    <script src="../js/main.js"></script>
             </div>
             <div class="nosotros">
                 <h3>Nosotros</h3>
