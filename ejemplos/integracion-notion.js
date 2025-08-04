@@ -67,7 +67,7 @@ class NotionCMS {
                     ${articles.map(article => this.createArticleCard(article)).join('')}
                 </div>
                 <div class="see-more">
-                    <a href="./Recursos/articulos.html">Ver todos los artículos →</a>
+                    <a href="../index.html#biblioteca-destacada">Ver biblioteca completa →</a>
                 </div>
             </div>
         `;
