@@ -17,6 +17,17 @@ videos/*.mkv
 audios/*.mp3
 audios/*.wav
 audios/*.m4a
+*.mp3
+*.wav
+*.m4a
+
+# PDFs y documentos grandes (usar Google Drive en su lugar)
+*.pdf
+*.doc
+*.docx
+ebooks/*.pdf
+PDF/
+PDF/*
 
 # Archivos de configuración del editor
 .vscode/
