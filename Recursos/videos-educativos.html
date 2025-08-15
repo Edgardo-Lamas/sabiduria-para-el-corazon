@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Videos de Enseñanza - Sabiduría para el Corazón. Contenido bíblico y educativo para el crecimiento espiritual.">
+    <meta name="keywords" content="videos biblicos, enseñanzas cristianas, estudios biblicos, contenido educativo cristiano">
+    <meta name="author" content="Sabiduría para el Corazón">
+    <meta property="og:title" content="Videos de Enseñanza - Sabiduría para el Corazón">
+    <meta property="og:description" content="Contenido bíblico educativo y enseñanzas para el crecimiento espiritual">
+    <meta property="og:type" content="website">
+    
+    <!-- Fuentes institucionales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/estilo.css">
+    <title>Videos de Enseñanza - Sabiduría para el Corazón</title>
+    
+    <style>
+        /* Estilo institucional formal */
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #8b9dc3;
+            --text-color: #333;
+            --text-light: #666;
+            --border-color: #e0e4e7;
+            --bg-section: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header institucional */
+        .institutional-header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .main-nav {
+            padding: 15px 0;
+            background: var(--white);
+            position: relative;
+            z-index: 1001;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        
+        .main-logo {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Breadcrumb institucional */
+        .breadcrumb-section {
+            background: var(--bg-section);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb span {
+            margin: 0 8px;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin: 8px 0 0 0;
+            max-width: 800px;
+        }
+        
+        /* Secciones de contenido institucional */
+        .content-section {
+            padding: 60px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Barra de navegación de contenido */
+        .content-nav {
+            background: var(--white);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+        
+        .content-nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .content-nav-item {
+            position: relative;
+        }
+        
+        .content-nav-link {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .content-nav-link:hover,
+        .content-nav-link.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        /* Grid de videos institucional */
+        .video-collection {
+            margin-bottom: 60px;
+        }
+        
+        .collection-header {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .collection-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 0 0 8px 0;
+            font-weight: 600;
+        }
+        
+        .collection-description {
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .video-item {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .video-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.1);
+        }
+        
+        .video-embed {
+            aspect-ratio: 16/9;
+            width: 100%;
+        }
+        
+        .video-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+        }
+        
+        .video-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        
+        .video-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        /* Shorts con diseño institucional */
+        .shorts-collection {
+            background: var(--bg-section);
+            padding: 40px 0;
+            margin: 60px 0;
+        }
+        
+        .shorts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .short-item {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .short-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.1);
+        }
+        
+        .short-embed {
+            aspect-ratio: 9/16;
+            width: 100%;
+            max-height: 400px;
+        }
+        
+        .short-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .short-info {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .short-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-color);
+            margin: 0;
+        }
+        
+        /* Footer institucional */
+        .institutional-footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0 20px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .footer-copyright {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+        
+        /* Canal de YouTube */
+        .channel-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .channel-link:hover {
+            background: #234a87;
+            transform: translateY(-2px);
+        }
+        
+        .channel-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            padding: 20px;
+            background: var(--bg-section);
+            border-radius: 8px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1rem;
+            }
+            
+            .content-nav-list {
+                gap: 20px;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .shorts-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .content-section {
+                padding: 40px 0;
+            }
+            
+            .channel-stats {
+                gap: 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header institucional -->
+    <header class="institutional-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="../index.html" class="logo-link">
+                    <img src="../img/logo SpC.svg" alt="Sabiduría para el Corazón" class="main-logo">
+                    <span class="logo-text">Sabiduría para el Corazón</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../ministerios/ministerios.html" class="nav-link">Ministerios</a></li>
+                    <li><a href="../Recursos/recursos.html" class="nav-link">Recursos</a></li>
+                    <li><a href="../Nosotros/historia.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="../page/contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Breadcrumb y título institucional -->
+        <section class="breadcrumb-section">
+            <div class="breadcrumb-container">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a>
+                    <span>›</span>
+                    <a href="recursos.html">Recursos</a>
+                    <span>›</span>
+                    <span>Videos de Enseñanza</span>
+                </nav>
+                <h1 class="page-title">Videos de Enseñanza</h1>
+                <p class="page-subtitle">
+                    Contenido bíblico educativo diseñado para fortalecer su conocimiento de las Escrituras 
+                    y promover el crecimiento espiritual a través de enseñanzas fundamentadas y reflexivas.
+                </p>
+                
+                <!-- Estadísticas del canal -->
+                <div class="channel-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">19</span>
+                        <span class="stat-label">Videos Totales</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">13</span>
+                        <span class="stat-label">Estudios Completos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Reflexiones Breves</span>
+                    </div>
+                </div>
+                
+                <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank" class="channel-link">
+                    <span>📺</span>
+                    Visitar Canal de YouTube
+                </a>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <!-- Navegación de contenido -->
+        <section class="content-nav">
+            <div class="container">
+                <ul class="content-nav-list">
+                    <li class="content-nav-item">
+                        <a href="#estudios-biblicos" class="content-nav-link active">Estudios Bíblicos</a>
+                    </li>
+                    <li class="content-nav-item">
+                        <a href="#reflexiones-breves" class="content-nav-link">Reflexiones Breves</a>
+                    </li>
+                    <li class="content-nav-item">
+                        <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" class="content-nav-link" target="_blank">Canal Completo</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección de Estudios Bíblicos -->
+        <section id="estudios-biblicos" class="content-section">
+            <div class="container">
+                <div class="video-collection">
+                    <div class="collection-header">
+                        <h2 class="collection-title">Estudios Bíblicos Expositivos</h2>
+                        <p class="collection-description">
+                            Análisis profundo y sistemático de las Escrituras, presentado con rigor académico 
+                            y aplicación práctica para la vida cristiana.
+                        </p>
+                    </div>
+                    <div class="videos-grid">
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/dHJU9MUFZQM" 
+                                        title="Estudio Bíblico: Entendiendo la Fe Cristiana" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">Entendiendo la Fe Cristiana: Fundamentos Bíblicos</h3>
+                                <div class="video-meta">
+                                    <span>45 min</span>
+                                    <span>•</span>
+                                    <span>Estudio Expositivo</span>
+                                </div>
+                                <p class="video-description">
+                                    Un análisis comprensivo de los fundamentos de la fe cristiana según las Escrituras, 
+                                    explorando los principios doctrinales esenciales.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/mQLvTPh-aQU" 
+                                        title="Estudio Bíblico: La Naturaleza de Dios" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">La Naturaleza de Dios en las Escrituras</h3>
+                                <div class="video-meta">
+                                    <span>38 min</span>
+                                    <span>•</span>
+                                    <span>Teología Sistemática</span>
+                                </div>
+                                <p class="video-description">
+                                    Exploración teológica de los atributos divinos revelados en la Biblia, 
+                                    con énfasis en su aplicación para la vida del creyente.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/N7rQDvF6iWw" 
+                                        title="Estudio Bíblico: Principios de Interpretación" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">Principios de Interpretación Bíblica</h3>
+                                <div class="video-meta">
+                                    <span>42 min</span>
+                                    <span>•</span>
+                                    <span>Hermenéutica</span>
+                                </div>
+                                <p class="video-description">
+                                    Metodología académica para el estudio e interpretación correcta de las Escrituras, 
+                                    fundamentada en principios hermenéuticos sólidos.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/vB0nt97-0Xw" 
+                                        title="Estudio Bíblico: La Doctrina de la Salvación" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">La Doctrina de la Salvación</h3>
+                                <div class="video-meta">
+                                    <span>50 min</span>
+                                    <span>•</span>
+                                    <span>Soteriología</span>
+                                </div>
+                                <p class="video-description">
+                                    Análisis doctrinal comprensivo sobre la salvación según las Escrituras, 
+                                    examinando sus fundamentos teológicos y implicaciones prácticas.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/cEP_Q9HFh8I" 
+                                        title="Estudio Bíblico: La Autoridad de las Escrituras" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">La Autoridad de las Escrituras</h3>
+                                <div class="video-meta">
+                                    <span>35 min</span>
+                                    <span>•</span>
+                                    <span>Bibliología</span>
+                                </div>
+                                <p class="video-description">
+                                    Estudio sobre la inspiración, autoridad e infalibilidad de la Biblia, 
+                                    examinando los fundamentos de nuestra confianza en las Escrituras.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/Mwk9LSWy2pY" 
+                                        title="Estudio Bíblico: El Evangelio de la Gracia" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">El Evangelio de la Gracia</h3>
+                                <div class="video-meta">
+                                    <span>47 min</span>
+                                    <span>•</span>
+                                    <span>Evangelio</span>
+                                </div>
+                                <p class="video-description">
+                                    Exposición detallada del mensaje del evangelio, centrándose en la gracia de Dios 
+                                    como fundamento de la redención cristiana.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/MYqHmzVvCxI" 
+                                        title="Estudio Bíblico: La Oración según las Escrituras" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">La Oración según las Escrituras</h3>
+                                <div class="video-meta">
+                                    <span>40 min</span>
+                                    <span>•</span>
+                                    <span>Vida Cristiana</span>
+                                </div>
+                                <p class="video-description">
+                                    Estudio comprensivo sobre la doctrina y práctica de la oración cristiana, 
+                                    basado en las enseñanzas bíblicas.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/kJ3B6m5Y0ow" 
+                                        title="Estudio Bíblico: El Discipulado Cristiano" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">El Discipulado Cristiano</h3>
+                                <div class="video-meta">
+                                    <span>44 min</span>
+                                    <span>•</span>
+                                    <span>Crecimiento Espiritual</span>
+                                </div>
+                                <p class="video-description">
+                                    Exploración del concepto bíblico del discipulado, sus características 
+                                    y su aplicación en la vida del creyente contemporáneo.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/TlRWD2OqRUk" 
+                                        title="Estudio Bíblico: La Santificación" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">La Santificación en la Vida Cristiana</h3>
+                                <div class="video-meta">
+                                    <span>52 min</span>
+                                    <span>•</span>
+                                    <span>Santidad</span>
+                                </div>
+                                <p class="video-description">
+                                    Análisis teológico del proceso de santificación, examinando su naturaleza, 
+                                    medios y progreso en la experiencia cristiana.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/8WCT7Y97wGE" 
+                                        title="Estudio Bíblico: La Iglesia Local" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">La Iglesia Local: Su Naturaleza y Propósito</h3>
+                                <div class="video-meta">
+                                    <span>48 min</span>
+                                    <span>•</span>
+                                    <span>Eclesiología</span>
+                                </div>
+                                <p class="video-description">
+                                    Estudio sobre la naturaleza, propósito y funcionamiento de la iglesia local 
+                                    según el modelo neotestamentario.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/XMSqmPPSojg" 
+                                        title="Estudio Bíblico: La Adoración Cristiana" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">La Adoración Cristiana</h3>
+                                <div class="video-meta">
+                                    <span>41 min</span>
+                                    <span>•</span>
+                                    <span>Adoración</span>
+                                </div>
+                                <p class="video-description">
+                                    Exploración de los principios bíblicos de la adoración cristiana, 
+                                    su naturaleza espiritual y expresión práctica.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/vSrxYfwPXYU" 
+                                        title="Estudio Bíblico: El Fruto del Espíritu" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">El Fruto del Espíritu</h3>
+                                <div class="video-meta">
+                                    <span>46 min</span>
+                                    <span>•</span>
+                                    <span>Pneumatología</span>
+                                </div>
+                                <p class="video-description">
+                                    Análisis detallado del fruto del Espíritu Santo según Gálatas 5, 
+                                    examinando cada característica y su desarrollo en el creyente.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="video-item">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/9oS4vNkKJ38" 
+                                        title="Estudio Bíblico: La Esperanza Cristiana" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">La Esperanza Cristiana</h3>
+                                <div class="video-meta">
+                                    <span>39 min</span>
+                                    <span>•</span>
+                                    <span>Escatología</span>
+                                </div>
+                                <p class="video-description">
+                                    Estudio sobre la naturaleza y fundamentos de la esperanza cristiana, 
+                                    basada en las promesas eternas de Dios.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Reflexiones Breves (Shorts) -->
+        <section id="reflexiones-breves" class="shorts-collection">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Reflexiones Breves</h2>
+                    <p class="section-description">
+                        Pensamientos edificantes y verdades bíblicas presentadas de manera concisa 
+                        para la meditación y aplicación cotidiana.
+                    </p>
+                </div>
+                <div class="shorts-grid">
+                    <article class="short-item">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/JoZnVCJQ9cM" 
+                                    title="Reflexión: Confía en Dios" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="short-info">
+                            <h3 class="short-title">Confía en Dios en Todo Tiempo</h3>
+                        </div>
+                    </article>
+
+                    <article class="short-item">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/3FMKkqXSDFM" 
+                                    title="Reflexión: La Paz de Dios" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="short-info">
+                            <h3 class="short-title">La Paz que Sobrepasa el Entendimiento</h3>
+                        </div>
+                    </article>
+
+                    <article class="short-item">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/mT_PF69wjhI" 
+                                    title="Reflexión: Gozo en Cristo" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="short-info">
+                            <h3 class="short-title">El Gozo del Señor es Nuestra Fortaleza</h3>
+                        </div>
+                    </article>
+
+                    <article class="short-item">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/bSE8qfDR8Uk" 
+                                    title="Reflexión: La Fidelidad de Dios" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="short-info">
+                            <h3 class="short-title">La Fidelidad de Dios Permanece</h3>
+                        </div>
+                    </article>
+
+                    <article class="short-item">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/8XHZo8rZjMU" 
+                                    title="Reflexión: Caminar con Cristo" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="short-info">
+                            <h3 class="short-title">Caminar Diariamente con Cristo</h3>
+                        </div>
+                    </article>
+
+                    <article class="short-item">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/aNaJGDm3g9w" 
+                                    title="Reflexión: La Gracia Suficiente" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="short-info">
+                            <h3 class="short-title">Mi Gracia Te Basta</h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer institucional -->
+    <footer class="institutional-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="../index.html">Inicio</a>
+                    <a href="../Nosotros/historia.html">Nosotros</a>
+                    <a href="../ministerios/ministerios.html">Ministerios</a>
+                    <a href="recursos.html">Recursos</a>
+                    <a href="../page/contacto.html">Contacto</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Sabiduría para el Corazón. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

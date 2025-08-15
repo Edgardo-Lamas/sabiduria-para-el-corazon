@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <link rel="stylesheet" href="./css/modern-design.css">
     <link rel="stylesheet" href="./css/nuevas-funcionalidades.css">
+    <link rel="stylesheet" href="./css/dropdown-fix.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Inicio - Sabiduría para el Corazón</title>
@@ -72,30 +73,30 @@
                 <!-- Navegación principal -->
                 <ul class="nav-menu">
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">BIBLIOTECA</a>
+                        <a href="javascript:void(0)" class="nav-link">BIBLIOTECA</a>
                         <div class="dropdown-content">
-                            <a href="#biblioteca-destacada">Artículos</a>
+                            <a href="./Recursos/videos-youtube.html">Videos YouTube</a>
+                            <a href="./page/articulos.html">Artículos</a>
                             <a href="./Recursos/ebooks.html">eBooks</a>
                             <a href="./Recursos/versiculos.html">Versículos</a>
-                            <a href="./Recursos/devocionales.html">Devocionales</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">MEDIA</a>
+                        <a href="javascript:void(0)" class="nav-link">RECURSOS</a>
                         <div class="dropdown-content">
-                            <a href="./Recursos/audios.html">Sermones</a>
-                            <a href="./Recursos/podcasts.html">Podcasts</a>
-                            <a href="./Recursos/videos.html">Videos</a>
-                            <a href="./Recursos/radio.html">Radio en Vivo</a>
+                            <a href="./Recursos/sermones.html">Sermones</a>
+                            <a href="./Recursos/audios.html">Audios</a>
+                            <a href="./Recursos/recursos.html">Todos los Recursos</a>
+                            <a href="#plan-lectura">Plan de Lectura</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">MINISTERIO</a>
+                        <a href="javascript:void(0)" class="nav-link">NOSOTROS</a>
                         <div class="dropdown-content">
-                            <a href="./page/nosotros.html">Acerca de</a>
+                            <a href="./Nosotros/historia.html">Nuestra Historia</a>
+                            <a href="./Nosotros/mision.html">Misión y Visión</a>
+                            <a href="./Nosotros/confesiondefe.html">Declaración de Fe</a>
                             <a href="#ministerios-eventos">Ministerios</a>
-                            <a href="#ministerios-eventos">Misiones</a>
-                            <a href="./page/eventos.html">Eventos</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -121,8 +122,8 @@
         <section class="hero-section">
             <div class="hero-background">
                 <div class="hero-overlay"></div>
-                <img src="./img/fondo nuevo 5.jpg" alt="Biblioteca Cristiana" class="hero-image">
-            </div>
+                <img src="./img/libreria.jpg" alt="Biblioteca Digital Cristiana" class="hero-image">
+            </div>en el index 
             
             <div class="hero-content">
                 <div class="hero-text">
@@ -178,6 +179,32 @@
                 </div>
                 
                 <div class="library-grid">
+                    <!-- Canal de YouTube Destacado -->
+                    <div class="library-category">
+                        <div class="category-header">
+                            <div>
+                                <h3>📺 Canal de YouTube</h3>
+                                <p class="category-subtitle">Videos y enseñanzas bíblicas</p>
+                            </div>
+                            <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank" class="view-all">Ver canal completo →</a>
+                        </div>
+                        <div class="resource-cards">
+                            <div class="resource-card video-card" id="featured-video">
+                                <div class="card-content">
+                                    <span class="card-category">🎥 YouTube</span>
+                                    <h4 class="card-title">Últimas Enseñanzas</h4>
+                                    <p class="card-author">Sabiduría para el Corazón</p>
+                                    <p class="card-description">Accede a nuestras enseñanzas bíblicas, estudios y reflexiones...</p>
+                                    <div class="card-meta">
+                                        <span class="subscribers">👥 Suscriptores</span>
+                                        <span class="videos">🎬 Videos</span>
+                                    </div>
+                                    <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank" class="btn btn-primary">Ver Canal</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- eBooks Destacados -->
                     <div class="library-category">
                         <div class="category-header">
@@ -239,7 +266,7 @@
                                 <h3>🎧 Sermones y Podcasts</h3>
                                 <p class="category-subtitle">Contenido reciente y popular</p>
                             </div>
-                            <a href="./Recursos/audios.html" class="view-all">Ver biblioteca completa →</a>
+                            <a href="./Recursos/sermones.html" class="view-all">Ver biblioteca completa →</a>
                         </div>
                         <div class="resource-cards">
                             <div class="resource-card audio-card" id="featured-sermon">
@@ -488,34 +515,33 @@
                 <div class="footer-column">
                     <h4>📚 Biblioteca Digital</h4>
                     <ul>
+                        <li><a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank">Videos YouTube</a></li>
                         <li><a href="#biblioteca-destacada">Artículos Académicos</a></li>
                         <li><a href="./Recursos/ebooks.html">eBooks Gratis</a></li>
                         <li><a href="./Recursos/versiculos.html">Versículos Bíblicos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 2: Recursos -->
+                <div class="footer-column">
+                    <h4>🎧 Recursos Espirituales</h4>
+                    <ul>
+                        <li><a href="./Recursos/sermones.html">Sermones</a></li>
+                        <li><a href="./Recursos/podcasts.html">Podcasts</a></li>
+                        <li><a href="./Recursos/radio.html">Radio en Vivo</a></li>
                         <li><a href="./Recursos/devocionales.html">Devocionales</a></li>
                         <li><a href="./Recursos/plan-lectura.html">Plan de Lectura</a></li>
                     </ul>
                 </div>
 
-                <!-- Columna 2: Media -->
+                <!-- Columna 3: Nosotros -->
                 <div class="footer-column">
-                    <h4>🎧 Contenido Audio/Video</h4>
+                    <h4>⛪ Nosotros</h4>
                     <ul>
-                        <li><a href="./Recursos/sermones.html">Sermones</a></li>
-                        <li><a href="./Recursos/podcasts.html">Podcasts</a></li>
-                        <li><a href="./Recursos/videos.html">Videos Educativos</a></li>
-                        <li><a href="./Recursos/radio.html">Radio en Vivo</a></li>
-                        <li><a href="./Recursos/musica.html">Música Cristiana</a></li>
-                    </ul>
-                </div>
-
-                <!-- Columna 3: Ministerio -->
-                <div class="footer-column">
-                    <h4>⛪ Ministerio</h4>
-                    <ul>
-                        <li><a href="./page/nosotros.html">Acerca de Nosotros</a></li>
+                        <li><a href="./Nosotros/historia.html">Nuestra Historia</a></li>
+                        <li><a href="./Nosotros/mision.html">Misión y Visión</a></li>
                         <li><a href="./Nosotros/confesiondefe.html">Declaración de Fe</a></li>
                         <li><a href="#ministerios-eventos">Ministerios</a></li>
-                        <li><a href="#ministerios-eventos">Misiones</a></li>
                         <li><a href="./page/eventos.html">Eventos</a></li>
                     </ul>
                 </div>
@@ -641,6 +667,35 @@
                 console.log('✅ Sistema Airtable legacy inicializado');
             }
         });
+    </script>
+
+    <!-- Test simple para verificar dropdowns -->
+    <script>
+        // Test rápido - ejecutar después de 1 segundo
+        setTimeout(function() {
+            const bibliotecaDropdown = document.querySelector('.nav-item.dropdown .dropdown-content');
+            if (bibliotecaDropdown) {
+                console.log('✅ Dropdown encontrado, aplicando test hover...');
+                
+                // Test manual del hover
+                const parentItem = bibliotecaDropdown.closest('.nav-item.dropdown');
+                parentItem.addEventListener('mouseenter', function() {
+                    bibliotecaDropdown.style.opacity = '1';
+                    bibliotecaDropdown.style.visibility = 'visible';
+                    bibliotecaDropdown.style.transform = 'translateY(0)';
+                });
+                
+                parentItem.addEventListener('mouseleave', function() {
+                    bibliotecaDropdown.style.opacity = '0';
+                    bibliotecaDropdown.style.visibility = 'hidden';
+                    bibliotecaDropdown.style.transform = 'translateY(-10px)';
+                });
+                
+                console.log('✅ Eventos hover aplicados manualmente');
+            } else {
+                console.error('❌ No se encontró el dropdown');
+            }
+        }, 1000);
     </script>
 </body>
 

@@ -1,28 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Declaración de Fe - Sabiduría para el Corazón. Conoce las verdades bíblicas fundamentales en las que creemos.">
+    <meta name="keywords" content="declaración de fe, doctrina, iglesia, ministerio, sabiduría para el corazón">
+    <meta name="author" content="Sabiduría para el Corazón">
+    <meta property="og:title" content="Declaración de Fe - Sabiduría para el Corazón">
+    <meta property="og:description" content="Conoce las verdades bíblicas fundamentales en las que creemos">
+    <meta property="og:type" content="website">
+    
+    <!-- Fuentes modernas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="../css/estilo.css">
-    <title>Declaracion de Fe</title>
+    <link rel="stylesheet" href="../css/modern-design.css">
+    <link rel="stylesheet" href="../css/nuevas-funcionalidades.css">
+    <link rel="stylesheet" href="../css/dropdown-fix.css">
+    <title>Declaración de Fe - Sabiduría para el Corazón</title>
 </head>
 
 <body>
-    <header class="confesiones">
-        <nav class="sesiones">
-            <a href="../index.html"><img src="../img/logo SpC.svg " alt="logo"></a>
-            <ul>
-                <li><a href="../page/nosotros.html">NOSOTROS</a></li>
-                <li><a href="../Nosotros/confesiondefe.html">CONFESION DE FE</a></li>
-                <li><a href="../Nosotros/historia.html">HISTORIAS</a></li>
-                <li><a href="../Nosotros/mision.html">MISION</a></li>
-            </ul>
+    <header class="modern-header">
+        <!-- Navegación principal -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="../index.html" class="logo-link">
+                    <img src="../img/logo SpC.svg" alt="Sabiduría para el Corazón" class="main-logo">
+                    <span class="logo-text">Sabiduría para el Corazón</span>
+                </a>
+                
+                <!-- Menú hamburguesa para móviles -->
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <!-- Navegación principal -->
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)" class="nav-link">BIBLIOTECA</a>
+                        <div class="dropdown-content">
+                            <a href="../Recursos/videos-youtube.html">Videos YouTube</a>
+                            <a href="../page/articulos.html">Artículos</a>
+                            <a href="../Recursos/ebooks.html">eBooks</a>
+                            <a href="../Recursos/versiculos.html">Versículos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)" class="nav-link">RECURSOS</a>
+                        <div class="dropdown-content">
+                            <a href="../Recursos/sermones.html">Sermones</a>
+                            <a href="../Recursos/audios.html">Audios</a>
+                            <a href="../Recursos/recursos.html">Todos los Recursos</a>
+                            <a href="../index.html#plan-lectura">Plan de Lectura</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a href="javascript:void(0)" class="nav-link">NOSOTROS</a>
+                        <div class="dropdown-content">
+                            <a href="./historia.html">Nuestra Historia</a>
+                            <a href="./mision.html">Misión y Visión</a>
+                            <a href="./confesiondefe.html">Declaración de Fe</a>
+                            <a href="../ministerios/ministerios.html">Ministerios</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../page/tienda.html" class="nav-link">TIENDA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../page/contacto.html" class="nav-link">CONTACTO</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
+        
+        <!-- Hero/Banner section -->
         <div class="declaration">
-            <img src="../img/fondo declaracion fe.jpg" alt="declaracion">
+            <img src="../img/fondo declaracion fe.jpg" alt="Declaración de Fe">
         </div>
     </header>
+
     <main>
         <div class="fe">
             <h1>En Sabiduría para el Corazón creemos en las siguientes Doctrinas basicas</h1>
@@ -265,58 +327,148 @@
             </section>
         </section>
     </main>
-    <footer>
-        <section class="fondopag">
-            <div class="redes-dos">
-                <h3>Informacion de contacto</h3>
-                <br>
-                <ul>
-                    <h4>Carabobo 4151</h4>
-                    <h4>Villa Luzuriaga</h4>
-                    <h4>Moron</h4>
-                    <h4>Buenos Aires</h4>
-                </ul>
-                <div class="tres-dos">
-                    <img src="../img/telephone.png" alt="telefono">
-                    <h3>Telefono : 1152604138</h3>
-                </div>
-                <div class="tres-uno">
-                    <img src="../img/email.png" alt="sobre">
-                    <h3>Email : egardolamas@gmail.com</h3>
+    
+    <footer class="modern-footer">
+        <div class="container">
+            <!-- Newsletter destacado en footer -->
+            <div class="footer-newsletter">
+                <div class="newsletter-box">
+                    <h3>📧 Mantente Conectado</h3>
+                    <p>Recibe nuestros mejores recursos directamente en tu correo</p>
+                    <form class="footer-newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn btn-primary">Suscribirse</button>
+                    </form>
                 </div>
             </div>
-            <div class="reuniones">
-                <h3>Reuniones</h3>
-                <br>
-                <ul>
-                    <li><a href="../ministerios/escuela-biblica.html">Escuela Bilbica</a></li>
-                    <li><a href="../ministerios/escuela-dominical.html">Escuela Dominical</a></li>
-                    <li><a href="../ministerios/ministerios.html">Ministerios</a></li>
-                    <li><a href="../ministerios/misiones.html">Campo Misionero</a></li>
-                </ul>
+
+            <!-- Enlaces del footer -->
+            <div class="footer-content">
+                <!-- Columna 1: Biblioteca -->
+                <div class="footer-column">
+                    <h4>📚 Biblioteca Digital</h4>
+                    <ul>
+                        <li><a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank">Videos YouTube</a></li>
+                        <li><a href="../index.html#biblioteca-destacada">Artículos Académicos</a></li>
+                        <li><a href="../Recursos/ebooks.html">eBooks Gratis</a></li>
+                        <li><a href="../Recursos/versiculos.html">Versículos Bíblicos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 2: Recursos -->
+                <div class="footer-column">
+                    <h4>🎧 Recursos Espirituales</h4>
+                    <ul>
+                        <li><a href="../Recursos/sermones.html">Sermones</a></li>
+                        <li><a href="../Recursos/podcasts.html">Podcasts</a></li>
+                        <li><a href="../Recursos/radio.html">Radio en Vivo</a></li>
+                        <li><a href="../Recursos/devocionales.html">Devocionales</a></li>
+                        <li><a href="../Recursos/plan-lectura.html">Plan de Lectura</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Nosotros -->
+                <div class="footer-column">
+                    <h4>⛪ Nosotros</h4>
+                    <ul>
+                        <li><a href="./historia.html">Nuestra Historia</a></li>
+                        <li><a href="./mision.html">Misión y Visión</a></li>
+                        <li><a href="./confesiondefe.html">Declaración de Fe</a></li>
+                        <li><a href="../index.html#ministerios-eventos">Ministerios</a></li>
+                        <li><a href="../page/eventos.html">Eventos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Recursos -->
+                <div class="footer-column">
+                    <h4>🛠️ Recursos</h4>
+                    <ul>
+                        <li><a href="../page/tienda.html">Tienda</a></li>
+                        <li><a href="../page/donaciones.html">Donar</a></li>
+                        <li><a href="../page/contacto.html">Contacto</a></li>
+                        <li><a href="../page/nuevo.html">Soy Nuevo</a></li>
+                        <li><a href="../page/ayuda.html">Centro de Ayuda</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 5: Contacto -->
+                <div class="footer-column">
+                    <h4>📍 Contacto</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <p>Carabobo 4151<br>
+                                Villa Luzuriaga<br>
+                                Buenos Aires, Argentina</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+541152604138">+54-11-5260-4138</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:contacto@sabiduriaparaelcorazon.org">contacto@sabiduriaparaelcorazon.org</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="nosotros">
-                <h3>Nosotros</h3>
-                <br>
-                <ul>
-                    <li><a href="../Nosotros/confesiondefe.html">Confesion de Fe</a></li>
-                    <li><a href="../Nosotros/historia.html">Historia</a></li>
-                    <li><a href="../Nosotros/mision.html">Mision</a></li>
-                    <li><a href="../Nosotros/distintivos.html">Distintivos</a></li>
-                </ul>
+
+            <!-- Redes sociales -->
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="https://web.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link facebook">
+                        <img src="../img/facebook (1).png" alt="Facebook">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank" rel="noopener noreferrer" class="social-link youtube">
+                        <img src="../img/youtube (2).png" alt="YouTube">
+                        <span>YouTube</span>
+                    </a>
+                    <a href="../index.html" class="social-link instagram">
+                        <img src="../img/instagram (2).png" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
+                    <a href="../index.html" class="social-link whatsapp">
+                        <img src="../img/whatsapp.png" alt="WhatsApp">
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
             </div>
-            <div class="nuevo">
-                <h3>Soy nuevo !</h3>
-                <br>
-                <ul>
-                    <li><a href="#">¿En que creemos?</a></li>
-                    <li><a href="#">¿como puedo congregarme en la IBM?</a></li>
-                    <li><a href="#">Formulario visitante</a></li>
-                    <li><a href="#">Recursos</a></li>
-                </ul>
+
+            <!-- Copyright y links legales -->
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <div class="copyright">
+                        <p>&copy; 2025 Sabiduría para el Corazón. Todos los derechos reservados.</p>
+                        <p class="tagline">Verdades Eternas hasta lo último de la Tierra</p>
+                    </div>
+                    <div class="legal-links">
+                        <a href="../page/privacidad.html">Política de Privacidad</a>
+                        <a href="../page/terminos.html">Términos de Uso</a>
+                        <a href="../page/cookies.html">Política de Cookies</a>
+                        <a href="../page/donaciones.html">Donaciones</a>
+                    </div>
+                </div>
+                
+                <!-- Información adicional -->
+                <div class="footer-info">
+                    <div class="ministry-info">
+                        <p><strong>🏛️ Iglesia Bautista Misionera</strong></p>
+                        <p>Ministerio dedicado a la enseñanza expositiva de la Palabra de Dios</p>
+                    </div>
+                    <div class="tech-info">
+                        <p>🚀 Desarrollado con GitHub Pages + Airtable + Notion</p>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
     </footer>
+    
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

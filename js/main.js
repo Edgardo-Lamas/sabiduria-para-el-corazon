@@ -33,20 +33,40 @@ function toggleMenu() {
   }
 }
 
-// Submenús en mobile: abrir/cerrar al hacer click en el enlace principal
-document.querySelectorAll('.nav-item.dropdown > .nav-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    if (window.innerWidth <= 991) {
-      e.preventDefault();
-      const parent = this.parentElement;
-      parent.classList.toggle('open');
-      // Cierra otros submenús
-      document.querySelectorAll('.nav-item.dropdown').forEach(item => {
-        if (item !== parent) item.classList.remove('open');
-      });
-    }
-  });
+// JavaScript simple para dropdowns
+document.addEventListener('DOMContentLoaded', function() {
+    // Manejar clicks en enlaces de dropdown
+    document.querySelectorAll('.nav-item.dropdown > .nav-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Solo para mobile (menos de 992px)
+            if (window.innerWidth < 992) {
+                const parent = this.parentElement;
+                
+                // Cerrar todos los otros dropdowns
+                document.querySelectorAll('.nav-item.dropdown').forEach(function(item) {
+                    if (item !== parent) {
+                        item.classList.remove('open');
+                    }
+                });
+                
+                // Toggle el dropdown actual
+                parent.classList.toggle('open');
+            }
+        });
+    });
+    
+    // Cerrar dropdown al hacer click fuera
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-menu')) {
+            document.querySelectorAll('.nav-item.dropdown').forEach(function(item) {
+                item.classList.remove('open');
+            });
+        }
+    });
 });
+
 async function handleSearch(event) {
     event.preventDefault();
     const query = event.target.querySelector('input[name="search"]').value;

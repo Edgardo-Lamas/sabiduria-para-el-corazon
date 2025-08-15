@@ -2852,4 +2852,73 @@ footer .redes-cuatro ul{
     }
 }
 
+/* Sección de YouTube destacada */
+.video-card {
+    background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 0, 0, 0.3);
+}
+
+.video-card .card-category {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.video-card .card-title {
+    color: white;
+    font-weight: 700;
+}
+
+.video-card .card-author,
+.video-card .card-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.card-meta {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.video-card .btn-primary {
+    background: white;
+    color: #FF0000;
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.video-card .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+}
+
+/* Responsive para la sección de YouTube */
+@media (max-width: 768px) {
+    .video-card {
+        margin-bottom: 20px;
+    }
+    
+    .card-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
 

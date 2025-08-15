@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Videos de Enseñanza - Sabiduría para el Corazón. Contenido bíblico y educativo para el crecimiento espiritual.">
+    <meta name="keywords" content="videos biblicos, enseñanzas cristianas, estudios biblicos, contenido educativo cristiano">
+    <meta name="author" content="Sabiduría para el Corazón">
+    <meta property="og:title" content="Videos de Enseñanza - Sabiduría para el Corazón">
+    <meta property="og:description" content="Contenido bíblico educativo y enseñanzas para el crecimiento espiritual">
+    <meta property="og:type" content="website">
+    
+    <!-- Fuentes institucionales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/modern-design.css">
+    <link rel="stylesheet" href="../css/nuevas-funcionalidades.css">
+    <link rel="stylesheet" href="../css/dropdown-fix.css">
+    <title>Videos de Enseñanza - Sabiduría para el Corazón</title>
+    
+    <style>
+        /* Estilo institucional formal */
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #8b9dc3;
+            --text-color: #333;
+            --text-light: #666;
+            --border-color: #e0e4e7;
+            --bg-section: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        /* Header institucional */
+        .institutional-header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .main-nav {
+            padding: 15px 0;
+            background: var(--white);
+            position: relative;
+            z-index: 1001;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        
+        .main-logo {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Breadcrumb institucional */
+        .breadcrumb-section {
+            background: var(--bg-section);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb span {
+            margin: 0 8px;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin: 8px 0 0 0;
+            max-width: 800px;
+        }
+        
+        /* Secciones de contenido institucional */
+        .content-section {
+            padding: 60px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Barra de navegación de contenido */
+        .content-nav {
+            background: var(--white);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+        
+        .content-nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .content-nav-item {
+            position: relative;
+        }
+        
+        .content-nav-link {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .content-nav-link:hover,
+        .content-nav-link.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        /* Grid de videos institucional */
+        .video-collection {
+            margin-bottom: 60px;
+        }
+        
+        .collection-header {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .collection-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 0 0 8px 0;
+            font-weight: 600;
+        }
+        
+        .collection-description {
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .video-item {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .video-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.1);
+        }
+        
+        .video-embed {
+            aspect-ratio: 16/9;
+            width: 100%;
+        }
+        
+        .video-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+        }
+        
+        .video-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        
+        .video-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        /* Shorts con diseño institucional */
+        .shorts-collection {
+            background: var(--bg-section);
+            padding: 40px 0;
+            margin: 60px 0;
+        }
+        
+        .shorts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .short-item {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .short-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.1);
+        }
+        
+        .short-embed {
+            aspect-ratio: 9/16;
+            width: 100%;
+            max-height: 400px;
+        }
+        
+        .short-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .short-info {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .short-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-color);
+            margin: 0;
+        }
+        
+        /* Footer institucional */
+        .institutional-footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0 20px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .footer-copyright {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+        
+        
+        /* YouTube Carousel Section */
+        .youtube-carousel-section {
+            background: linear-gradient(135deg, #17214f 30%, #06375f 70%);
+            padding: 60px 0;
+            overflow: hidden;
+        }
+        
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: #000;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .carousel-image {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            background: #000;
+        }
+        
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.1) 0%,
+                rgba(0, 0, 0, 0.3) 60%,
+                rgba(0, 0, 0, 0.8) 100%
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .carousel-slide:hover .slide-overlay {
+            opacity: 1;
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-slide:hover .play-button {
+            transform: scale(1);
+            background: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .slide-info {
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .slide-info h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .slide-info p {
+            font-size: 1rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        /* Navigation Arrows */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .carousel-nav:hover {
+            background: var(--white);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .carousel-nav.prev {
+            left: 20px;
+        }
+        
+        .carousel-nav.next {
+            right: 20px;
+        }
+        
+        /* Dots Indicators */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .dot:hover,
+        .dot.active {
+            background: var(--white);
+            transform: scale(1.2);
+            border-color: var(--white);
+        }
+        
+        /* Header Content Over Carousel */
+        .header-info-content {
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .breadcrumb {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            opacity: 0.8;
+        }
+        
+        .breadcrumb span {
+            margin: 0 8px;
+            opacity: 0.7;
+        }
+        
+        .header-info-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            font-family: 'Crimson Text', serif;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-info-subtitle {
+            font-size: 1.2rem;
+            margin: 0 0 30px 0;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+        
+        .header-info-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-box {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .stat-num {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        
+        .stat-text {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .header-info-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .btn-header {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: #FF0000;
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: #E60000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 0, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .youtube-carousel-section {
+                padding: 40px 0;
+            }
+            
+            .carousel-image {
+                height: 250px;
+                object-fit: contain;
+            }
+            
+            .header-info-content {
+                margin-bottom: 30px;
+            }
+            
+            .header-info-title {
+                font-size: 2.2rem;
+            }
+            
+            .header-info-subtitle {
+                font-size: 1rem;
+            }
+            
+            .header-info-stats {
+                gap: 15px;
+            }
+            
+            .stat-box {
+                padding: 10px 15px;
+            }
+            
+            .stat-num {
+                font-size: 1.5rem;
+            }
+            
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .carousel-nav.prev {
+                left: 10px;
+            }
+            
+            .carousel-nav.next {
+                right: 10px;
+            }
+            
+            .play-button {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1rem;
+            }
+            
+            .content-nav-list {
+                gap: 20px;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .shorts-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .content-section {
+                padding: 40px 0;
+            }
+        }
+        
+        /* Hero Section Styles */
+        .videos-hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 60px 0;
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .hero-right {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .featured-video {
+            width: 100%;
+            max-width: 600px;
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .featured-video:hover {
+            box-shadow: 0 12px 35px rgba(44, 90, 160, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+        }
+        
+        .video-thumbnail iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .featured-video-info {
+            padding: 25px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .featured-video-info h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .featured-video-info p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #FF0000;
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: #E60000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 90, 160, 0.3);
+        }
+        
+        /* Mobile Responsive for Hero Section */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .featured-video {
+                max-width: 100%;
+            }
+            
+            .hero-actions {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .videos-hero {
+                padding: 40px 0;
+            }
+            
+            .hero-content {
+                gap: 30px;
+            }
+            
+            .hero-title {
+                font-size: 1.9rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .featured-video-info {
+                padding: 20px;
+            }
+            
+            .featured-video-info h3 {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* Featured Video Description Styles */
+        .featured-video-description {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        /* Section Separator */
+        .section-separator {
+            height: 3px;
+            background: linear-gradient(135deg, #17214f 30%, #06375f 70%);
+            margin: 0;
+            border: none;
+            opacity: 0.7;
+            position: relative;
+        }
+        
+        .section-separator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.1) 50%, 
+                transparent 100%);
+        }
+        
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .badge-icon {
+            font-size: 1rem;
+        }
+        
+        .featured-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .featured-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .meta-icon {
+            font-size: 1rem;
+            width: 20px;
+        }
+        
+        .featured-description {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .featured-topics {
+            margin-top: 15px;
+        }
+        
+        .featured-topics h4 {
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+        
+        .featured-topics ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .featured-topics li {
+            position: relative;
+            padding: 4px 0 4px 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .featured-topics li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        /* Mobile responsive for featured video description */
+        @media (max-width: 768px) {
+            .featured-video-description {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .featured-title {
+                font-size: 1.3rem;
+            }
+            
+            .featured-meta {
+                flex-direction: column;
+                gap: 6px;
+            }
+            
+            .meta-item {
+                font-size: 0.85rem;
+            }
+            
+            .featured-description {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="modern-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="../index.html" class="logo-link">
+                    <img src="../img/logo SpC.svg" alt="Sabiduría para el Corazón" class="main-logo">
+                    <span class="logo-text">Sabiduría para el Corazón</span>
+                </a>
+                
+                <!-- Menú hamburguesa para móviles -->
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <!-- Navegación principal -->
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)" class="nav-link">BIBLIOTECA</a>
+                        <div class="dropdown-content">
+                            <a href="../Recursos/videos-youtube.html">Videos YouTube</a>
+                            <a href="../page/articulos.html">Artículos</a>
+                            <a href="../Recursos/ebooks.html">eBooks</a>
+                            <a href="../Recursos/versiculos.html">Versículos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)" class="nav-link">RECURSOS</a>
+                        <div class="dropdown-content">
+                            <a href="../Recursos/sermones.html">Sermones</a>
+                            <a href="../Recursos/audios.html">Audios</a>
+                            <a href="../Recursos/recursos.html">Todos los Recursos</a>
+                            <a href="../index.html#plan-lectura">Plan de Lectura</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)" class="nav-link">NOSOTROS</a>
+                        <div class="dropdown-content">
+                            <a href="../Nosotros/historia.html">Nuestra Historia</a>
+                            <a href="../Nosotros/mision.html">Misión y Visión</a>
+                            <a href="../Nosotros/confesiondefe.html">Declaración de Fe</a>
+                            <a href="../index.html#ministerios-eventos">Ministerios</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../page/tienda.html" class="nav-link">TIENDA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../page/contacto.html" class="nav-link">CONTACTO</a>
+                    </li>
+                </ul>
+                
+                <!-- Búsqueda y acciones -->
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="search" placeholder="Buscar recursos..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <button class="newsletter-btn">📧 Newsletter</button>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- YouTube Video Carousel -->
+        <section class="youtube-carousel-section">
+            <div class="carousel-container">
+                <!-- Header Info Content -->
+                <div class="header-info-content">
+                    <div class="breadcrumb">
+                        <a href="../index.html">Inicio</a> 
+                        <span>></span> 
+                        <a href="../index.html#biblioteca-destacada">Biblioteca</a> 
+                        <span>></span> 
+                        <span class="current">Videos YouTube</span>
+                    </div>
+                    
+                    <h1 class="header-info-title">📺 Canal de YouTube</h1>
+                    <p class="header-info-subtitle">Descubre nuestras enseñanzas bíblicas en video</p>
+                    
+                    <div class="header-info-stats">
+                        <div class="stat-box">
+                            <span class="stat-num">19</span>
+                            <span class="stat-text">Videos Total</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">6</span>
+                            <span class="stat-text">Shorts</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">13</span>
+                            <span class="stat-text">Videos Largos</span>
+                        </div>
+                    </div>
+                    
+                    <div class="header-info-actions">
+                        <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank" class="btn-header btn-primary">
+                            🔴 Ver Canal
+                        </a>
+                        <a href="#shorts-section" class="btn-header btn-secondary">
+                            📱 Ver Shorts
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Carousel Section -->
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide active">
+                            <img src="../img/carrousel /img 1.png" alt="Video YouTube 1" class="carousel-image">
+                            <div class="slide-overlay">
+                                <div class="play-button">▶</div>
+                                <div class="slide-info">
+                                    <h3>Enseñanza Bíblica</h3>
+                                    <p>Ver en YouTube</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <img src="../img/carrousel /img 2.jpg" alt="Video YouTube 2" class="carousel-image">
+                            <div class="slide-overlay">
+                                <div class="play-button">▶</div>
+                                <div class="slide-info">
+                                    <h3>Estudio Bíblico</h3>
+                                    <p>Ver en YouTube</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <img src="../img/carrousel /img 3.png" alt="Video YouTube 3" class="carousel-image">
+                            <div class="slide-overlay">
+                                <div class="play-button">▶</div>
+                                <div class="slide-info">
+                                    <h3>Reflexión Espiritual</h3>
+                                    <p>Ver en YouTube</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <img src="../img/carrousel /img 4.jpg" alt="Video YouTube 4" class="carousel-image">
+                            <div class="slide-overlay">
+                                <div class="play-button">▶</div>
+                                <div class="slide-info">
+                                    <h3>Doctrina Cristiana</h3>
+                                    <p>Ver en YouTube</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <img src="../img/carrousel /img 5.jpg" alt="Video YouTube 5" class="carousel-image">
+                            <div class="slide-overlay">
+                                <div class="play-button">▶</div>
+                                <div class="slide-info">
+                                    <h3>Vida Cristiana</h3>
+                                    <p>Ver en YouTube</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <img src="../img/carrousel /img 6.png" alt="Video YouTube 6" class="carousel-image">
+                            <div class="slide-overlay">
+                                <div class="play-button">▶</div>
+                                <div class="slide-info">
+                                    <h3>Sabiduría Bíblica</h3>
+                                    <p>Ver en YouTube</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button class="carousel-nav prev" id="prevBtn" aria-label="Anterior">‹</button>
+                    <button class="carousel-nav next" id="nextBtn" aria-label="Siguiente">›</button>
+                </div>
+                
+                <!-- Dots Indicators -->
+                <div class="carousel-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                    <span class="dot" data-slide="5"></span>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <!-- Hero Section con Video Destacado -->
+        <section class="videos-hero">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1 class="hero-title">🎬 Video Destacado del Mes</h1>
+                    <p class="hero-subtitle">Descubre nuestra enseñanza más popular y edificante</p>
+                    
+                    <!-- Video Destacado Información -->
+                    <div class="featured-video-description">
+                        <div class="featured-badge">
+                            <span class="badge-icon">⭐</span>
+                            <span class="badge-text">Más Visto de Julio 2025</span>
+                        </div>
+                        
+                        <h2 class="featured-title">Enseñanza Bíblica: Creciendo en la Fe</h2>
+                        
+                        <div class="featured-meta">
+                            <div class="meta-item">
+                                <span class="meta-icon">📅</span>
+                                <span class="meta-text">Publicado: 15 de Julio 2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-icon">👁️</span>
+                                <span class="meta-text">1,247 visualizaciones</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-icon">⏱️</span>
+                                <span class="meta-text">Duración: 28:45</span>
+                            </div>
+                        </div>
+                        
+                        <p class="featured-description">
+                            Una profunda reflexión sobre el crecimiento espiritual y la importancia de la perseverancia en la vida cristiana. En esta enseñanza exploramos los fundamentos bíblicos para fortalecer nuestra fe diaria y vivir conforme a los propósitos de Dios.
+                        </p>
+                        
+                        <div class="featured-topics">
+                            <h4>Temas tratados:</h4>
+                            <ul>
+                                <li>Fundamentos de la fe cristiana</li>
+                                <li>Crecimiento espiritual y perseverancia</li>
+                                <li>Aplicación práctica de principios bíblicos</li>
+                                <li>Vivir conforme a la voluntad de Dios</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="https://www.youtube.com/watch?v=Xzkp9Ei0nHc" target="_blank" class="btn btn-primary">
+                            ▶️ Ver Video Completo
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank" class="btn btn-secondary">
+                            � Ver Más Videos
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-right">
+                    <div class="featured-video">
+                        <div class="video-thumbnail">
+                            <iframe src="https://www.youtube.com/embed/Xzkp9Ei0nHc" 
+                                    title="Video Destacado" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="featured-video-info">
+                            <h3>🎬 Video Destacado</h3>
+                            <p>Última enseñanza disponible en nuestro canal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Separator -->
+        <div class="section-separator"></div>
+
+        <!-- YouTube Shorts Section -->
+        <section class="video-section shorts-section" id="shorts-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🎬 YouTube Shorts</h2>
+                    <p class="section-subtitle">Contenido bíblico breve y poderoso para inspirar tu día</p>
+                </div>
+                
+                <div class="shorts-grid">
+                    <div class="short-card">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/FydFulEkElo" 
+                                    title="Short 1" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="short-card">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/QpJojusTt5Q" 
+                                    title="Short 2" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="short-card">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/Kbh1lSKdhZY" 
+                                    title="Short 3" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="short-card">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/500DMtziKI4" 
+                                    title="Short 4" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="short-card">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/2pqzsd9VHek" 
+                                    title="Short 5" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="short-card">
+                        <div class="short-embed">
+                            <iframe src="https://www.youtube.com/embed/mIjJGMKxDS4" 
+                                    title="Short 6" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Videos Completos Section -->
+        <section class="video-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">📺 Videos Completos</h2>
+                    <p class="section-subtitle">Enseñanzas profundas y estudios bíblicos para fortalecer tu fe</p>
+                </div>
+                
+                <div class="videos-grid">
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/Xzkp9Ei0nHc" 
+                                    title="Video 1" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Enseñanza Bíblica</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/yATKMORLEPY" 
+                                    title="Video 2" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Estudio Bíblico</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/-PgqvH6olPc" 
+                                    title="Video 3" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Reflexión Espiritual</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/8d6wyX-yUME" 
+                                    title="Video 4" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Enseñanza Pastoral</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/UtQv7kcAZek" 
+                                    title="Video 5" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Doctrina Cristiana</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/LJ4UTPLAqOs" 
+                                    title="Video 6" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Vida Cristiana</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/Vw86HBr3log" 
+                                    title="Video 7" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Sabiduría Bíblica</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/BYiCSLs95cM" 
+                                    title="Video 8" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Predicación Expositiva</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/Qf_jA4dk7vI" 
+                                    title="Video 9" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Teología Práctica</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/Mc3nBdCIiJ0" 
+                                    title="Video 10" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Evangelismo</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/4X_cAo6w4tE" 
+                                    title="Video 11" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Discipulado</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/W3l-mp8cgOg" 
+                                    title="Video 12" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Gracia Divina</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/7Gi-_rR6csE" 
+                                    title="Video 13" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Esperanza Eterna</h3>
+                            <div class="video-meta">
+                                <span>📅 2025</span>
+                                <span>👁️ Ver en YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="video-section" style="background: #f8f9fa;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🔔 ¡No te pierdas nuestro contenido!</h2>
+                    <p class="section-subtitle">Suscríbete a nuestro canal y activa las notificaciones para recibir las últimas enseñanzas</p>
+                    <div style="margin-top: 30px;">
+                        <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA?sub_confirmation=1" target="_blank" class="btn btn-primary" style="background: #FF0000; color: white; font-size: 1.1rem; padding: 15px 30px;">
+                            🎬 Suscribirse al Canal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="../index.html">Inicio</a>
+                    <a href="../index.html#biblioteca-destacada">Biblioteca</a>
+                    <a href="../Recursos/sermones.html">Recursos</a>
+                    <a href="../Nosotros/historia.html">Nosotros</a>
+                    <a href="../page/contacto.html">Contacto</a>
+                    <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank">YouTube</a>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Sabiduría para el Corazón. Todos los derechos reservados.</p>
+                    <p><strong>Verdades Eternas hasta lo último de la Tierra</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // YouTube Carousel Functionality
+        class YoutubeCarousel {
+            constructor() {
+                this.currentSlide = 0;
+                this.totalSlides = 6;
+                this.autoPlayInterval = null;
+                this.isPlaying = true;
+                
+                this.init();
+            }
+            
+            init() {
+                this.track = document.getElementById('carouselTrack');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.dots = document.querySelectorAll('.dot');
+                this.slides = document.querySelectorAll('.carousel-slide');
+                
+                if (!this.track) return;
+                
+                // Event listeners
+                this.prevBtn?.addEventListener('click', () => this.prevSlide());
+                this.nextBtn?.addEventListener('click', () => this.nextSlide());
+                
+                // Dots navigation
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                });
+                
+                // Pause on hover
+                const carousel = document.querySelector('.carousel-wrapper');
+                if (carousel) {
+                    carousel.addEventListener('mouseenter', () => this.pauseAutoPlay());
+                    carousel.addEventListener('mouseleave', () => this.startAutoPlay());
+                }
+                
+                // Touch/swipe support
+                this.addTouchSupport();
+                
+                // Start auto-play
+                this.startAutoPlay();
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.prevSlide();
+                    if (e.key === 'ArrowRight') this.nextSlide();
+                });
+            }
+            
+            goToSlide(slideIndex) {
+                this.currentSlide = slideIndex;
+                this.updateCarousel();
+            }
+            
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.updateCarousel();
+            }
+            
+            prevSlide() {
+                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.updateCarousel();
+            }
+            
+            updateCarousel() {
+                // Update track position
+                const translateX = -this.currentSlide * 100;
+                this.track.style.transform = `translateX(${translateX}%)`;
+                
+                // Update dots
+                this.dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+                
+                // Update slides active state
+                this.slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === this.currentSlide);
+                });
+            }
+            
+            startAutoPlay() {
+                if (this.autoPlayInterval) return;
+                
+                this.autoPlayInterval = setInterval(() => {
+                    if (this.isPlaying) {
+                        this.nextSlide();
+                    }
+                }, 4000); // Change slide every 4 seconds
+            }
+            
+            pauseAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                    this.autoPlayInterval = null;
+                }
+            }
+            
+            addTouchSupport() {
+                let startX = 0;
+                let startY = 0;
+                let isDragging = false;
+                
+                const carousel = document.querySelector('.carousel-wrapper');
+                if (!carousel) return;
+                
+                carousel.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                    isDragging = true;
+                    this.pauseAutoPlay();
+                }, { passive: true });
+                
+                carousel.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    
+                    const currentX = e.touches[0].clientX;
+                    const currentY = e.touches[0].clientY;
+                    const diffX = startX - currentX;
+                    const diffY = startY - currentY;
+                    
+                    // Only handle horizontal swipes
+                    if (Math.abs(diffX) > Math.abs(diffY)) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+                
+                carousel.addEventListener('touchend', (e) => {
+                    if (!isDragging) return;
+                    
+                    const endX = e.changedTouches[0].clientX;
+                    const diffX = startX - endX;
+                    const threshold = 50;
+                    
+                    if (Math.abs(diffX) > threshold) {
+                        if (diffX > 0) {
+                            this.nextSlide();
+                        } else {
+                            this.prevSlide();
+                        }
+                    }
+                    
+                    isDragging = false;
+                    this.startAutoPlay();
+                }, { passive: true });
+            }
+        }
+        
+        // Initialize carousel when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new YoutubeCarousel();
+        });
+        
+        // Add click functionality to carousel slides for YouTube navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const youtubeUrls = [
+                'https://www.youtube.com/watch?v=Xzkp9Ei0nHc',
+                'https://www.youtube.com/watch?v=yATKMORLEPY',
+                'https://www.youtube.com/watch?v=-PgqvH6olPc',
+                'https://www.youtube.com/watch?v=8d6wyX-yUME',
+                'https://www.youtube.com/watch?v=UtQv7kcAZek',
+                'https://www.youtube.com/watch?v=LJ4UTPLAqOs'
+            ];
+            
+            slides.forEach((slide, index) => {
+                slide.addEventListener('click', () => {
+                    if (youtubeUrls[index]) {
+                        window.open(youtubeUrls[index], '_blank');
+                    }
+                });
+                
+                // Add pointer cursor
+                slide.style.cursor = 'pointer';
+            });
+        });
+    </script>
+    
+    <!-- Featured Video Manager Script -->
+    <script src="../js/featured-video-manager.js"></script>
+    
+    <!-- Main JS for dropdowns -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

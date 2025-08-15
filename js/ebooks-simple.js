@@ -268,10 +268,22 @@ class EbooksManagerSimple {
                     
                     <div class="ebook-actions">
                         ${ebook.estado === 'Disponible' ? 
-                            `<a href="${ebook.archivo}" target="_blank" class="btn-primary" rel="noopener noreferrer">
-                                <span class="download-icon">📥</span>
-                                Descargar PDF
-                            </a>` : 
+                            `<div class="action-buttons">
+                                <a href="../page/ebook-viewer.html?pdf=${encodeURIComponent(ebook.archivo)}&title=${encodeURIComponent(ebook.titulo)}&author=${encodeURIComponent(ebook.autor)}" 
+                                   class="btn-secondary ebook-preview-btn" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer">
+                                    <span class="preview-icon">👁️</span>
+                                    Vista Previa
+                                </a>
+                                <a href="${ebook.archivo}" 
+                                   target="_blank" 
+                                   class="btn-primary ebook-download-btn" 
+                                   rel="noopener noreferrer">
+                                    <span class="download-icon">📥</span>
+                                    Descargar PDF
+                                </a>
+                            </div>` : 
                             `<button class="btn-primary disabled" disabled>
                                 <span class="download-icon">⏳</span>
                                 Disponible próximamente

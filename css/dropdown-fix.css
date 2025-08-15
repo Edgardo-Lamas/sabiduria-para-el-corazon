@@ -1,0 +1,52 @@
+/* Solución simple y directa para dropdowns */
+
+/* Reset completo del dropdown */
+.nav-item.dropdown .dropdown-content {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: white !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+    min-width: 180px !important;
+    padding: 8px 0 !important;
+    z-index: 9999 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Mostrar dropdown en hover (desktop) */
+.nav-item.dropdown:hover .dropdown-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Mostrar dropdown con clase open (mobile) */
+.nav-item.dropdown.open .dropdown-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Enlaces dentro del dropdown */
+.dropdown-content a {
+    display: block !important;
+    padding: 8px 16px !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5 !important;
+    color: #333 !important;
+}
+
+/* Asegurar posición relativa del contenedor */
+.nav-item.dropdown {
+    position: relative !important;
+}

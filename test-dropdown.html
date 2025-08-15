@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Dropdown</title>
+    <style>
+        .nav-item.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-width: 180px;
+            padding: 8px 0;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+        }
+        
+        .nav-item.dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-content a {
+            display: block;
+            padding: 8px 16px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Dropdown</h1>
+    <p>Haz hover sobre "BIBLIOTECA" para ver si aparece el menú:</p>
+    
+    <div class="nav-item dropdown">
+        <a href="javascript:void(0)" class="nav-link">BIBLIOTECA</a>
+        <div class="dropdown-content">
+            <a href="#1">Videos YouTube</a>
+            <a href="#2">Artículos</a>
+            <a href="#3">eBooks</a>
+            <a href="#4">Versículos</a>
+        </div>
+    </div>
+    
+    <p>Si este test funciona, el problema está en algún CSS o JavaScript que interfiere en la página principal.</p>
+</body>
+</html>

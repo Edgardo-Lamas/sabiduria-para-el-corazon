@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Previa eBook - Sabiduría para el Corazón</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/modern-design.css">
+    <link rel="stylesheet" href="../css/dropdown-fix.css">
+    
+    <style>
+        .ebook-viewer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .viewer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .book-info h1 {
+            color: #2c5aa0;
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+        
+        .book-info p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .viewer-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #2c5aa0;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1e3a6f;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #1e7e34;
+        }
+        
+        .viewer-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .page-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .page-info {
+            font-weight: 500;
+            color: #495057;
+        }
+        
+        .zoom-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .zoom-level {
+            font-weight: 500;
+            color: #495057;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .pdf-container {
+            text-align: center;
+            margin-top: 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        #pdf-canvas {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .loading-message {
+            padding: 40px;
+            text-align: center;
+            color: #666;
+        }
+        
+        .error-message {
+            padding: 40px;
+            text-align: center;
+            color: #dc3545;
+            background: #f8d7da;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        
+        .preview-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .preview-notice h3 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .preview-notice p {
+            color: #856404;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .viewer-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .viewer-controls {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .ebook-viewer {
+                padding: 15px;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="modern-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="../index.html" class="logo-link">
+                    <img src="../img/logo SpC.svg" alt="Sabiduría para el Corazón" class="main-logo">
+                    <span class="logo-text">Sabiduría para el Corazón</span>
+                </a>
+                
+                <!-- Menú hamburguesa para móviles -->
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <!-- Navegación principal -->
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)" class="nav-link">BIBLIOTECA</a>
+                        <div class="dropdown-content">
+                            <a href="../Recursos/videos-youtube.html">Videos YouTube</a>
+                            <a href="../page/articulos.html">Artículos</a>
+                            <a href="../Recursos/ebooks.html">eBooks</a>
+                            <a href="../Recursos/versiculos.html">Versículos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)" class="nav-link">RECURSOS</a>
+                        <div class="dropdown-content">
+                            <a href="../Recursos/sermones.html">Sermones</a>
+                            <a href="../Recursos/audios.html">Audios</a>
+                            <a href="../Recursos/recursos.html">Todos los Recursos</a>
+                            <a href="../index.html#plan-lectura">Plan de Lectura</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)" class="nav-link">NOSOTROS</a>
+                        <div class="dropdown-content">
+                            <a href="../Nosotros/historia.html">Nuestra Historia</a>
+                            <a href="../Nosotros/mision.html">Misión y Visión</a>
+                            <a href="../Nosotros/confesiondefe.html">Declaración de Fe</a>
+                            <a href="../index.html#ministerios-eventos">Ministerios</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../page/tienda.html" class="nav-link">TIENDA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../page/contacto.html" class="nav-link">CONTACTO</a>
+                    </li>
+                </ul>
+                
+                <!-- Búsqueda y acciones -->
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="search" placeholder="Buscar recursos..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <button class="newsletter-btn">📧 Newsletter</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="ebook-viewer">
+            <!-- Vista previa notice -->
+            <div class="preview-notice">
+                <h3>📖 Vista Previa del eBook</h3>
+                <p>Estás viendo una preview del contenido. Para acceder al libro completo, descárgalo gratis.</p>
+            </div>
+            
+            <!-- Header con info del libro -->
+            <div class="viewer-header">
+                <div class="book-info">
+                    <h1 id="book-title">Cargando título...</h1>
+                    <p id="book-author">Cargando autor...</p>
+                </div>
+                <div class="viewer-actions">
+                    <a href="../Recursos/ebooks.html" class="btn btn-secondary">← Volver a eBooks</a>
+                    <button id="download-btn" class="btn btn-success">📥 Descargar Gratis</button>
+                </div>
+            </div>
+            
+            <!-- Controles del visor -->
+            <div class="viewer-controls">
+                <div class="page-controls">
+                    <button id="prev-btn" class="btn btn-secondary">← Anterior</button>
+                    <span class="page-info">
+                        Página <span id="current-page">1</span> de <span id="total-pages">-</span>
+                    </span>
+                    <button id="next-btn" class="btn btn-secondary">Siguiente →</button>
+                </div>
+                
+                <div class="zoom-controls">
+                    <button id="zoom-out" class="btn btn-secondary">🔍-</button>
+                    <span class="zoom-level" id="zoom-level">100%</span>
+                    <button id="zoom-in" class="btn btn-secondary">🔍+</button>
+                </div>
+            </div>
+            
+            <!-- Contenedor del PDF -->
+            <div class="pdf-container">
+                <div class="loading-message" id="loading">
+                    🔄 Cargando vista previa del eBook...
+                </div>
+                <div class="error-message" id="error" style="display: none;">
+                    ❌ Error al cargar la vista previa. 
+                    <br>
+                    <button onclick="location.reload()" class="btn btn-primary" style="margin-top: 10px;">
+                        🔄 Reintentar
+                    </button>
+                </div>
+                <canvas id="pdf-canvas" style="display: none;"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <!-- PDF.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    
+    <script src="../js/main.js"></script>
+    <script>
+        // Configuración del visor de eBooks
+        class EBookViewer {
+            constructor() {
+                this.pdf = null;
+                this.currentPage = 1;
+                this.totalPages = 0;
+                this.scale = 1.2;
+                this.canvas = document.getElementById('pdf-canvas');
+                this.ctx = this.canvas.getContext('2d');
+                
+                this.initializeViewer();
+                this.setupEventListeners();
+            }
+            
+            initializeViewer() {
+                // Obtener parámetros de la URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const bookId = urlParams.get('book');
+                const pdfUrl = urlParams.get('pdf');
+                const title = urlParams.get('title') || 'eBook';
+                const author = urlParams.get('author') || 'Autor';
+                
+                // Actualizar información del libro
+                document.getElementById('book-title').textContent = decodeURIComponent(title);
+                document.getElementById('book-author').textContent = `Por: ${decodeURIComponent(author)}`;
+                
+                // Configurar botón de descarga
+                if (pdfUrl) {
+                    document.getElementById('download-btn').onclick = () => {
+                        window.open(pdfUrl, '_blank');
+                    };
+                }
+                
+                // Cargar PDF
+                this.loadPDF(pdfUrl);
+            }
+            
+            async loadPDF(url) {
+                try {
+                    if (!url) {
+                        throw new Error('No se proporcionó URL del PDF');
+                    }
+                    
+                    console.log('Cargando PDF:', url);
+                    
+                    // Configurar PDF.js worker
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                    
+                    // Cargar documento PDF
+                    const loadingTask = pdfjsLib.getDocument(url);
+                    this.pdf = await loadingTask.promise;
+                    
+                    this.totalPages = this.pdf.numPages;
+                    document.getElementById('total-pages').textContent = this.totalPages;
+                    
+                    // Ocultar loading y mostrar canvas
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('error').style.display = 'none';
+                    this.canvas.style.display = 'block';
+                    
+                    // Renderizar primera página
+                    await this.renderPage(1);
+                    
+                    console.log('PDF cargado exitosamente');
+                    
+                } catch (error) {
+                    console.error('Error cargando PDF:', error);
+                    this.showError();
+                }
+            }
+            
+            async renderPage(pageNum) {
+                if (!this.pdf) return;
+                
+                try {
+                    const page = await this.pdf.getPage(pageNum);
+                    const viewport = page.getViewport({ scale: this.scale });
+                    
+                    this.canvas.width = viewport.width;
+                    this.canvas.height = viewport.height;
+                    
+                    const renderContext = {
+                        canvasContext: this.ctx,
+                        viewport: viewport
+                    };
+                    
+                    await page.render(renderContext).promise;
+                    
+                    this.currentPage = pageNum;
+                    document.getElementById('current-page').textContent = pageNum;
+                    
+                    // Actualizar estado de botones
+                    document.getElementById('prev-btn').disabled = pageNum <= 1;
+                    document.getElementById('next-btn').disabled = pageNum >= this.totalPages;
+                    
+                } catch (error) {
+                    console.error('Error renderizando página:', error);
+                    this.showError();
+                }
+            }
+            
+            showError() {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                this.canvas.style.display = 'none';
+            }
+            
+            setupEventListeners() {
+                // Navegación de páginas
+                document.getElementById('prev-btn').addEventListener('click', () => {
+                    if (this.currentPage > 1) {
+                        this.renderPage(this.currentPage - 1);
+                    }
+                });
+                
+                document.getElementById('next-btn').addEventListener('click', () => {
+                    if (this.currentPage < this.totalPages) {
+                        this.renderPage(this.currentPage + 1);
+                    }
+                });
+                
+                // Zoom
+                document.getElementById('zoom-in').addEventListener('click', () => {
+                    this.scale = Math.min(this.scale + 0.1, 3.0);
+                    this.updateZoomLevel();
+                    this.renderPage(this.currentPage);
+                });
+                
+                document.getElementById('zoom-out').addEventListener('click', () => {
+                    this.scale = Math.max(this.scale - 0.1, 0.5);
+                    this.updateZoomLevel();
+                    this.renderPage(this.currentPage);
+                });
+                
+                // Teclado
+                document.addEventListener('keydown', (e) => {
+                    switch(e.key) {
+                        case 'ArrowLeft':
+                        case 'ArrowUp':
+                            if (this.currentPage > 1) {
+                                this.renderPage(this.currentPage - 1);
+                            }
+                            break;
+                        case 'ArrowRight':
+                        case 'ArrowDown':
+                            if (this.currentPage < this.totalPages) {
+                                this.renderPage(this.currentPage + 1);
+                            }
+                            break;
+                    }
+                });
+            }
+            
+            updateZoomLevel() {
+                document.getElementById('zoom-level').textContent = Math.round(this.scale * 100) + '%';
+            }
+        }
+        
+        // Inicializar visor cuando la página carga
+        document.addEventListener('DOMContentLoaded', () => {
+            new EBookViewer();
+        });
+    </script>
+</body>
+</html>
