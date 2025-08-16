@@ -1109,6 +1109,71 @@
                 font-size: 0.9rem;
             }
         }
+        
+        /* YouTube Auto-Updater UI Styles */
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .refresh-featured-video {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .refresh-featured-video:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .update-loading {
+            animation: fadeInOut 2s infinite;
+        }
+        
+        .last-update-indicator {
+            transition: opacity 0.3s ease;
+        }
+        
+        .last-update-indicator:hover {
+            opacity: 0.8;
+        }
+        
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Responsive adjustments for new button */
+        @media (max-width: 768px) {
+            .hero-actions {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero-actions .btn, .hero-actions .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
@@ -1357,8 +1422,11 @@
                             ▶️ Ver Video Completo
                         </a>
                         <a href="https://www.youtube.com/channel/UCQ4LzY6UyppxVddHx5f-ZnA" target="_blank" class="btn btn-secondary">
-                            � Ver Más Videos
+                            📺 Ver Más Videos
                         </a>
+                        <button onclick="youtubeUpdater?.updateFeaturedVideo()" class="btn btn-outline refresh-featured-video" title="Actualizar video destacado">
+                            🔄 Actualizar
+                        </button>
                     </div>
                 </div>
                 
@@ -1901,8 +1969,11 @@
         });
     </script>
     
-    <!-- Featured Video Manager Script -->
-    <script src="../js/featured-video-manager.js"></script>
+    <!-- YouTube Configuration -->
+    <script src="../js/youtube-config.js"></script>
+    
+    <!-- YouTube Auto-Updater System -->
+    <script src="../js/youtube-auto-updater.js"></script>
     
     <!-- Main JS for dropdowns -->
     <script src="../js/main.js"></script>

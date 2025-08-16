@@ -483,7 +483,7 @@ a:hover {
 .hamburger-menu span {
     width: 25px;
     height: 3px;
-    background: var(--primary-color);
+    background: #333; /* Color oscuro para mejor visibilidad */
     transition: all var(--transition-normal);
     border-radius: 2px;
 }

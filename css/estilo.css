@@ -2400,7 +2400,7 @@ footer .redes-cuatro ul{
     .hamburger-menu span {
         width: 25px;
         height: 3px;
-        background-color: bisque;
+        background-color: #333; /* Color oscuro para mejor visibilidad */
         margin: 3px 0;
         transition: 0.3s;
         border-radius: 2px;

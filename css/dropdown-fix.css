@@ -50,3 +50,66 @@
 .nav-item.dropdown {
     position: relative !important;
 }
+
+/* ============================================
+   FIX MENÚ HAMBURGUESA - VISIBILIDAD MÓVIL
+   ============================================ */
+
+/* Asegurar que el menú hamburguesa sea visible en móvil */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        cursor: pointer !important;
+        margin-right: 20px !important;
+        z-index: 1001 !important;
+        padding: 8px !important;
+        /* Añadir fondo sutil para mejor visibilidad */
+        background: rgba(0, 0, 0, 0.05) !important;
+        border-radius: 4px !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        min-width: 35px !important;
+        min-height: 35px !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .hamburger-menu span {
+        width: 25px !important;
+        height: 3px !important;
+        background-color: #333 !important; /* Color oscuro siempre visible */
+        margin: 3px 0 !important;
+        transition: 0.3s ease !important;
+        border-radius: 2px !important;
+        display: block !important;
+        /* Añadir sombra para mayor visibilidad en cualquier fondo */
+        box-shadow: 0 0 3px rgba(255, 255, 255, 0.8), 0 0 1px rgba(0, 0, 0, 0.5) !important;
+    }
+    
+    /* Estados de animación del hamburger */
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px) !important;
+        background-color: #333 !important;
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0 !important;
+    }
+    
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px) !important;
+        background-color: #333 !important;
+    }
+    
+    /* Hover effect para mejor UX */
+    .hamburger-menu:hover {
+        background: rgba(0, 0, 0, 0.1) !important;
+        border-color: rgba(0, 0, 0, 0.2) !important;
+        transform: scale(1.05) !important;
+    }
+    
+    .hamburger-menu:hover span {
+        background-color: #000 !important; /* Más oscuro en hover */
+        box-shadow: 0 0 4px rgba(255, 255, 255, 1), 0 0 2px rgba(0, 0, 0, 0.8) !important;
+    }
+}
